@@ -79,8 +79,7 @@ categories: jekyll update
 
 今天买矿泉水的时候, 我看到了冠状啤酒 "Coronita Extra!", 虽然不常喝, 我还是买了一提, 纪念这个特殊的二〇二〇.
 
-***
-
+___
 
 留念: 
 
