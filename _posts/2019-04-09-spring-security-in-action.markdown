@@ -3,10 +3,8 @@ layout: post
 title:  "Spring Security In Action"
 date:   2019-04-09 23:31:07 +0800
 tags: [JAVA, Spring-Security]
-categories: [blog]
 author: Jakob He
-categories: [java]
-tags: [java]
+categories: [java, blog]
 ---
 
 

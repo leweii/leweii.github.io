@@ -4,6 +4,7 @@ title: '[JAVA 8] Default Method'
 date: 2016-12-29 10:39:50 +0800
 categories: [java]
 tags: [java]
+author: Jakob He
 ---
 
 #####什么是Default Method

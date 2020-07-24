@@ -4,6 +4,7 @@ title:  "Coronita Extra!!"
 date:   2020-03-18 12:39:50 +0800
 categories: [life]
 tags: [COVID-19]
+author: Jakob He
 ---
 
 在家工作了辣么久, 忽然有一种很希望表达自己的感觉, 早上看了一个vlog, up主只是很简单的记录自己的生活和想法, 就是这样的一个日常简单的表达, 也感染到我, 让我有一种表达欲希望能够宣泄.

@@ -4,6 +4,7 @@ title: '[Mapstruct] 基本用法'
 date: 2016-11-08 10:39:50 +0800
 categories: [java]
 tags: [java]
+author: Jakob He
 ---
 
 渔人,你还在手动些各种对象转换的代码吗?
