@@ -1,8 +1,8 @@
 title: Hacker-Blog
-description: "A Jekyll Blog Theme For Hackers"
+description: "Hit an exception when I try to describe myself."
 author:
-  name: "SomeHacker"
-  email: "someone@somewebsite.somedomain"
+  name: "Jakob He"
+  email: "lewei.me@gmail.com"
   url: "https://ashishchaudhary.in/hacker-blog"
 
 baseurl: /
@@ -28,5 +28,5 @@ plugins:
   - jekyll-sitemap
 
 # Custom variables
-owner : "SomeHacker"
+owner : "Jakob He"
 year : "2020"
