@@ -22,7 +22,7 @@ In this example we will go through a very basic Spring-Security application. The
 4. token verification
 5. password crypto
 
-> ![spring-security-scope.jpg]({{ site.url }}/assets/2019-04-09-spring-security-in-action/pic1.jpg)
+> ![spring-security-scope.jpg]({{ site.url }}/assets/2019-04-09-spring-security-in-action/pic1.png)
 
 Within the process of realization, we may cover some fundamental principle of Spring-Security.
 

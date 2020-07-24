@@ -59,4 +59,4 @@ subscription.subscribe();
 ```
 
 Now you can see all your messages in the log. You can do whatever you want for your Glip messages, store in some TODO list, key word scan, auto reply etc.
-![Image]({{ site.url }}/assets/2020-03-17-work-with-rc-api/pic3.jpg)
+![Image]({{site.url}}/assets/2020-03-17-work-with-rc-api/pic3.jpg)
