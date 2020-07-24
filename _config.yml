@@ -24,7 +24,7 @@ github_username: leweii
 
 # Build settings
 markdown: kramdown
-remote_theme: PandaSekh/Jekyll-YAMT
+theme: minima
 plugins:
   - jekyll-feed
 
