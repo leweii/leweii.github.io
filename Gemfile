@@ -23,6 +23,8 @@ group :jekyll_plugins do
   gem "jekyll-gist"
   gem "jekyll-coffeescript"
   gem "jekyll-assets"
+  gem "jekyll-paginate"
+  gem "jekyll-archives"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

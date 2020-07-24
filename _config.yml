@@ -30,6 +30,8 @@ plugins:
   - jekyll-gist
   - jekyll-coffeescript
   - jekyll-assets
+  - jekyll-archives
+  - jekyll-paginate
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
