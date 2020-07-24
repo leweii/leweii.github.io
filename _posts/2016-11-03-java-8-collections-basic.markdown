@@ -1,8 +1,12 @@
 ---
-date: 2016-11-03 08:20
-status: public
+layout: post
+date:   2016-11-03 23:31:07 +0800
 title: '[JAVA 8] Collections 基本用法'
+author: Jakob He
+categories: [java]
+tags: [java]
 ---
+
 
 #####Java8 Stream的终端操作
 + foreach

@@ -2,7 +2,8 @@
 layout: post
 title: "黑与白"
 date: 2020-02-30 10:39:50 +0800
-categories: picture
+categories: [picture]
+tags: [life]
 ---
 
 ![Image]({{ site.url }}/assets/2020-02-30-black-and-white/pic1.jpg)

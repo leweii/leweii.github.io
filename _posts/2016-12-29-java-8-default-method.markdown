@@ -2,7 +2,8 @@
 layout: post
 title: '[JAVA 8] Default Method'
 date: 2016-12-29 10:39:50 +0800
-categories: java
+categories: [java]
+tags: [java]
 ---
 
 #####什么是Default Method

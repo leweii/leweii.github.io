@@ -2,7 +2,8 @@
 layout: post
 title: "Work with RC API"
 date: 2020-03-17 10:39:50 +0800
-categories: java
+categories: [java]
+tags: [java]
 ---
 
 

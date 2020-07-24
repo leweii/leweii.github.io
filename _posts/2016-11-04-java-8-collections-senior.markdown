@@ -2,7 +2,8 @@
 layout: post
 title:  "[JAVA 8] Collections 进阶用法"
 date:   2016-11-04 10:39:50 +0800
-categories: java
+categories: [java]
+tags: [java]
 ---
 
 Collections 除了基本统计用法,还有提供了类似SQL分组数据的用法.通过传递分组参数
