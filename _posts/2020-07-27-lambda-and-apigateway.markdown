@@ -66,7 +66,6 @@ EXAMPLES
                 "Arn": "arn:aws:iam::123456789012:role/Test-Role"
             }
           }
-
 ``` 
 
 #### create iam role
@@ -94,6 +93,7 @@ aws iam create-role --role-name lambda-2020-role --assume-role-policy-document m
   ]
 }
 ```
+
 细看之下, 原来是........在aws文档里笔者遇到了, 笔者遇到过的最绕的中文.
 > trust-policy.json 文件是当前目录中的 JSON 文件，该文件定义了角色的信任策略。此信任策略通过向服务委托人授予调用 AWS Security Token Service AssumeRole 操作所需的 lambda.amazonaws.com 权限来允许 Lambda 使用角色的权限。
 
