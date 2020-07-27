@@ -357,7 +357,7 @@ types -> (list)
 
 ```sh
 aws apigateway create-rest-api --name 'banana-2020' --description 'to trigger the lambda to generate a banana.' --profile leweihe \
---endpoint-configuration='{ "types": ["REGIONAL"], "vpcEndpointIds": ["vpc-0cefaa82e9fbf226a"] }'
+--endpoint-configuration='{ "types": ["REGIONAL"] }'
 ```
 
 再次无语, 
@@ -447,6 +447,75 @@ output:
     "apiKeyRequired": false
 }
 ```
-#### 3. 关联api 与lambda
+#### 4. 关联api 与lambda
 
 接下来这步的cmd让笔者有点费解, 笔者第一次配置是通过AWS Lambda UI的鼠标点击来操作的.
+第二次根据文档试了又试, 实在无法通关.
+无奈, 只好反向拉出arn 看看自己错在哪里.
+对比之!
+--uri 'arn:**aws-cn**:apigateway:cn-northwest-1:lambda:path/2015-03-31/functions/arn:**aws-cn**:lambda:cn-northwest-1:378321470043:function:lambda-2020/invocations' \
+--uri 'arn:**aws**:apigateway:cn-northwest-1:lambda:path/2015-03-31/functions/arn:**aws**:lambda:cn-northwest-1:378321470043:function:lambda-2020/invocations' \
+
+笔者此时此刻感慨, 中国特色果然十分不同寻常~
+
+得出正确答案只中国特色如下
+
+```sh
+aws apigateway put-integration --rest-api-id r0i94dlswk --resource-id hoo898 \
+--http-method POST --type AWS --integration-http-method POST \
+--uri 'arn:aws-cn:apigateway:cn-northwest-1:lambda:path/2015-03-31/functions/arn:aws-cn:lambda:cn-northwest-1:378321470043:function:lambda-2020/invocations' \
+--profile leweihe
+```
+
+```json
+{
+    "type": "AWS",
+    "httpMethod": "POST",
+    "uri": "arn:aws-cn:apigateway:cn-northwest-1:lambda:path/2015-03-31/functions/arn:aws-cn:lambda:cn-northwest-1:378321470043:function:lambda-2020/invocations",
+    "passthroughBehavior": "WHEN_NO_MATCH",
+    "timeoutInMillis": 29000,
+    "cacheNamespace": "hoo898",
+    "cacheKeyParameters": []
+}
+```
+
+#### 5. 配置响应类型json
+
+这步就是定义api validation 和response code, 哎, 感觉就是看help 填鸭, 不懂先看help吧, 再不懂发邮件, support case, 或者找一个aws 销售假装自己是上市公司要迁移阿里云的应用, 他们会很热情的给你解答所有问题.....
+
+```sh
+aws apigateway put-method-response --rest-api-id r0i94dlswk \
+--resource-id hoo898 --http-method POST \
+--status-code 200 --response-models application/json=Empty \
+--profile leweihe
+```
+
+```json
+{
+    "statusCode": "200",
+    "responseModels": {
+        "application/json": "Empty"
+    }
+}
+```
+
+#### 5. deploy api gateway
+
+```sh
+aws apigateway create-deployment --rest-api-id r0i94dlswk --stage-name prod
+```
+
+尼玛 output是
+
+```text
+An error occurred (BadRequestException) when calling the CreateDeployment operation: Private REST API doesn't have a resource policy attached to it
+```
+
+卧槽, 居然不能发布private endpoint, 正在懊恼复盘的时候, 笔者上面一个限制
+
+```text
+CreateRestApi operation: VPCEndpoints can only be specified with PRIVATE apis.
+```
+
+好吧, 登录到console, 手动修改到Regional呗~
+
