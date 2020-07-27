@@ -235,7 +235,7 @@ help一下~
 aws lambda help
 ```
 英文不大好的我找了 trigger, execute, 无果. 不过好像看到了一类似的 invoke, 打开词典一查, 有援引~换起~用法术召唤的意思....
-看到用法术召唤, 我就知道了, 我要invoke my beast. 照理, help 一下.
+看到用法术召唤, 我就知道了, 我要invoke my beast. 照例, help 一下.
 
 ```shell script
 aws lambda invoke help
@@ -257,9 +257,81 @@ aws lambda invoke \
 cat response.json
 ```
 
-### API Gateway
+output
+```text
+"██████╗  ██████╗ ██████╗ \n██╔══██╗██╔═══██╗██╔══██╗\n██████╔╝██║   ██║██████╔╝\n██╔══██╗██║   ██║██╔══██╗\n██████╔╝╚██████╔╝██████╔╝\n╚═════╝  ╚═════╝ ╚═════╝ \n                         "⏎
+```
 
-1. create Lambda
+哟嘿, 有了, 但是换行好像有点问题, 没关系lambda works, 剩下的以后代码慢慢调整.
+接下来是创建一个api gateway, 好让广大的banana爱好者能够一同便利的生成出自己的banana.
+
+### API Gateway
+1. create api gateway
+api gateway 顾名思义, 就是一个门, 有条路~
+门能访问控制, 连接aws 各种资源. lambda, ec2, s3 xxx.
+
+gtsqesy, help 
+```shell script
+aws apigateway help
+aws apigateway create-rest-api help
+```
+想速成, 就直接翻到example吧, 想连英文阅读理解, 就慢慢看下来. 反正我大概找到方法了.
+```shell script
+aws apigateway create-rest-api --name 'banana-2020' --description 'to trigger the lambda to generate a banana.' --profile leweihe
+```
+
+哎 终于没有那种一次跑过的感觉了, 遇到了一个error, 我们一起来面向Stack Overflow吧~
+```text
+Endpoint Configuration type EDGE is not supported in this region: cn-northwest-1
+```
+看起来是酱紫的, 创建api gateway的时候, 可以选择各种type, edge 看起来像是边缘节点, 但是边缘节点在我的祖国中国是无法创建的, 我和我的祖国一刻也不能分离, 那我换一个type吧~
+照例 help 一下, 看看有啥别的选择不, 反正创建api gateway也不收钱.
+
+```text
+types -> (list)
+              A  list  of  endpoint  types of an API ( RestApi ) or its custom
+              domain name ( DomainName ). For an edge-optimized  API  and  its
+              custom domain name, the endpoint type is "EDGE" . For a regional
+              API and its custom domain name, the endpoint type is REGIONAL  .
+              For a private API, the endpoint type is PRIVATE .
+```
+好了, 这里说的很清楚了, 三个选择EDGE/REGIONAL/PRIVATE
+那我就选REGIONAL吧~ 毕竟我和我的祖国一刻也不能分离~
+> types: 用于指定对应的endpoint类型
+> vpcEndpointIds: 指定多个vpc域
+
+吧? 我看文档的理解是酱紫的, 所以有错的话请读者指出哦....
+改一下shell
+```shell script
+aws apigateway create-rest-api --name 'banana-2020' --description 'to trigger the lambda to generate a banana.' --profile leweihe \
+--endpoint-configuration='{ "types": ["REGIONAL"], "vpcEndpointIds": ["vpc-0cefaa82e9fbf226a"] }'
+```
+再次无语, 
+```text
+An error occurred (BadRequestException) when calling the CreateRestApi operation: VPCEndpoints can only be specified with PRIVATE apis.
+```
+所以~ 我只能做一个private person. 再改一下吧~
+```shell script
+aws apigateway create-rest-api --name 'banana-2020' --description 'to trigger the lambda to generate a banana.' --profile leweihe \
+--endpoint-configuration='{ "types": ["PRIVATE"] }'
+```
+output, 记下id, 待会要用哦.
+```json
+{
+    "id": "r0i94dlswk",
+    "name": "banana-2020",
+    "description": "to trigger the lambda to generate a banana.",
+    "createdDate": "2020-07-27T21:51:31+08:00",
+    "apiKeySource": "HEADER",
+    "endpointConfiguration": {
+        "types": [
+            "PRIVATE"
+        ]
+    }
+}
+```
+
+
 
 2. 
 
