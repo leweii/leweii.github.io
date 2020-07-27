@@ -71,6 +71,7 @@ EXAMPLES
 #### create iam role
 
 试着打一下吧, 反正创建IAM不收费~
+
 ```shell script
 aws iam create-role --role-name lambda-2020-role --assume-role-policy-document my2020policy.json --profile leweihe
 ```
@@ -110,7 +111,11 @@ An error occurred (MalformedPolicyDocument) when calling the CreateRole operatio
 
 ```shell script
 aws iam create-role --role-name lambda-2020-role --assume-role-policy-document file://my2020policy.json --profile leweihe
----
+```
+
+output: 
+
+```json
 {
     "Role": {
         "Path": "/",
