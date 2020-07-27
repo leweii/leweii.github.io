@@ -9,12 +9,14 @@ publish: true
 2. 一个API Gateway
 3. 两个向资源的IAM Role
 
+开始吧~
+
 ## In Action
 
 ### Lambda-1
 笔者此时此刻毫无准备, 那么常规的做法是通过help命令看看我们都能对lambda做些啥?
 
-```shell script
+```sh
 aws lambda help
 ```
 
@@ -35,7 +37,7 @@ DESCRIPTION
 #### 1. try to create Lambda
 我也不大熟悉这个cmd, 那么先get help一下呗
 
-```shell script
+```sh
 aws lambda create-function help
 ```
 
@@ -46,7 +48,7 @@ aws lambda create-function help
 ### Role-1
 还是通过
 
-```shell script
+```sh
 aws iam help
 aws iam create-role help
 ```
@@ -78,7 +80,7 @@ EXAMPLES
 
 试着打一下吧, 反正创建IAM不收费~
 
-```shell script
+```sh
 aws iam create-role --role-name lambda-2020-role --assume-role-policy-document my2020policy.json --profile leweihe
 ```
 
@@ -116,7 +118,7 @@ An error occurred (MalformedPolicyDocument) when calling the CreateRole operatio
 面向stack overflow编程之后发现, file:// 是不能轻易省去的, 即使你是MAC OS 还是linux 还是Windows, 
 于是加上file:// 执行成功!
 
-```shell script
+```sh
 aws iam create-role --role-name lambda-2020-role --assume-role-policy-document file://my2020policy.json --profile leweihe
 ```
 
@@ -203,7 +205,7 @@ public class Handler implements RequestHandler<Map<String, String>, String> {
 
 接下来gradle build zip 然后上传咯
 
-```shell script
+```sh
 ./gradlew buildZip
 ```
 
@@ -213,7 +215,7 @@ public class Handler implements RequestHandler<Map<String, String>, String> {
 
 再次打出, 寻求出路.
 
-```shell script
+```sh
 aws lambda create-function help
 ```
 
@@ -233,7 +235,7 @@ aws lambda create-function help
 
 于是我们有了如下的命令
 
-```shell script
+```sh
 aws lambda create-function --function-name lambda-2020 \
 ##--这个fileb:// 同理 也不要乱改哦~
 --zip-file fileb://banana-lambda.zip --handler com.leweii.banana.lambda.Handler --runtime java11 \
@@ -270,20 +272,20 @@ output能看到所有需要的信息, 如果有错可以用 aws lambda update-fu
 既然成功了, 单靠这个output似乎有点不够充分必要, 总有什么命令是可以trigger 我的lambda function吧?
 help一下~
 
-```shell script
+```sh
 aws lambda help
 ```
 
 英文不大好的我找了 trigger, execute, 无果. 不过好像看到了一类似的 invoke, 打开词典一查, 有援引~换起~用法术召唤的意思....
 看到用法术召唤, 我就知道了, 我要invoke my beast. 照例, help 一下.
 
-```shell script
+```sh
 aws lambda invoke help
 ```
 
 copy example来填鸭吧
 
-```shell script
+```sh
 aws lambda invoke \
               --cli-binary-format raw-in-base64-out \
               --function-name lambda-2020 \
@@ -296,7 +298,7 @@ aws lambda invoke \
 
 打开response.json 看看呗
 
-```shell script
+```sh
 cat response.json
 ```
 
@@ -314,7 +316,7 @@ api gateway 顾名思义, 就是一个门, 有条路~
 
 gtsqesy, help 
 
-```shell script
+```sh
 aws apigateway help
 aws apigateway create-rest-api help
 ```
@@ -322,7 +324,7 @@ aws apigateway create-rest-api help
 #### 1. create api gateway
 想速成, 就直接翻到example吧, 想连英文阅读理解, 就慢慢看下来. 反正我大概找到方法了.
 
-```shell script
+```sh
 aws apigateway create-rest-api --name 'banana-2020' --description 'to trigger the lambda to generate a banana.' --profile leweihe
 ```
 
@@ -353,7 +355,7 @@ types -> (list)
 吧? 我看文档的理解是酱紫的, 所以有错的话请读者指出哦....
 改一下shell
 
-```shell script
+```sh
 aws apigateway create-rest-api --name 'banana-2020' --description 'to trigger the lambda to generate a banana.' --profile leweihe \
 --endpoint-configuration='{ "types": ["REGIONAL"], "vpcEndpointIds": ["vpc-0cefaa82e9fbf226a"] }'
 ```
@@ -366,7 +368,7 @@ An error occurred (BadRequestException) when calling the CreateRestApi operation
 
 所以~ 我只能做一个private person. 再改一下吧~
 
-```shell script
+```sh
 aws apigateway create-rest-api --name 'banana-2020' --description 'to trigger the lambda to generate a banana.' --profile leweihe \
 --endpoint-configuration='{ "types": ["PRIVATE"] }'
 ```
@@ -393,7 +395,7 @@ output, 记下id, 待会要用哦.
 --parent-id 是对应资源的根节点id, 也就是这个资源你想放在哪个门上, 由哪个门来控制.
 在创建api(第一步)的时候, aws 默认会创建一个根resource. 所以我们需要先get这个根resource的id哦
 
-```shell script
+```sh
 aws apigateway get-resources --rest-api-id r0i94dlswk --profile leweihe
 ```
 
@@ -412,7 +414,7 @@ output
 
 --path-part The last path segment for this resource. 简单说就是url path.
 
-```shell script
+```sh
 aws apigateway create-resource --rest-api-id r0i94dlswk --path-part banana-2020 \
 --parent-id ox8o6t69l6 --profile leweihe
 ```
@@ -431,7 +433,7 @@ output, 记住id 待会要用哦.
 #### 3. 创建POST
 我们有了资源, 可以给他指定各种方法/POST/GET/PUT/DELETE....
 
-```shell script
+```sh
 aws apigateway put-method --rest-api-id r0i94dlswk --resource-id hoo898 \
 --http-method POST --authorization-type NONE --profile leweihe
 ```
