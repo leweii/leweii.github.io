@@ -502,7 +502,7 @@ aws apigateway put-method-response --rest-api-id r0i94dlswk \
 #### 5. deploy api gateway
 
 ```sh
-aws apigateway create-deployment --rest-api-id r0i94dlswk --stage-name prod
+aws apigateway create-deployment --rest-api-id r0i94dlswk --stage-name prod --profile leweihe
 ```
 
 尼玛 output是
@@ -517,5 +517,21 @@ An error occurred (BadRequestException) when calling the CreateDeployment operat
 CreateRestApi operation: VPCEndpoints can only be specified with PRIVATE apis.
 ```
 
-好吧, 登录到console, 手动修改到Regional呗~
+好吧, 登录到console, 手动修改到Regional呗~ 暂时绕过这个问题, 但是我跟它还没完~!
 
+行吧 重新deploy
+
+```json
+{
+    "id": "6n6t7e",
+    "createdDate": "2020-07-27T23:26:25+08:00"
+}
+```
+
+#### 6. 赋予api 调用lambda 的权限
+
+#### 7. 赋予某个iam key 调用api 的权限
+
+
+
+## Test and use it
