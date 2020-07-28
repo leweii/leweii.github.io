@@ -639,3 +639,7 @@ curl --location --request POST 'https://r0i94dlswk.execute-api.cn-northwest-1.am
 ```
 
 ![Image]({{ site.url }}/assets/2020-07-27-lambda-and-apigateway/pic2.jpg)
+
+## 总结
+
+啥都不多说了, 我要赶紧去invalid 自己的IAM key and values 👋🏼
