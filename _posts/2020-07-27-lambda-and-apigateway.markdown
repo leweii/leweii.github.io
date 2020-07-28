@@ -489,7 +489,24 @@ aws apigateway put-integration --rest-api-id r0i94dlswk --resource-id hoo898 \
 }
 ```
 
-#### 5.5 配置响应类型json
+#### 5.5 加入integration response map
+```sh
+aws apigateway put-integration-response --rest-api-id r0i94dlswk \                                                                                                              ↵ 254
+    --resource-id hoo898 --http-method POST \
+    --status-code 200 --response-templates application/json="" \
+    --profile leweihe
+```
+
+```text
+{
+    "statusCode": "200",
+    "responseTemplates": {
+        "application/json": null
+    }
+}
+```
+
+#### 5.6 配置响应类型json
 
 这步就是定义api validation 和response code, 哎, 感觉就是看help 填鸭, 不懂先看help吧, 再不懂发邮件, support case, 或者找一个aws 销售假装自己是上市公司要迁移阿里云的应用, 他们会很热情的给你解答所有问题.....
 
@@ -509,7 +526,7 @@ aws apigateway put-method-response --rest-api-id r0i94dlswk \
 }
 ```
 
-#### 5.6 deploy api gateway
+#### 5.7 deploy api gateway
 
 ```sh
 aws apigateway create-deployment --rest-api-id r0i94dlswk --stage-name prod --profile leweihe
@@ -538,11 +555,11 @@ CreateRestApi operation: VPCEndpoints can only be specified with PRIVATE apis.
 }
 ```
 
-#### 5.7 赋予api 调用lambda 的权限
+#### 5.8 赋予api 调用lambda 的权限
 
 ```sh
 aws lambda add-permission --function-name lambda-2020 \
---statement-id apigateway-prod-st --action lambda:InvokeFunction \
+--statement-id apigateway-stage-st --action lambda:InvokeFunction \
 --principal apigateway.amazonaws.com \
 --source-arn "arn:aws:execute-api:cn-northwest-1:378321470043:r0i94dlswk/prod/POST/banana-2020" \
 --profile leweihe
@@ -575,4 +592,6 @@ Tue Jul 28 00:29:38 UTC 2020 : Method completed with status: 500
 ```
 
 大概就是api 成功调用了, 但是没有足够的权限调用lambda function?~ 开启debug模式.
-如果是权限相关的, 会不会是
+看起来是这一步出现了问题.
+![Image]({{ site.url }}/assets/2020-07-27-lambda-and-apigateway/pic1.jpeg)
+
