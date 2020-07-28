@@ -491,7 +491,7 @@ aws apigateway put-integration --rest-api-id r0i94dlswk --resource-id hoo898 \
 
 #### 5.5 加入integration response map
 ```sh
-aws apigateway put-integration-response --rest-api-id r0i94dlswk \                                                                                                              ↵ 254
+aws apigateway put-integration-response --rest-api-id r0i94dlswk \
     --resource-id hoo898 --http-method POST \
     --status-code 200 --response-templates application/json="" \
     --profile leweihe
@@ -593,5 +593,49 @@ Tue Jul 28 00:29:38 UTC 2020 : Method completed with status: 500
 
 大概就是api 成功调用了, 但是没有足够的权限调用lambda function?~ 开启debug模式.
 看起来是这一步出现了问题.
-![Image]({{ site.url }}/assets/2020-07-27-lambda-and-apigateway/pic1.jpeg)
 
+![Image]({{ site.url }}/assets/2020-07-27-lambda-and-apigateway/pic1.jpg)
+
+经过比较久的排查, 终于找到了原因.
+当我们调用API 的时候, 我们需要传入Authorization 信息, api gateway 会一路传递这个Authorization 信息, 但是回顾`5.3 创建POST`步, 我们选择了--authorization-type NONE, 导致Authorization 信息被过滤, 并且无法继续传递到下一个对lambda 调用的步骤.
+那我们改一改我们resource 的method 吧, 让它能够支持Authorization
+
+```sh
+aws apigateway update-method help
+```
+
+```text
+ authorizationType -> (string)
+          The  method's  authorization  type.  Valid  values are NONE for open
+          access, AWS_IAM for using AWS IAM permissions, CUSTOM  for  using  a
+          custom  authorizer,  or  COGNITO_USER_POOLS for using a Cognito user
+          pool.
+
+       authorizerId -> (string)
+          The identifier of an  Authorizer to use on this method.  The  autho-
+          rizationType must be CUSTOM .
+```
+
+我们看到authorizationType 支持NONE /AWS_IAM / CUSTOM... 我们需要使用AWS_IAM.
+
+```sh
+aws apigateway update-method --rest-api-id r0i94dlswk --resource-id hoo898 --http-method POST \
+    --patch-operations op="replace",path="/authorizationType",value="AWS_IAM" --profile leweihe
+```
+
+发布之后再次测试!
+
+```sh
+curl --location --request POST 'https://r0i94dlswk.execute-api.cn-northwest-1.amazonaws.com.cn/prod/banana-2020' \
+--header 'X-Amz-Content-Sha256: beaead3198f7da1e70d03ab969765e0821b24fc913697e929e726aeaebf0eba3' \
+--header 'X-Amz-Date: 20200728T071817Z' \
+--header 'Authorization: AWS4-HMAC-SHA256 Credential=AKIAVQFNXQJN57QG7JI7/20200728/cn-northwest-1/execute-api/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date, Signature=d0b571c6cb20753e37eb554ad006a6afabaf382f56a341f2d837d0d928bfee38' \
+--header 'Content-Type: text/plain' \
+--data-raw '{
+  "name": "banana generator",
+  "text": "FUCK U",
+  "font": "ANSI_Shadow"
+}'
+```
+
+![Image]({{ site.url }}/assets/2020-07-27-lambda-and-apigateway/pic2.jpg)
