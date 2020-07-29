@@ -6,7 +6,7 @@ author:
   url: "https://leweii.github.io"
 
 baseurl: /
-
+google_analytics: UA-173973129-1
 source: .
 destination: ./_site
 permalink: /:title
