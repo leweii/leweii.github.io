@@ -5,8 +5,9 @@ author:
   email: "lewei.me@gmail.com"
   url: "https://leweii.github.io"
 
-baseurl: /
 google_analytics: UA-173973129-1
+
+baseurl: /
 source: .
 destination: ./_site
 permalink: /:title
