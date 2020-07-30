@@ -14,7 +14,7 @@ permalink: /:title
 paginate: 3
 paginate_path: /page/:num/
 
-defaults:
+defaults:ApacheSftpUploadServiceTest.java
   -
     scope:
       path: ""
