@@ -1,5 +1,6 @@
 ---
 layout: post
+publish: true
 title:  "Coronita Extra!!"
 date:   2020-03-18 12:39:50 +0800
 categories: [life]

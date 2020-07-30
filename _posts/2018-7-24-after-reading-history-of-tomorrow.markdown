@@ -1,5 +1,6 @@
 ---
 layout: post
+publish: true
 title: "未来简史读后感"
 date: 2018-7-24 15:39:50 +0800
 categories: [读后感]

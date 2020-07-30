@@ -1,5 +1,6 @@
 ---
 layout: post
+publish: true
 title: "CryptoKitties 源码解读"
 date: 2018-02-01 15:39:50 +0800
 categories: [bitcoin]

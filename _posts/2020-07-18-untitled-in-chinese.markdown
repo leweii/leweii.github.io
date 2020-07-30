@@ -1,5 +1,6 @@
 ---
 layout: post
+publish: true
 title: "无题"
 date: 2020-07-18 15:39:50 +0800
 categories: [life]
