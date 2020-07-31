@@ -54,7 +54,7 @@ spring:
             client-secret: <secret>
 ```
 
-配置spring-security, spring security 基础配置, 这篇文章不赘述, 更多细节可以参考[这篇]({{ site.url }}/blog/2019/04/09/spring-security-in-action.html)
+配置spring-security, spring security 基础配置, 这篇文章不赘述, 更多细节可以参考[这篇]({{ site.url }}/java/blog/2019/04/09/spring-security-in-action.html)
 ```java
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -129,3 +129,6 @@ http://localhost:8081/user/oidc-claims
 [source code](https://github.com/leweii/oidc-demo)
 
 [Spring Security and OpenID Connect](https://www.baeldung.com/spring-security-openid-connect)
+
+对了, 写博客的同时,  我要围住我的土兜兜.
+![tudoudou]({{ site.url }}/assets/2020-08-01-spring-security-integrate-w-oidc/pic4.jpeg)
