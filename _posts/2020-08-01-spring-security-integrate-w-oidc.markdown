@@ -8,7 +8,6 @@ title:  "Spring Security integrate with OIDC"
 关键字:
 spring security
 oidc
-lti
 
 ## 2. **In Action**
 
@@ -112,4 +111,10 @@ http://localhost:8081/user/oidc-claims
 重定向到google login page
 返回时带上所有登录用户的d信息~
 
+做了一个youtube demo.
 
+
+---
+
+[source code](https://github.com/leweii/oidc-demo)
+[Spring Security and OpenID Connect](https://www.baeldung.com/spring-security-openid-connect)
