@@ -3,8 +3,10 @@ title: AWS Lambda 初探
 publish: true
 ---
 
-写在前头的最后的话, 全篇有一半的内容都是试错和debug 的内容, 充满了不和谐的粗话和坎坷的心路历程, 另外内容也比较冗长, 可酌情阅读. 
-整个过程下来的感受就是, 用Java 开发lambda 有几个缺点:
+写在前头的最后的话, 全篇有一半的内容都是试错和debug 的内容, 充满了不和谐的粗话和坎坷的心路历程, 另外内容也比较冗长, 可酌情阅读.
+
+整个过程下来的感受就是, 用心体会了几个用java开发lambda的缺点, 和不爽点:
+
 1. 需要预编译的环境, 不像python /nodejs 可在线直接开发.
 2. java 的第三方包size 不小, 写满同样多的代码, 其它语言能做的事更多.
 3. api gateway 的配置有点不够傻瓜式? 用起来感到慌张. 或许是我太慌了.
@@ -19,7 +21,7 @@ publish: true
 
 ## In Action
 
-### 1. Lambda-1
+### 1. lambda-1
 
 笔者此时此刻也毫无准备, 那么常规的做法是通过help 命令看看我们都能对lambda 做些啥?
 
@@ -41,7 +43,7 @@ DESCRIPTION
 
 很幸运, aws 对cli 的help 有很完尽的表述. 那我们就开始尝试创建自己的第一个lambda 吧~!
 
-#### 1.1 try to create Lambda
+#### 1.1 try to create lambda
 
 我也不大熟悉这个cmd, 那么先get help 一下呗
 
@@ -54,7 +56,7 @@ aws lambda create-function help
 通过这里的描述告诉我们, 首先需要一段lambda可执行的代码, 另外我们需要创建一个role , 并且分配可调用lambda 的资源. 
 受挫感很强烈, 但是blog 要继续, C'est la vie. 那么我们回头开始准备工作吧, 一个role 和一个可执行的代码包.
 
-### 2. Role-1
+### 2. role-1
 
 还是通过help
 
@@ -160,7 +162,7 @@ output:
 
 棒棒哒, 有了role, 我们就拥有了trigger lambda 的权利. 下一步, 我们需要一个打包好的lambda代码, 来实现一个简单的小功能.
 
-### 3. Lambda Coding
+### 3. lambda coding
 
 #### 3.1 思路
 记得上周的时候, AWS培训师告诉我们, coding这个事情大概就是ctrl c + ctrl v. 笔者觉得他说的很有道理. 自己会的事情为什么还要费脑子思考呢. 直接github ctrl c 吧.
@@ -221,7 +223,7 @@ public class Handler implements RequestHandler<Map<String, String>, String> {
 
 哎呀呀呀晕, 现在才想起来, 我们还没有创建lambda.
 
-### 4. Lambda-2
+### 4. lambda-2
 
 再次打出, 寻求出路.
 
@@ -468,7 +470,7 @@ output:
 
 笔者此时此刻感慨, 中国特色果然十分不同寻常~
 
-得出正确答案只中国特色如下
+得出正确答案之中国特色如下
 
 ```sh
 aws apigateway put-integration --rest-api-id r0i94dlswk --resource-id hoo898 \
@@ -571,7 +573,7 @@ aws lambda add-permission --function-name lambda-2020 \
 }
 ```
 
-## Test and use it
+## test and use it
 
 自我感觉很良好, 那我们来赶紧试试看.
 打开api gateway 的console -> 点击test, 传入我们lambda 需要的输入
@@ -597,7 +599,7 @@ Tue Jul 28 00:29:38 UTC 2020 : Method completed with status: 500
 ![Image]({{ site.url }}/assets/2020-07-27-lambda-and-apigateway/pic1.jpg)
 
 经过比较久的排查, 终于找到了原因.
-当我们调用API 的时候, 我们需要传入Authorization 信息, api gateway 会一路传递这个Authorization 信息, 但是回顾`5.3 创建POST`步, 我们选择了--authorization-type NONE, 导致Authorization 信息被过滤, 并且无法继续传递到下一个对lambda 调用的步骤.
+当我们调用API 的时候, 我们需要传入Authorization 信息, api gateway 会一路传递这个Authorization 信息, 但是回顾`5.3 创建POST`步, 我们选择了--authorization-type NONE, 导致Authorization 信息被过滤, 并且无法继续传递到下一个对lambda 调用的步骤.(这是一个基于个人理解的解释, 诚恳的请愿, 如果有高手知道具体原理, 请纠正我给我留言, 投我以木桃, 报之以琼瑶.)
 那我们改一改我们resource 的method 吧, 让它能够支持Authorization
 
 ```sh
