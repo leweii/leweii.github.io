@@ -1,10 +1,13 @@
 ---
+publish: true
 layout: post
-date:   2016-11-03 23:31:07 +0800
 title: '[JAVA 8] Collections 基本用法'
+date:   2016-11-03 23:31:07 +0800
+permalink: /java-8-collections-basic/
 author: Jakob He
 categories: [java]
 tags: [java]
+author: Jakob He
 ---
 
 

@@ -1,8 +1,9 @@
 ---
-layout: post
 publish: true
+layout: post
 title: "Work with RC API"
 date: 2020-03-17 10:39:50 +0800
+permalink: /work-with-rc-api/
 categories: [java]
 tags: [java]
 author: Jakob He

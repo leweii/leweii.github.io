@@ -1,7 +1,9 @@
 ---
+publish: true
 layout: post
 title: "黑与白"
 date: 2020-02-30 10:39:50 +0800
+permalink: /black-and-white/
 categories: [picture]
 tags: [life]
 author: Jakob He

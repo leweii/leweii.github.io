@@ -1,8 +1,9 @@
 ---
-layout: post
 publish: true
+layout: post
 title: "无题"
 date: 2020-07-18 15:39:50 +0800
+permalink: /untitled-in-chinese/
 categories: [life]
 author: Jakob He
 ---

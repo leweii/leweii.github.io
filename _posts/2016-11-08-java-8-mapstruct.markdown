@@ -1,7 +1,9 @@
 ---
+publish: true
 layout: post
 title: '[Mapstruct] 基本用法'
 date: 2016-11-08 10:39:50 +0800
+permalink: /java-8-mapstruct/
 categories: [java]
 tags: [java]
 author: Jakob He

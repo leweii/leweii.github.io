@@ -1,7 +1,9 @@
 ---
+publish: true
 layout: post
 title: '[JAVA 8] Default Method'
 date: 2016-12-29 10:39:50 +0800
+permalink: /default-method/
 categories: [java]
 tags: [java]
 author: Jakob He

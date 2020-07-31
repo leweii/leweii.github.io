@@ -1,8 +1,9 @@
 ---
+publish: true
 layout: post
-status: public
 title: "AngularJs + Java + MongoDB"
 date: 2016-12-26 15:39:50 +0800
+permalink: /angularjs-java-mongodb/
 categories: [java]
 author: Jakob He
 ---

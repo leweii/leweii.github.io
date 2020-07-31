@@ -1,8 +1,9 @@
 ---
-layout: post
 publish: true
+layout: post
 title: "未来简史读后感"
 date: 2018-7-24 15:39:50 +0800
+permalink: /after-reading-history-of-tomorrow/
 categories: [读后感]
 author: Jakob He
 ---

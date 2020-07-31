@@ -1,8 +1,9 @@
 ---
-layout: post
 publish: true
+layout: post
 title:  "Spring Security In Action"
 date:   2019-04-09 23:31:07 +0800
+permalink: /spring-security-in-action/
 tags: [JAVA, Spring-Security]
 categories: [java, blog]
 author: Jakob He

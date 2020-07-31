@@ -1,6 +1,10 @@
 ---
-title: AWS Lambda 初探
 publish: true
+layout: page
+title: AWS Lambda 初探
+date: 2020-07-27 12:22:50 +0800
+permalink: /lambda-and-apigateway/
+author: Jakob He
 ---
 
 写在前头的最后的话, 全篇有一半的内容都是试错和debug 的内容, 充满了不和谐的粗话和坎坷的心路历程, 另外内容也比较冗长, 可酌情阅读.

@@ -1,8 +1,9 @@
 ---
-layout: post
 publish: true
+layout: post
 title: "CryptoKitties 源码解读"
 date: 2018-02-01 15:39:50 +0800
+permalink: /cryptokitties-learning/
 categories: [bitcoin]
 author: Jakob He
 ---

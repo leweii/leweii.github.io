@@ -1,7 +1,9 @@
 ---
+publish: true
 layout: post
 title:  "[JAVA 8] Collections 进阶用法"
 date:   2016-11-04 10:39:50 +0800
+permalink: /java-8-collections-senior/
 categories: [java]
 tags: [java]
 author: Jakob He

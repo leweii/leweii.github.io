@@ -1,8 +1,9 @@
 ---
-layout: post
 publish: true
+layout: post
 title:  "Coronita Extra!!"
 date:   2020-03-18 12:39:50 +0800
+permalink: /coronita-extra/
 categories: [life]
 tags: [COVID-19]
 author: Jakob He
