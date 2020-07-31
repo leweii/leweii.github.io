@@ -1,11 +1,6 @@
- ---
-layout: post
+---
 publish: true
 title:  "Spring Security integrate with OIDC"
-date:   2020-07-31 16:31:07 +0800
-tags: [JAVA, Spring-Security]
-categories: [java, blog]
-author: Jakob He
 ---
 
 

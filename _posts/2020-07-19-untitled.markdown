@@ -1,10 +1,6 @@
 ---
-layout: post
 publish: true
 title: "Untiled"
-date: 2020-07-19 15:39:50 +0800
-categories: [life]
-author: Jakob He
 ---
 
 Words "Tradition" and "Majority" appear frequently in the circumstances of forcing others to accept a value. In this essay, I will try to prove that only by using "Tradition and Majority decision" as a key to convincing people is not good enough.
