@@ -78,13 +78,6 @@ spring:
     }// @formatter:on
 }
 ```
-做完了?
-卧槽
-是的...
-
-#### 2.1.4 我们来测试一下呗
-启动application.
-浏览器反问
 
 ### 2.2 access user info
 id token 就是那一个, oidc 封装在oauth2.0 之上其中一样冬冬.
@@ -108,3 +101,20 @@ if (authentication.getPrincipal() instanceof OidcUser) {
     // ...
 }
 ```
+
+做完了?
+卧槽
+是的...
+
+#### 2.1.4 我们来测试一下呗
+启动application.
+浏览器访问
+```sh
+http://localhost:8081/user/oidc-principal
+
+http://localhost:8081/user/oidc-claims
+```
+重定向到google login page
+返回时带上所有登录用户的d信息~
+
+
