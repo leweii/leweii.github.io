@@ -1,6 +1,6 @@
 ---
 publish: true
-title:  "Spring Security integrate with OIDC"
+title:  "Spring Security integrates with OIDC"
 ---
 
 
