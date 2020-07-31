@@ -54,7 +54,7 @@ spring:
             client-secret: <secret>
 ```
 
-配置spring-security 
+配置spring-security, spring security 基础配置, 这篇文章不赘述, 更多细节可以参考[这篇]({{ site.url }}/blog/2019/04/09/spring-security-in-action.html)
 ```java
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -108,22 +108,24 @@ http://localhost:8081/user/oidc-principal
 
 http://localhost:8081/user/oidc-claims
 ```
-重定向到google login page
-返回时带上所有登录用户的d信息~
+重定向到google login page, 返回时带上所有登录用户的d信息~
 
 做了一个youtube demo.
 
-[![IMAGE ALT TEXT HERE]({{ site.url }}/assets/2020-08-01-spring-security-integrate-w-oidc/pic3.jpg)](https://youtu.be/wXcHgP_DqHQ)
+[![click to redirect]({{ site.url }}/assets/2020-08-01-spring-security-integrate-w-oidc/pic3.jpg)](https://youtu.be/wXcHgP_DqHQ)
 
 
 ## 3. **小结一下吧**
 
 
 通篇文章来自[Spring Security and OpenID Connect](https://www.baeldung.com/spring-security-openid-connect)
-基本上这篇文章就是在试图说明一个问题, spring security 对oauth 2.0 的login 支持已经达到了傻瓜保姆级.
+
+它在试图说明一个问题, 那就是spring security 对oauth 2.0 的login 支持已经达到了傻瓜保姆级.
+
 但是如果要写一个customerlize  的security 验证服务器, 需要对框架🈶更深入的理解. 
 
 ---
 
 [source code](https://github.com/leweii/oidc-demo)
+
 [Spring Security and OpenID Connect](https://www.baeldung.com/spring-security-openid-connect)
