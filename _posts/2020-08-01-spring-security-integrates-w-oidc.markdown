@@ -3,7 +3,7 @@ publish: true
 layout: page
 title:  "Spring Security integrates with OIDC"
 date: 2020-08-01 15:39:50 +0800
-permalink: /spring-security-integrate-w-oidc/
+permalink: /spring-security-integrates-w-oidc/
 author: Jakob He
 ---
 
