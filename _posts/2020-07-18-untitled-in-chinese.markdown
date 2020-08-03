@@ -30,4 +30,4 @@ author: Jakob He
 
 最后放一张小土兜兜的美照.
 
-![Image]({{ site.url }}/assets/2020-07-18-untitled-in-chinese/pic1.jpeg)
+![Image]({{ site.url }}/_post_img/2020-07-18-untitled-in-chinese/pic1.jpeg)

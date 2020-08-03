@@ -19,7 +19,7 @@ oidc
 
 #### 2.1.1 init a project with spring security 
 
-![spring proj generator]({{ site.url }}/assets/2020-08-01-spring-security-integrate-w-oidc/pic1.jpg)
+![spring proj generator]({{ site.url }}/_post_img/2020-08-01-spring-security-integrate-w-oidc/pic1.jpg)
 
 基本上就是加上一些依赖:
 1. spring-boot-starter-oauth2-client
@@ -33,7 +33,7 @@ https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.3.2
 ```
 下载proj zip 包, 或者下载build.gradle 自己创建文件树
 
-![project tree]({{ site.url }}/assets/2020-08-01-spring-security-integrate-w-oidc/pic2.jpg)
+![project tree]({{ site.url }}/_post_img/2020-08-01-spring-security-integrate-w-oidc/pic2.jpg)
 
 #### 2.1.2 配置service 端 app credentials 和 redirect url
 也就是你要从哪一个平台拿取info? 这里我们用google 做范例.
@@ -44,7 +44,7 @@ redirect url 记得配上
 http://localhost:8081/login/oauth2/code/google
 ```
 
-![google console]({{ site.url }}/assets/2020-08-01-spring-security-integrate-w-oidc/pic3.jpg)
+![google console]({{ site.url }}/_post_img/2020-08-01-spring-security-integrate-w-oidc/pic3.jpg)
 
 #### 2.1.3 配置spring security client
 ```yml
@@ -116,7 +116,7 @@ http://localhost:8081/user/oidc-claims
 
 做了一个youtube demo.
 
-[![click to redirect]({{ site.url }}/assets/2020-08-01-spring-security-integrate-w-oidc/pic3.jpg)](https://youtu.be/wXcHgP_DqHQ)
+[![click to redirect]({{ site.url }}/_post_img/2020-08-01-spring-security-integrate-w-oidc/pic3.jpg)](https://youtu.be/wXcHgP_DqHQ)
 
 
 ## 3. **小结一下吧**
@@ -135,4 +135,4 @@ http://localhost:8081/user/oidc-claims
 [Spring Security and OpenID Connect](https://www.baeldung.com/spring-security-openid-connect)
 
 对了, 写博客的同时,  我要围住我的土兜兜.
-![tudoudou]({{ site.url }}/assets/2020-08-01-spring-security-integrate-w-oidc/pic4.jpeg)
+![tudoudou]({{ site.url }}/_post_img/2020-08-01-spring-security-integrate-w-oidc/pic4.jpeg)

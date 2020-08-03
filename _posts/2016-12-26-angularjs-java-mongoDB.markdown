@@ -11,7 +11,7 @@ author: Jakob He
 这是一个基本项目框架.基于AngularJs + Java + MongoDB
 
 #####项目树
-![]({{ site.url }}/assets/2016-12-26-angularjs-java-mongoDB/pic1.jpg)
+![]({{ site.url }}/_post_img/2016-12-26-angularjs-java-mongoDB/pic1.jpg)
 
 #####原理
 java作为MVC的controller层,将数据以webservice方式发送到前端.

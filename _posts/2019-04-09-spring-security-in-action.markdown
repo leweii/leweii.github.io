@@ -24,7 +24,7 @@ In this example we will go through a very basic Spring-Security application. The
 4. token verification
 5. password crypto
 
-> ![spring-security-scope.jpg]({{ site.url }}/assets/2019-04-09-spring-security-in-action/pic1.png)
+> ![spring-security-scope.jpg]({{ site.url }}/_post_img/2019-04-09-spring-security-in-action/pic1.png)
 
 Within the process of realization, we may cover some fundamental principle of Spring-Security.
 
@@ -214,7 +214,7 @@ It will return:
 ### III. Verify the token by JWT
 Put your token and signing key in [jwt.io](https://jwt.io), you will get following result.
 
-> ![jwt-verification.jpg]({{ site.url }}/assets/2019-04-09-spring-security-in-action/pic2.jpg)
+> ![jwt-verification.jpg]({{ site.url }}/_post_img/2019-04-09-spring-security-in-action/pic2.jpg)
 
 
 Let’s quickly go over, we have introduced what is Spring-Security, why we need to use it, and after all we have also realize a complete Spring-Security application including token management, token distribution, and rest APIs that requiring web authorization. 
