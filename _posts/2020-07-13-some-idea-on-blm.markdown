@@ -2,7 +2,7 @@
 publish: true
 layout: post
 title: '黑命贵杂谈'
-date:   2015-02-11
+date:   2020-07-03
 author: Jakob He
 categories: [杂文]
 tags: [杂文]
