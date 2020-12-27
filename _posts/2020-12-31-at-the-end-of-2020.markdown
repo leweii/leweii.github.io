@@ -2,7 +2,7 @@
 publish: true
 layout: post
 title: "年底了, 随便写些啥"
-date: 2020-12-31
+date: 2020-12-26
 author: Jakob He
 ---
 ### 我们
@@ -61,3 +61,9 @@ anyway, 无所谓.
 
 ### 播客
 根据RSS信息统计, 今年中文播客呈现爆炸试增长, 我不觉得是风口, 反倒认为这是因为它领域的蛋糕都被瓜分完了, 或者说玩坏的玩坏了, 玩好了的被垄断了. 恶狼们只能望向这片贫瘠之地. 发了几期节目后, 发现自己说话好慢, 经常结巴, 语气词过多, 思路常常短路, 忽然觉得平时听的顺畅的播客们水平好高. 
+
+
+
+> ![Image]({{ site.url }}/assets/post_images/2020-12-31-at-the-end-of-2020/pic1.jpg)
+
+> ![Image]({{ site.url }}/assets/post_images/2020-12-31-at-the-end-of-2020/pic2.jpg)
