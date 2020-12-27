@@ -3,7 +3,8 @@ author:
   name: Jakob He
   email: lewei.me@gmail.com
 description: > # this means to ignore newlines until "show_excerpts:"
-  主观的, 琐碎的, 杂乱的, 辞不达义的, 索然无味的, 迅雷不及掩耳盗铃的..
+  主观的, 琐碎的, 混沌的, 辞不达义的, 华而不实的, 索然无味的,
+  春眠不觉晓, 处处闻啼鸟的..
 
 show_excerpts: true # set to true to show excerpts on the homepage
 google_analytics: UA-31207431-1

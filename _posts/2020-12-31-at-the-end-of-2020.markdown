@@ -64,6 +64,6 @@ anyway, 无所谓.
 
 
 
-> ![Image]({{ site.url }}/assets/post_images/2020-12-31-at-the-end-of-2020/pic1.jpg)
+> ![Image]({{ site.url }}/assets/post_images/2020-12-31-at-the-end-of-2020/pic1.jpeg)
 
-> ![Image]({{ site.url }}/assets/post_images/2020-12-31-at-the-end-of-2020/pic2.jpg)
+> ![Image]({{ site.url }}/assets/post_images/2020-12-31-at-the-end-of-2020/pic2.jpeg)
