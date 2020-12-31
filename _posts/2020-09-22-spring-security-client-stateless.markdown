@@ -1,11 +1,12 @@
 ---
-publish: true
-layout: post
 title: "Spring Security Client Stateless"
-date: 2020-09-22 15:39:50 +0800
-author: Jakob He
+date:   2020-09-22
+categories:
+  - Java
+tags:
+  - Java
+  - Spring
 ---
-
 
 ### Background
 

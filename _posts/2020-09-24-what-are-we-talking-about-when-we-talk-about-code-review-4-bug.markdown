@@ -1,10 +1,12 @@
 ---
-publish: true
-layout: post
 title: "当我们code review 的时候, 我们究竟在review 什么?(bug 篇)"
-date: 2020-09-22 15:39:50 +0800
-author: Jakob He
+date:   2020-09-22
+categories:
+  - Java
+tags:
+  - Java
 ---
+
 
 ### Background.
 

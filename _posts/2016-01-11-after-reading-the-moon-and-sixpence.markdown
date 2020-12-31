@@ -1,11 +1,10 @@
 ---
-publish: true
-layout: post
-title: '月亮与六便士 - 读后感'
+title: "月亮与六便士 - 读后感"
 date:   2016-01-11
-author: Jakob He
-categories: [读后感]
-tags: [读后感]
+categories:
+  - 读后感
+tags:
+  - 读后感
 ---
 
 作者: [英] 毛姆

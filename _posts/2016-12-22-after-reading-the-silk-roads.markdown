@@ -1,13 +1,11 @@
 ---
-publish: true
-layout: post
-title: '丝绸之路 - 读后感'
+title: "丝绸之路 - 再读后感"
 date:   2016-12-22
-author: Jakob He
-categories: [读后感]
-tags: [读后感]
+categories:
+  - 读后感
+tags:
+  - 读后感
 ---
-
 
 作者: [英] 彼得·弗兰科潘
 出版社: 浙江大学出版社

@@ -1,11 +1,12 @@
 ---
-publish: true
-layout: post
 title: "Spring Security integrates with OIDC"
-date: 2020-08-01 15:39:50 +0800
-author: Jakob He
+date:   2020-08-01
+categories:
+  - Java
+tags:
+  - Java
+  - Spring
 ---
-
 
 ### 1. **废话不多说, 概念自己查**
 关键字:

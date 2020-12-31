@@ -1,11 +1,10 @@
 ---
-publish: true
-layout: post
-title: '去杭州!'
+title: "去杭州!"
 date:   2017-07-01
-author: Jakob He
-categories: [旅游]
-tags: [旅游]
+categories:
+  - 旅游
+tags:
+  - 旅游
 ---
 
 作为南方人, 既不喜欢曹操的霸气, 也不感冒刘备的贤德, 倒是孙权, 孙策, 周瑜, 陆逊的才华更加让我欣赏.

@@ -1,11 +1,10 @@
 ---
-publish: true
-layout: post
 title: "黑与白"
-date: 2020-02-30 10:39:50 +0800
-categories: [picture]
-tags: [life]
-author: Jakob He
+date:   2020-02-30
+categories:
+  - 旅游
+tags:
+  - 旅游
 ---
 
 > ![Image]({{ site.url }}/assets/post_images/2020-02-30-black-and-white/pic1.jpg)

@@ -1,11 +1,10 @@
 ---
-publish: true
-layout: post
-title: '推理要在晚餐后 - 读后感'
+title: "推理要在晚餐后 - 读后感"
 date:   2015-04-06
-author: Jakob He
-categories: [读后感]
-tags: [读后感]
+categories:
+  - 读后感
+tags:
+  - 读后感
 ---
 
 作者:  [日] 东川笃哉

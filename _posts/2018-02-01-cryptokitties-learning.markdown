@@ -1,10 +1,10 @@
 ---
-publish: true
-layout: post
 title: "CryptoKitties 源码解读"
-date: 2018-02-01 15:39:50 +0800
-categories: [bitcoin]
-author: Jakob He
+date:   2018-02-01
+categories:
+  - bitcoin
+tags:
+  - bitcoin
 ---
 
 CryptoKitties <https://www.cryptokitties.co> 是一款构建在以太坊智能合约之上的交易猫咪的游戏。其热度造成了以太坊交易的拥堵。最近每天的交易量也超过了1000tx/day，区区一千比一天的交易就让以太坊网络拥堵，不禁要思考，区块链还有很长的道路要走~

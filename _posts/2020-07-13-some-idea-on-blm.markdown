@@ -1,11 +1,10 @@
 ---
-publish: true
-layout: post
-title: '黑命贵杂谈'
+title: "黑命贵杂谈"
 date:   2020-07-03
-author: Jakob He
-categories: [杂文]
-tags: [杂文]
+categories:
+  - 杂文
+tags:
+  - 杂文
 ---
 
 追求绝对的种族平等就跟追求绝对的性别平等一样, 是一个被政客利用的伪命题.

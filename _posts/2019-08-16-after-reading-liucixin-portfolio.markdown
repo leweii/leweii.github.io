@@ -1,12 +1,13 @@
+
 ---
-publish: true
-layout: post
-title: '最璀璨的银河 - 读后感'
+title: "最璀璨的银河 - 读后感"
 date:   2019-08-16
-author: Jakob He
-categories: [读后感]
-tags: [读后感]
+categories:
+  - 读后感
+tags:
+  - 读后感
 ---
+
 
 看到了很多三体的影子, 蚂蚁排列方正与恐龙交流, 三颗太阳的行星.
 流浪地球的影子, 挖空的地球, 文化知识如何传承.

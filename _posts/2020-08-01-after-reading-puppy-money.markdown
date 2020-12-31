@@ -1,12 +1,12 @@
 ---
-publish: true
-layout: post
-title: '小狗钱钱 - 读后感'
+title: "小狗钱钱 - 读后感"
 date:   2020-08-01
-author: Jakob He
-categories: [读后感]
-tags: [读后感]
+categories:
+  - 读后感
+tags:
+  - 读后感
 ---
+
 
 空了好久发现这篇文章还是空的.
 作者很有逻辑的让孩子先建立梦想储蓄罐.

@@ -1,13 +1,12 @@
 ---
-publish: true
-layout: post
-title:  "Spring Security In Action"
-date:   2019-04-09 23:31:07 +0800
-tags: [JAVA, Spring-Security]
-categories: [java, blog]
-author: Jakob He
+title: "Spring Security In Action"
+date:   2019-04-09
+categories:
+  - JAVA
+tags:
+  - JAVA
+  - Spring
 ---
-
 
 ### **What is Spring-Security?**
 Spring-Security is a highly customizable authentication and access-control framework for java applications. Especially for spring based applications. This is wildly used in Java developing field. 

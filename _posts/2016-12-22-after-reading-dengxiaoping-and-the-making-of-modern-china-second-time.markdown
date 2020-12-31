@@ -1,20 +1,28 @@
 ---
-publish: true
-layout: post
-title: '邓小平传 - 再读后感'
+title: "邓小平传 - 再读后感"
 date:   2016-12-22
-author: Jakob He
-categories: [读后感]
-tags: [读后感]
+categories:
+  - 读后感
+tags:
+  - 读后感
 ---
+
 作者: 理查德•伊文思 (Richard Evans)
+
 出版社: 国际文化出版公司
+
 原作名: DengXiaoPing and The Making of Modern China
+
 译者: 田山
+
 出版年: 2013-2-1
+
 页数: 400
+
 定价: 49.80元
+
 装帧: 平装
+
 ISBN: 9787512504837
 
 写在再过几个月之后,下次应该把论证观点的段落copy下来.

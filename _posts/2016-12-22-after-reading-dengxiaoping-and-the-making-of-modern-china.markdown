@@ -1,21 +1,28 @@
 ---
-publish: true
-layout: post
-title: '邓小平传 - 读后感'
+title: "邓小平传 - 读后感"
 date:   2016-12-22
-author: Jakob He
-categories: [读后感]
-tags: [读后感]
+categories:
+  - 读后感
+tags:
+  - 读后感
 ---
 
 作者: 理查德·伊文思 (Richard Evans)
+
 出版社: 国际文化出版公司
+
 译者: 田山
+
 出版年: 2014-3
+
 页数: 452
+
 定价: 69.80元
+
 装帧: 精装
+
 ISBN: 9787512506442
+
 
 几个事变的故事叫我哭笑不得.
 

@@ -1,11 +1,10 @@
 ---
-publish: true
-layout: post
-title: '我们仨 - 读后感'
+title: "我们仨 - 读后感"
 date:   2015-02-11
-author: Jakob He
-categories: [读后感]
-tags: [读后感]
+categories:
+  - 读后感
+tags:
+  - 读后感
 ---
 
 作者:  杨绛

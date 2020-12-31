@@ -1,10 +1,10 @@
 ---
-publish: true
-layout: post
 title: "AngularJs + Java + MongoDB"
-date: 2016-12-26 15:39:50 +0800
-categories: [java]
-author: Jakob He
+date:   2016-12-26
+categories:
+  - java
+tags:
+  - java
 ---
 
 这是一个基本项目框架.基于AngularJs + Java + MongoDB

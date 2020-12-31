@@ -1,11 +1,12 @@
 ---
-publish: true
-layout: post
 title: "无题"
-date: 2020-07-18 15:39:50 +0800
-categories: [life]
-author: Jakob He
+date:   2020-07-18
+categories:
+  - 杂文
+tags:
+  - 杂文
 ---
+
 
 最近常听到一个词, "传统是这样的, 大家都是这样的".
 当这个词出现的时候, 常常都是出现在试图说服一个人的语境里. 但是这样的话作为论点, 未免显得有点不够充分.

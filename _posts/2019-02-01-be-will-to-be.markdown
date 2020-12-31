@@ -1,11 +1,10 @@
 ---
-publish: true
-layout: post
-title: '哎哟哟, 甘心套路'
+title: "哎哟哟, 甘心套路"
 date:   2019-02-01
-author: Jakob He
-categories: [杂文]
-tags: [杂文]
+categories:
+  - 杂文
+tags:
+  - 杂文
 ---
 
 呵呵哒, 不知道说啥好, 好久没写东东, sp大年三就要办婚礼了bless.

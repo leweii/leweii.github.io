@@ -1,11 +1,10 @@
 ---
-publish: true
-layout: post
-title: '三国演义 - 文摘'
-date:   2015-05-23 23:31:07 +0800
-author: Jakob He
-categories: [读后感]
-tags: [读后感]
+title: "三国演义 - 读后感"
+date:   2015-05-23
+categories:
+  - 读后感
+tags:
+  - 读后感
 ---
 
 
