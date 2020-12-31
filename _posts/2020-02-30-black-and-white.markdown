@@ -2,9 +2,9 @@
 title: "黑与白"
 date:   2020-02-30
 categories:
-  - 旅游
+  - life
 tags:
-  - 旅游
+  - life
 ---
 
 > ![Image]({{ site.url }}/assets/post_images/2020-02-30-black-and-white/pic1.jpg)
