@@ -7,7 +7,7 @@ tags:
   - java
 ---
 
-#####Java8 Stream的终端操作
+#### Java8 Stream的终端操作
 + foreach
 + count
 + **collect**
@@ -18,17 +18,17 @@ tags:
 如果把迭代器(filter, map)看成流水线, 那么终端操作表示将产生出一个最终结果.
 今天我们重点介绍 collect 相关的常用用法.
 
-#####约归和汇总
+#### 约归和汇总
 在数学中,我们常常将问题转移.
 例如我们计算`((a + b)2 - a2 - b2)/2`时, 会先化简为`a×b`来计算.
 这样的思路我们称之为**约归和汇总**
 那么在Java8中, `java.util.stream.Collectors` 很好的提供了寻求约归和汇总这种数学思路的实现方法.
 让你得以在Java中灵活运用在高中所学的数学.
 
-#####Collections 意义
+#### Collections 意义
 从功能的角度.所有的 collect 都是 reducing 工厂方法实现的特殊情况.而 collect 只是增加了代码的可读性.然而代码可读性可是 the top priority issue.
 
-#####示例
+#### 示例
 >例1: 收集流
 ```java
 public static void main(String ... args) {

@@ -8,16 +8,16 @@ tags:
   - Spring
 ---
 
-### 1. **废话不多说, 概念自己查**
+#### 1. **废话不多说, 概念自己查**
 关键字:
 spring security
 oidc
 
-### 2. **In Action**
+#### 2. **In Action**
 
-#### 2.1 OIDC Login solution using Spring Security
+##### 2.1 OIDC Login solution using Spring Security
 
-##### 2.1.1 init a project with spring security 
+###### 2.1.1 init a project with spring security 
 
 ![spring proj generator]({{ site.url }}/assets/post_images/2020-08-01-spring-security-integrate-w-oidc/pic1.jpg)
 
@@ -35,7 +35,7 @@ https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.3.2
 
 ![project tree]({{ site.url }}/assets/post_images/2020-08-01-spring-security-integrate-w-oidc/pic2.jpg)
 
-##### 2.1.2 配置service 端 app credentials 和 redirect url
+###### 2.1.2 配置service 端 app credentials 和 redirect url
 也就是你要从哪一个平台拿取info? 这里我们用google 做范例.
 先在google console 建一个application 并且生成一个credentials.
 redirect url 记得配上
@@ -46,7 +46,7 @@ http://localhost:8081/login/oauth2/code/google
 
 ![google console]({{ site.url }}/assets/post_images/2020-08-01-spring-security-integrate-w-oidc/pic3.jpg)
 
-##### 2.1.3 配置spring security client
+###### 2.1.3 配置spring security client
 ```yml
 spring:
   security:
@@ -77,7 +77,7 @@ spring:
 }
 ```
 
-#### 2.2 access user info
+##### 2.2 access user info
 id token 就是那一个, oidc 封装在oauth2.0 之上其中一样冬冬.
 
 那么, 就来创建一个controller 提取这些信息吧~
@@ -104,7 +104,7 @@ if (authentication.getPrincipal() instanceof OidcUser) {
 卧槽
 是的...
 
-##### 2.1.4 我们来测试一下呗
+###### 2.1.4 我们来测试一下呗
 启动application.
 浏览器访问
 ```sh
@@ -119,7 +119,7 @@ http://localhost:8081/user/oidc-claims
 [![click to redirect]({{ site.url }}/assets/post_images/2020-08-01-spring-security-integrate-w-oidc/pic3.jpg)](https://youtu.be/wXcHgP_DqHQ)
 
 
-### 3. **小结一下吧**
+#### 3. **小结一下吧**
 
 
 通篇文章来自[Spring Security and OpenID Connect](https://www.baeldung.com/spring-security-openid-connect)
