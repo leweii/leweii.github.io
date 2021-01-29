@@ -33,6 +33,6 @@ tags:
 <iframe id="notebook"
 title="principles notebook"
 width="100%"
-height="100%"
-src="./principles-notebook.html">
+height="200%"
+src="{{ site.url }}/assets/post_images/2021-01-29-after-reading-principles_life_and_work/principles-notebook.html">
 </iframe>
