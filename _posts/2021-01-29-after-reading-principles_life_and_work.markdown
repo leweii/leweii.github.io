@@ -30,9 +30,10 @@ tags:
 
 > ![Image]({{ site.url }}/assets/post_images/2021-01-29-after-reading-principles_life_and_work/pic1.png)
 
+#### 一些文摘
 <iframe id="notebook"
 title="principles notebook"
 width="100%"
-height="200%"
+height="500"
 src="{{ site.url }}/assets/post_images/2021-01-29-after-reading-principles_life_and_work/principles-notebook.html">
 </iframe>
