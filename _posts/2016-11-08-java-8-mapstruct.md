@@ -9,7 +9,7 @@ tags:
 渔人,你还在手动些各种对象转换的代码吗?
 
 java中,有hacker已经提供了一个开源项目,实现用注释的方式自动转换任意对象.
-<http://www.mapstruct.org>
+<https://www.mapstruct.org>
 
 下面这个例子包含:
 1. 不同文件名之间的转换.
