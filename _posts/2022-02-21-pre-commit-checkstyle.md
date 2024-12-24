@@ -78,9 +78,9 @@ git clone git@github.com:leweii/demo.git
 ./gradlew checkstyleMain
 ```
 
-> ![Image]({{ site.url }}/images/post_images/2022-02-21-pre-commit-checkstyle/1.jpg)
+> ![Image](/2022-02-21-pre-commit-checkstyle/1.jpg)
 
-> ![Image]({{ site.url }}/images/post_images/2022-02-21-pre-commit-checkstyle/2.jpg)
+> ![Image](/2022-02-21-pre-commit-checkstyle/2.jpg)
 
 #### 配置git hooks
 
@@ -142,7 +142,7 @@ fi
 exit 0
 ```
 
-> ![Image]({{ site.url }}/images/post_images/2022-02-21-pre-commit-checkstyle/3.jpg)
+> ![Image](/2022-02-21-pre-commit-checkstyle/3.jpg)
 
 单单这样配置, 还是不够哦~ 因为hooks的目录是不会被git 同步, 那么我们要怎样把自己的checkstyle 共享给全团队呢?👇🏻️
 
@@ -165,7 +165,7 @@ mv .git/hooks/pre-commit ./hooks/
 
 举例子说明吧, 我今天想检查无用的import 和不应该出现的空格.
 
-> ![Image]({{ site.url }}/images/post_images/2022-02-21-pre-commit-checkstyle/4.jpg)
+> ![Image](/2022-02-21-pre-commit-checkstyle/4.jpg)
 
 依葫芦画瓢~, 在你的Checker 里加上.
 
@@ -184,9 +184,9 @@ mv .git/hooks/pre-commit ./hooks/
 
 效果如下:
 
-> ![Image]({{ site.url }}/images/post_images/2022-02-21-pre-commit-checkstyle/5.jpg)
+> ![Image](/2022-02-21-pre-commit-checkstyle/5.jpg)
 
-> ![Image]({{ site.url }}/images/post_images/2022-02-21-pre-commit-checkstyle/6.jpg)
+> ![Image](/2022-02-21-pre-commit-checkstyle/6.jpg)
 
 #### 最后, 一些问题总结
 
@@ -198,7 +198,7 @@ mv .git/hooks/pre-commit ./hooks/
 gradle checkstyleMain --stacktrace
 ```
 
-> ![Image]({{ site.url }}/images/post_images/2022-02-21-pre-commit-checkstyle/7.jpg)
+> ![Image](/2022-02-21-pre-commit-checkstyle/7.jpg)
 
 -----
 

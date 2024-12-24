@@ -114,8 +114,8 @@ jakob@jakobMacBook-Air ~/.ssh> cat id_rsa-jakob-company.pub
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDKMQjGVwbjrRD4RiuKksiRuon5IKu9d2yl/9n2vQObPCRnZAyUfqjSB5Ne3wnvNduz0AvpAOm4l0ZYLFComwrl+/Bg9UfrN/oODGWaSRcJNZoQH80UZ1HnseTWxN3ajrubooVbC2fNyMmufZG8B4GxrKLrHzXZgNBe7JGEUbPDsqsFenhrrCVv2Dbgx8+DvfALD+6mmssIbqSJ+P1+pBNVQEltk6yLiws2EzeDUCPktSsJ/TgUD/mH9SuG2VJNuoCvL6FT8y7jYyMWFiSLXIfY31fJDrnesXErDbN6dX+nFaZHjhtgu1oPmDDsgvpT2hm8dLE3bIqqC7877wznXGUNrekYmrsrOeqsWqhAnj0H0c8byKRuhq3AT7xeAueYTAaZUHcgsrWauimFMb2uAJ/pnPtcB8CXQQm5yGQVlHa0gwJ4s79zU+7/FCbTWAuD6NIfp4o7r2OiXY+2kB7M0Q/UmpxZ/HHRlTW55QYiD76N8qwKBTnp3n7UL4O9GSNj7P+xCRIDTdVejdfP9RpmrSdIUW433PVPMgiKGNVoWVCQX9JJUEbiTrhlpGHPXla3/goqBrCjbSvFEsPc7zrDVR2vWGJgTEg1gMZ9fWB6Y7p84y1+b9pERBwmxxspR+Qx19FoByn3VFxbs8q1rZTnxXAz4y64AW35ar2aeiFib9s/Uw== jakob@company.com
 ```
 
-> ![Image]({{ site.url }}/images/post_images/2021-07-14-multiple-git-accounts-on-mac/github_config.jpg)
-> ![Image]({{ site.url }}/images/post_images/2021-07-14-multiple-git-accounts-on-mac/gitlab_config.jpg)
+> ![Image](/2021-07-14-multiple-git-accounts-on-mac/github_config.jpg)
+> ![Image](/2021-07-14-multiple-git-accounts-on-mac/gitlab_config.jpg)
 
 #### 如何知道设置成功？
 如果你遇到了错误，比如依旧需要帐号密码登录，或者无法pull push 代码，你可以检查git 设置：
@@ -140,6 +140,6 @@ Git 设置里的 `remote.url` 必须是一个SSH 格式的 URL `git@github.com:j
 #### 最后的话
 最近终于用上了心仪已久的Macbook Air M1 版。为了ta，给ta配上了拓展坞，外置固态硬盘，显示器，让ta能尽其所能的工作。但是他只有245.11 GB 的储存空间，所以我必须很小心的安排每一寸土地。如果我用我旧的Macbook pro time-machine 来restore 这台macbook air，ta很快就会因为存储空间不足而变的很尴尬。所以我需要重新配置各种app，shell，brew 等等等等。。。
 
-> ![Image]({{ site.url }}/images/post_images/2021-07-14-multiple-git-accounts-on-mac/my-eq.jpg)
+> ![Image](/2021-07-14-multiple-git-accounts-on-mac/my-eq.jpg)
 
 ：）

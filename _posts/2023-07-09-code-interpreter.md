@@ -13,7 +13,7 @@ tags:
 ### Code Interpreter
 Code Interpreter 是GPT 七月份上线的一个新特性，大致的思路是
 
-> ![Image]({{ site.url }}/images/post_images/2023-07-09-code-interpreter/1.png)
+> ![Image](/2023-07-09-code-interpreter/1.png)
 
 输入需求 -> GPT 拆解任务 -> 生成解决细分任务的方案代码(python) -> 分配一个或者多个可执行代码的空间 -> 运行代码 -> 输出结果
 

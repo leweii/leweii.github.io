@@ -48,7 +48,7 @@ published: true
 title="矛盾论 (Chinese Edition)-Notebook"
 width="100%"
 height="500"
-src="{{ site.url }}/images/post_images/2022-05-02-after-reading-on-contradiction/矛盾论 (Chinese Edition)-Notebook.html">
+src="/2022-05-02-after-reading-on-contradiction/矛盾论 (Chinese Edition)-Notebook.html">
 </iframe>
 
 一些挫见, 也不知道是否合理, 也不知道逻辑是否严谨. 不过对我来说, 单纯把思路写下来, 就是一个梳理思绪的过程, 让我能够把自己有限的想法整理更清晰一些.

@@ -15,13 +15,13 @@ Biome, 欲罢不能. 开启了单曲循环, 加上降噪, 覆盖掉星巴克的�
 
 老婆出差要来济南, 心理建设做了一周了, 豆宝才十个月大, 三月份了济南还是零下一度, 不过终究还是顺利来了. 飞机上看山东真是不毛之地呀, 到处是黄土高坡. 相比福建简直是荒凉, 谁知道刚下飞机, 就被护城林吼到了, 壮观不说, 第一次看到这么多没叶子的树, 完全是一幅没见过的景象, 心想, 能把中国玩透也是不容易呀. 说到底, 我还是没怎么见过市面啊...
 
-> ![Image]({{ site.url }}/images/post_images/2021-03-26-jinan-starbucks/pic0.jpg)
+> ![Image](/2021-03-26-jinan-starbucks/pic0.jpg)
  
-> ![Image]({{ site.url }}/images/post_images/2021-03-26-jinan-starbucks/pic1.jpg)
+> ![Image](/2021-03-26-jinan-starbucks/pic1.jpg)
 
 到济南第五天, 住在省博物馆对面, 同一条路上还有山东鲁能泰山球场, 10年甲A冠军, 好几个赛季都是前三. 跟我小时候随机买了一件尤文图斯队服, 而后开始自称尤文图斯球迷一样, 我现在自称鲁能球迷. 虽然一场比赛也没看过, 虽然一个球员也不认识.
 
-> ![Image]({{ site.url }}/images/post_images/2021-03-26-jinan-starbucks/pic2.jpeg)
+> ![Image](/2021-03-26-jinan-starbucks/pic2.jpeg)
 
 #### 老师!
 
@@ -47,20 +47,20 @@ Biome, 欲罢不能. 开启了单曲循环, 加上降噪, 覆盖掉星巴克的�
 
 是的 单向 🔟️车道. 不过好像还是堵车, 能解决堵车的不是加宽车道, 而是在家办公啊~
 
-> ![Image]({{ site.url }}/images/post_images/2021-03-26-jinan-starbucks/pic3.jpeg)
+> ![Image](/2021-03-26-jinan-starbucks/pic3.jpeg)
 
 #### 然后是祭上几张觉的好看的图. AWS按流量计费, 大家打开了就务必看完呀~
 
-> ![Image]({{ site.url }}/images/post_images/2021-03-26-jinan-starbucks/pic4.jpg)
+> ![Image](/2021-03-26-jinan-starbucks/pic4.jpg)
 
-> ![Image]({{ site.url }}/images/post_images/2021-03-26-jinan-starbucks/pic5.jpg)
+> ![Image](/2021-03-26-jinan-starbucks/pic5.jpg)
 
-> ![Image]({{ site.url }}/images/post_images/2021-03-26-jinan-starbucks/pic6.jpg)
+> ![Image](/2021-03-26-jinan-starbucks/pic6.jpg)
 
-> ![Image]({{ site.url }}/images/post_images/2021-03-26-jinan-starbucks/pic7.jpg)
+> ![Image](/2021-03-26-jinan-starbucks/pic7.jpg)
 
-> ![Image]({{ site.url }}/images/post_images/2021-03-26-jinan-starbucks/pic8.jpeg)
+> ![Image](/2021-03-26-jinan-starbucks/pic8.jpeg)
 
-> ![Image]({{ site.url }}/images/post_images/2021-03-26-jinan-starbucks/pic9.jpeg)
+> ![Image](/2021-03-26-jinan-starbucks/pic9.jpeg)
 
-> ![Image]({{ site.url }}/images/post_images/2021-03-26-jinan-starbucks/pic10.jpg)
+> ![Image](/2021-03-26-jinan-starbucks/pic10.jpg)

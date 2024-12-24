@@ -8,6 +8,6 @@ tags:
 嗯嗯
 
 
-> ![Image]({{ site.url }}/images/post_images/2021-11-28-duchangtuan/1.JPG)
+> ![Image](/2021-11-28-duchangtuan/1.JPG)
 
-> ![Image]({{ site.url }}/images/post_images/2021-11-28-duchangtuan/2.JPG)
+> ![Image](/2021-11-28-duchangtuan/2.JPG)

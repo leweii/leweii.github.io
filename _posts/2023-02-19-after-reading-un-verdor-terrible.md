@@ -20,7 +20,7 @@ _previous note:_
 
 New Yorker 插图👇
 
-> ![Image]({{ site.url }}/images/post_images/2023-02-19-after-reading-un-verdor-terrible/1.png)
+> ![Image](/2023-02-19-after-reading-un-verdor-terrible/1.png)
 
 
 我想象中的作者创作的过程应该是，四处收集，打听，拜读所有与这些泰斗沾边的故事，拿着这些小故事当作拼图碎片，在脑袋中拼出一副有趣的画面，拼图的缝隙部分，就是自己发挥的空间，利用自己像胶水一样，亦真亦假的文字，游走在碎片缝隙之间，最终呈现出那副有趣的画面。

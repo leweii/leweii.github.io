@@ -12,7 +12,7 @@ published: true
 
 定义好了还不够, 我们还要用好它.
 
-![Image]({{ site.url }}/images/post_images/2022-02-18-tagging-docker/0.jpeg)
+![Image](/2022-02-18-tagging-docker/0.jpeg)
 
 以下, 是这些年以来, 大家总结的一些要点和实操经验.
 

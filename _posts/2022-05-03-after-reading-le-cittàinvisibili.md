@@ -15,11 +15,11 @@ published: true
 
 直到我发现有人以这种形式在做《看不见的城市》的读书笔记。才意识到，原来这是一本特别*几何*，特别*处女座*的一本书。
 
-![Image]({{ site.url }}/images/post_images/2022-05-03-after-reading-le-cittàinvisibili/TIRWMCL_Spreadsheet.jpg)
+![Image](/2022-05-03-after-reading-le-cittàinvisibili/TIRWMCL_Spreadsheet.jpg)
 
 这本书特别适合慢慢读，边读边想（image），边读边把文字画面化，如果心有旁念不如不读。比如这篇：
 
-![Image]({{ site.url }}/images/post_images/2022-05-03-after-reading-le-cittàinvisibili/1.jpg)
+![Image](/2022-05-03-after-reading-le-cittàinvisibili/1.jpg)
 
 #### 读后感
 
@@ -47,15 +47,15 @@ published: true
 
 然后是一家新加坡商场Excelsior Shopping Centre 对此书的一个展区。
 
-![Image]({{ site.url }}/images/post_images/2022-05-03-after-reading-le-cittàinvisibili/After-A-Lovers-Discourse-2.jpg)
+![Image](/2022-05-03-after-reading-le-cittàinvisibili/After-A-Lovers-Discourse-2.jpg)
 
-![Image]({{ site.url }}/images/post_images/2022-05-03-after-reading-le-cittàinvisibili/TIRWMCL_Window-2_2-scaled.jpg)
+![Image](/2022-05-03-after-reading-le-cittàinvisibili/TIRWMCL_Window-2_2-scaled.jpg)
 
-![Image]({{ site.url }}/images/post_images/2022-05-03-after-reading-le-cittàinvisibili/TIRWMCL_Window-2_3-scaled.jpg)
+![Image](/2022-05-03-after-reading-le-cittàinvisibili/TIRWMCL_Window-2_3-scaled.jpg)
 
-![Image]({{ site.url }}/images/post_images/2022-05-03-after-reading-le-cittàinvisibili/TIRWMCL_Window-4_4-scaled.jpg)
+![Image](/2022-05-03-after-reading-le-cittàinvisibili/TIRWMCL_Window-4_4-scaled.jpg)
 
-![Image]({{ site.url }}/images/post_images/2022-05-03-after-reading-le-cittàinvisibili/TIRWMCL_Window-4_7-scaled.jpg)
+![Image](/2022-05-03-after-reading-le-cittàinvisibili/TIRWMCL_Window-4_7-scaled.jpg)
 
 #### 书摘。
 
@@ -63,5 +63,5 @@ published: true
 title="矛盾论 (Chinese Edition)-Notebook"
 width="100%"
 height="500"
-src="{{ site.url }}/images/post_images/2022-05-03-after-reading-le-cittàinvisibili/看不见的城市-Notebook.html">
+src="/2022-05-03-after-reading-le-cittàinvisibili/看不见的城市-Notebook.html">
 </iframe>
