@@ -7,11 +7,11 @@ tags:
 published: true
 ---
 FUJI XT-50 + 35mm f1.4
-![Image]({{ site.url }}/images/post_images/2024-10-09-act-too-much/1.JPEG)
+![Image](/2024-10-09-act-too-much/1.JPEG)
 
-![Image]({{ site.url }}/images/post_images/2024-10-09-act-too-much/5.JPEG)
+![Image](/2024-10-09-act-too-much/5.JPEG)
 
-![Image]({{ site.url }}/images/post_images/2024-10-09-act-too-much/2.JPEG)
+![Image](/2024-10-09-act-too-much/2.JPEG)
 
 
 

@@ -600,7 +600,7 @@ Tue Jul 28 00:29:38 UTC 2020 : Method completed with status: 500
 大概就是api 成功调用了, 但是没有足够的权限调用lambda function?~ 开启debug模式.
 看起来是这一步出现了问题.
 
-> ![Image]({{ site.url }}/images/post_images/2020-07-27-lambda-and-apigateway/pic1.jpg)
+> ![Image](/2020-07-27-lambda-and-apigateway/pic1.jpg)
 
 经过比较久的排查, 终于找到了原因.
 当我们调用API 的时候, 我们需要传入Authorization 信息, api gateway 会一路传递这个Authorization 信息, 但是回顾`5.3 创建POST`步, 我们选择了--authorization-type NONE, 导致Authorization 信息被过滤, 并且无法继续传递到下一个对lambda 调用的步骤.(这是一个基于个人理解的解释, 诚恳的请愿, 如果有高手知道具体原理, 请纠正我给我留言, 投我以木桃, 报之以琼瑶.)
@@ -644,7 +644,7 @@ curl --location --request POST 'https://r0i94dlswk.execute-api.cn-northwest-1.am
 }'
 ```
 
-> ![Image]({{ site.url }}/images/post_images/2020-07-27-lambda-and-apigateway/pic2.jpg)
+> ![Image](/2020-07-27-lambda-and-apigateway/pic2.jpg)
 
 ## 总结
 

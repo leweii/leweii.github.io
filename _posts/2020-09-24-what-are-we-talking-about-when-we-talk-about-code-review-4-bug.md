@@ -17,7 +17,7 @@ tags:
 > + Issue link: [qavid:gh-8865](https://github.com/spring-projects/spring-security/issues/8865)
 > + Merge request link: [pr-8894](https://github.com/spring-projects/spring-security/pull/8894)
 
-> ![Image]({{ site.url }}/images/post_images/2020-09-24-what-are-we-talking-about-when-we-talk-about-code-review-4-bug/pic1.jpg)
+> ![Image](/2020-09-24-what-are-we-talking-about-when-we-talk-about-code-review-4-bug/pic1.jpg)
 
 1. Bug reporter 在开发过程中遇到了一个特定场景会出现的bug: 当token 是一个不符合规范的token 时, 并且convert() 在没有订阅的情况下, 抛出的异常. 显然convert() 方法在没有订阅的情况下, 是应该要允许非法的token.
 
@@ -72,7 +72,7 @@ public void resolveWhenHeaderWithInvalidCharactersIsPresentThenAuthenticationExc
 
 #### 4. Review code style.
 Review code style by script, 代码风格统一, 在项目中也是必要的.
-> ![Image]({{ site.url }}/images/post_images/2020-09-24-what-are-we-talking-about-when-we-talk-about-code-review-4-bug/pic2.jpg)
+> ![Image](/2020-09-24-what-are-we-talking-about-when-we-talk-about-code-review-4-bug/pic2.jpg)
 
 ### The End.
 抛开code review 的话题来谈, UT 作为一个看似完美的practice 在许多项目中却是非常缺失的一环, 也是有它的原因的.
@@ -83,7 +83,7 @@ Review code style by script, 代码风格统一, 在项目中也是必要的.
 
 拿Case Study 的convert() 方法来说, 他至少被50 个UT Mock 或调用, 而一个小小的改动, 很可能让他们全部failed. 紧接着的一系列维护成本很可能超出想象.
 
-> ![Image]({{ site.url }}/images/post_images/2020-09-24-what-are-we-talking-about-when-we-talk-about-code-review-4-bug/pic3.jpg)
+> ![Image](/2020-09-24-what-are-we-talking-about-when-we-talk-about-code-review-4-bug/pic3.jpg)
 
 或许这些情况都应该通过代码层面的优化, 合理的拆分UT 的覆盖面等等方法来避免, 不知道大家是否有好的practice 或者心得呢? 
 

@@ -57,5 +57,5 @@ published: true
 title="百年孤独-Notebook"
 width="100%"
 height="500"
-src="{{ site.url }}/images/post_images/2022-06-24-after-reading-cien-años-de-soledad/百年孤独-Notebook.html">
+src="/2022-06-24-after-reading-cien-años-de-soledad/百年孤独-Notebook.html">
 </iframe>

@@ -11,7 +11,7 @@ published: true
 
 然后顺带过一遍将要去做的一些事. 
 
-![Image]({{ site.url }}/images/post_images/2022-04-07-omnifocus-today/1.jpg)
+![Image](/2022-04-07-omnifocus-today/1.jpg)
 
 #### 没有遗漏的
 
@@ -19,7 +19,7 @@ published: true
 
 我们得先看看today 视图的条件.
 
-![Image]({{ site.url }}/images/post_images/2022-04-07-omnifocus-today/2.jpg)
+![Image](/2022-04-07-omnifocus-today/2.jpg)
 
 1. has a defer date
 2. group by defer date

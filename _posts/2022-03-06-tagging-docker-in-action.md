@@ -27,11 +27,11 @@ build 和deploy 的唯一区别就是tag 不一样. 举一反三后, 大家都�
 git@github.com:docker/getting-started.git
 ```
 
-![Image]({{ site.url }}/images/post_images/2022-03-06-tagging-docker-in-action/2.jpg)
+![Image](/2022-03-06-tagging-docker-in-action/2.jpg)
 
 2. 一个 docker repository 👇🏻️
 
-![Image]({{ site.url }}/images/post_images/2022-03-06-tagging-docker-in-action/1.jpg)
+![Image](/2022-03-06-tagging-docker-in-action/1.jpg)
 
 #### 开始!
 
@@ -39,7 +39,7 @@ git@github.com:docker/getting-started.git
 
 ##### 第二步 选择一个分支, 或许对于我们的团队来说, 只有分支main/master 的代码需要打包发布, 而其它分支的代码我们只需要checkstyle 或者sonar scan.
 
-![Image]({{ site.url }}/images/post_images/2022-03-06-tagging-docker-in-action/3.jpg)
+![Image](/2022-03-06-tagging-docker-in-action/3.jpg)
 
 ##### 第三步 定义每一步的工作内容吧
 
@@ -104,15 +104,15 @@ deploy:
 
 先本地执行一下👇🏻️
 
-![Image]({{ site.url }}/images/post_images/2022-03-06-tagging-docker-in-action/4.jpg)
+![Image](/2022-03-06-tagging-docker-in-action/4.jpg)
 
 提交之后的一个执行效果👇🏻️
 
-![Image]({{ site.url }}/images/post_images/2022-03-06-tagging-docker-in-action/5.jpg)
+![Image](/2022-03-06-tagging-docker-in-action/5.jpg)
 
 然后我们发现, docker repo 被更新了 👇🏻️
 
-![Image]({{ site.url }}/images/post_images/2022-03-06-tagging-docker-in-action/6.jpg)
+![Image](/2022-03-06-tagging-docker-in-action/6.jpg)
 
 修改配置一下变量, 把你的帐号密码藏起来, 把你的docker repo 地址配置一下, 我用的是官方的repo 就如下配置啦.
 
@@ -127,7 +127,7 @@ CI_REGISTRY_PASSWORD: password
 - 指定你的pipeline docker 版本, 例如 docker:19.03.12, 如果你坚持使用latest, 那么将来每次docker 的 docker image 升级, 你都在承担着风险
 - 账户密码千万放在gitlab cdci pipeline 里, 放在变量里
 
-![Image]({{ site.url }}/images/post_images/2022-03-06-tagging-docker-in-action/7.jpg)
+![Image](/2022-03-06-tagging-docker-in-action/7.jpg)
 
 
 #### 最后
