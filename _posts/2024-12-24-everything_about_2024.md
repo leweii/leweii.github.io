@@ -9,7 +9,7 @@ pin: true
 math: true
 mermaid: true
 image:
-path: /avatar/2.jpg
+    path: /avatar/2.jpg
 ---
 
 年纪越大越觉得不应该发表主观的观点，因为常常回想过去，会看自己说的话，写的文字，都觉得自己可笑。越来越喜欢引用别人说的话来表达自己的观点。 所以博客也发的少了。
