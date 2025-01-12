@@ -4,7 +4,7 @@ create_time: 2025-01-12 00:00
 tags:
   - life
   - photo
-published: false
+published: true
 ---
 
 ![Image](/2025-01-12-real-reality/1.jpg)
