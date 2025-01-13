@@ -5,9 +5,7 @@ description: 折腾，人生就是折腾，褒义的折腾。
 author: Jakob He
 categories: [Blogging, Life]
 tags: [life]
-pin: true
 math: true
-mermaid: true
 image:
     path: /avatar/2.jpg
 ---
