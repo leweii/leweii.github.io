@@ -5,7 +5,6 @@ author: Jakob He
 date: 2025-01-08 00:00:00 +0000
 categories: [Blogging, Life]
 tags: [Life]
-pin: true
 published: false
 image:
   path: /2025-01-08-2025/1.jepg
