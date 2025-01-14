@@ -7,7 +7,7 @@ categories: [Blogging, Life]
 tags: [life]
 math: true
 image:
-    path: /avatar/2.jpg
+    path: /2024-12-24-everything_about_2024/1.jpg
 ---
 
 年纪越大越觉得不应该发表主观的观点，因为偶尔回想过去，回想自己说过的话，写过的文字，都觉得自己可笑幼稚。于是越来越喜欢引用别人说的话来表达自己的观点。 所以博客也发的少了。

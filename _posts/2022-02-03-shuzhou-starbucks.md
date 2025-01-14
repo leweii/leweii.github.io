@@ -5,7 +5,7 @@ tags:
   - life
   - city
   - travel
-featured_image: /images/post_images/2022-02-03-shuzhou-starbucks/0.jpeg
+featured_image: /2022-02-03-shuzhou-starbucks/0.jpeg
 ---
 
 #### 苏州?

@@ -7,7 +7,7 @@ tags:
   - git
   - tips
   - cdci
-featured_image: /images/post_images/2022-02-21-pre-commit-checkstyle/0.png
+featured_image: /2022-02-21-pre-commit-checkstyle/0.png
 ---
 
 养成编码习惯的第一步. checkstyle + precommit
