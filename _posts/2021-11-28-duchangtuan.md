@@ -1,7 +1,7 @@
 ---
 title: '独唱团'
 date: 2021-11-27 00:00:00
-featured_image: '/images/post_images/2021-11-28-duchangtuan/1.JPG'
+featured_image: '/2021-11-28-duchangtuan/1.JPG'
 excerpt: 最近听周云鹏的歌很有感觉，那个时候的KOL真是很有趣。
 tags:
   - 杂文
