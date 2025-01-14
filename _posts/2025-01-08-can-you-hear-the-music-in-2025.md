@@ -7,7 +7,7 @@ categories: [Blogging, Life]
 tags: [Life]
 published: true
 image:
-  path: /2025-01-08-can-you-hear-the-music-in-2025/1.jepg
+  path: /2025-01-08-can-you-hear-the-music-in-2025/1.jpg
   alt: 
 ---
 

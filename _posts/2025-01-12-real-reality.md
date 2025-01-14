@@ -7,7 +7,7 @@ tags:
   - photo
 published: true
 image:
-  path: /2025-01-12-real-reality/1.jepg
+  path: /2025-01-12-real-reality/1.jpg
 ---
 
 ![Image](/2025-01-12-real-reality/1.jpg)
