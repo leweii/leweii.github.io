@@ -18,4 +18,4 @@ published: true
 
 ![Image](/2025-01-12-real-reality/4.jpg)
 
-![Image](/2025-01-12-real-reality/6.jpg)
+![Image](/2025-01-12-real-reality/7.jpg)
