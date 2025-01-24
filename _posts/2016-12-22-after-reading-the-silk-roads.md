@@ -42,13 +42,13 @@ ISBN: 9787308161459
 
 比如今天的新闻说到.
 
-> ![Image](/2016-12-22-after-reading-the-silk-roads/pic1.png)
+![Image](/2016-12-22-after-reading-the-silk-roads/pic1.png)
 
 与XXX真是如出一辙.
 
 再比如:
 
-> ![Image](/2016-12-22-after-reading-the-silk-roads/pic2.png)
+![Image](/2016-12-22-after-reading-the-silk-roads/pic2.png)
 
 跟伊拉克战争之前的表现如法炮制!
 

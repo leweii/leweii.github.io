@@ -17,9 +17,9 @@ tags:
 
 这本书安利给大家，读完会发现自媒体时代流行之前，文字内容门槛还是很高的。
 
-> ![Image](/2021-11-28-duchangtuan/1.JPG)
+![Image](/2021-11-28-duchangtuan/1.JPG)
 
-> ![Image](/2021-11-28-duchangtuan/2.JPG)
+![Image](/2021-11-28-duchangtuan/2.JPG)
 
 ### 最爱的版块
 * 《绿皮火车》-周云蓬

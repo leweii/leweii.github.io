@@ -1,6 +1,6 @@
 ---
 title: '最近的挑战'
-date: 2020-08-26 00:00:00
+date: 2023-08-26 00:00:00
 excerpt: 最近遇到的一系列问题
 tags:
   - life
@@ -56,12 +56,12 @@ tags:
 
 再同意这期播客不能更多了, 说了我想说的一切.
 
-> ![Image](/2021-08-26-facing-problem/podcast.png)
+![Image](/2023-08-26-facing-problem/podcast.png)
 
 ## 最后的一些话
 
 有幸在职业生涯, 遇到几位给予我足够supportive 的领导, 回想自己也是跟他们在一起的时候成长最多. 从工作效率上看, 给予明确的社会分工自然是最高效的, 但是不见得是最长远的.
 
-> ![Image](/2021-08-26-facing-problem/desk-1.jpeg)
-> ![Image](/2021-08-26-facing-problem/desk-2.jpeg)
-> ![Image](/2021-08-26-facing-problem/desk-3.jpeg)
+![Image](/2023-08-26-facing-problem/desk-1.jpeg)
+![Image](/2023-08-26-facing-problem/desk-2.jpeg)
+![Image](/2023-08-26-facing-problem/desk-3.jpeg)

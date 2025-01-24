@@ -29,4 +29,4 @@ tags:
 
 最后放一张小土兜兜的美照.
 
-> ![Image](/2020-07-18-untitled-in-chinese/pic1.jpeg)
+![Image](/2020-07-18-untitled-in-chinese/pic1.jpeg)

@@ -114,8 +114,8 @@ jakob@jakobMacBook-Air ~/.ssh> cat id_rsa-jakob-company.pub
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDKMQjGVwbjrRD4RiuKksiRuon5IKu9d2yl/9n2vQObPCRnZAyUfqjSB5Ne3wnvNduz0AvpAOm4l0ZYLFComwrl+/Bg9UfrN/oODGWaSRcJNZoQH80UZ1HnseTWxN3ajrubooVbC2fNyMmufZG8B4GxrKLrHzXZgNBe7JGEUbPDsqsFenhrrCVv2Dbgx8+DvfALD+6mmssIbqSJ+P1+pBNVQEltk6yLiws2EzeDUCPktSsJ/TgUD/mH9SuG2VJNuoCvL6FT8y7jYyMWFiSLXIfY31fJDrnesXErDbN6dX+nFaZHjhtgu1oPmDDsgvpT2hm8dLE3bIqqC7877wznXGUNrekYmrsrOeqsWqhAnj0H0c8byKRuhq3AT7xeAueYTAaZUHcgsrWauimFMb2uAJ/pnPtcB8CXQQm5yGQVlHa0gwJ4s79zU+7/FCbTWAuD6NIfp4o7r2OiXY+2kB7M0Q/UmpxZ/HHRlTW55QYiD76N8qwKBTnp3n7UL4O9GSNj7P+xCRIDTdVejdfP9RpmrSdIUW433PVPMgiKGNVoWVCQX9JJUEbiTrhlpGHPXla3/goqBrCjbSvFEsPc7zrDVR2vWGJgTEg1gMZ9fWB6Y7p84y1+b9pERBwmxxspR+Qx19FoByn3VFxbs8q1rZTnxXAz4y64AW35ar2aeiFib9s/Uw== jakob@company.com
 ```
 
-> ![Image](/2021-07-14-multiple-git-accounts-on-mac/github_config.jpg)
-> ![Image](/2021-07-14-multiple-git-accounts-on-mac/gitlab_config.jpg)
+![Image](/2021-07-14-multiple-git-accounts-on-mac/github_config.jpg)
+![Image](/2021-07-14-multiple-git-accounts-on-mac/gitlab_config.jpg)
 
 #### How to debug
 If you failed to pull or push or you still need to key in the username and password, make sure your project config are correctly configed ssh url.
@@ -140,6 +140,6 @@ the `remote.url` should using ssh url which is like `git@github.com:jakob/projec
 #### In the end
 Recently I got new Macbook air. I got external hard drives, monitors, and docking stations to show off the Macbook's characteristics as much as possible. However, it has only 245.11 GB storage. I have to arrange the storage very carefully. Using my old Macbook pro time-machine backups is not a good options. So I have to re-install all apps and configurations include git.
 
-> ![Image](/2021-07-14-multiple-git-accounts-on-mac/my-eq.jpg)
+![Image](/2021-07-14-multiple-git-accounts-on-mac/my-eq.jpg)
 
 :)
