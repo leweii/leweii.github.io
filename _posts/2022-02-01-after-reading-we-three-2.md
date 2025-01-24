@@ -17,13 +17,13 @@ tags:
 
 也记不清上一次是什么时候读的，最近又想重读《我们仨》，第二部分，文中穿插着梦境，杨绛先生徘徊在女儿和钱钟书先生之间，梦里现实里全是他们，一样分不清什么是梦什么是真。
 
-> ![Image](/2022-02-01-after-reading-we-three/1.png)
+![Image](/2022-02-01-after-reading-we-three/1.png)
 
 单单读完第二部分的时候，《我们仨》给人的感觉就是一篇长长的告别，沉重，无力。但是到了第三部分，文章一扫之前的阴霾，第三部分，是一篇长长的轻松愉快的追忆。
 
-> ![Image](/2022-02-01-after-reading-we-three/2.png)
+![Image](/2022-02-01-after-reading-we-three/2.png)
 
-> ![Image](/2022-02-01-after-reading-we-three/3.png)
+![Image](/2022-02-01-after-reading-we-three/3.png)
 
 至于第三部分是多有意思？接触过钱钟书幽默的人都懂。只不过是经杨绛口转述了一遍。
 

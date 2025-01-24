@@ -8,7 +8,7 @@ tags:
 
 CryptoKitties <https://www.cryptokitties.co> 是一款构建在以太坊智能合约之上的交易猫咪的游戏。其热度造成了以太坊交易的拥堵。最近每天的交易量也超过了1000tx/day，区区一千比一天的交易就让以太坊网络拥堵，不禁要思考，区块链还有很长的道路要走~
 
-> ![Image](/2018-02-01-cryptokitties-learning/pic1.jpg)
+![Image](/2018-02-01-cryptokitties-learning/pic1.jpg)
 
 其开发团队凭借CryptoKitties项目在ETHWaterloo编程马拉松中被选为八个获奖者之一。闲话少说。
 
@@ -17,7 +17,7 @@ CryptoKitties <https://www.cryptokitties.co> 是一款构建在以太坊智能�
 
 从代码中，我们能大致得到以下结构图
 
-> ![Image](/2018-02-01-cryptokitties-learning/pic2.jpg)
+![Image](/2018-02-01-cryptokitties-learning/pic2.jpg)
 
 ####0. 合约维护(KittyAccessControl)
 我们知道，基于以太坊的应用都属于DApp（去中心化应用），其最大的缺点就是维护更新成本极高，因为DApp的基本性质，决定了开发者一旦发布了应用，就很难修改，历史上比特币的第一次和第二次更新，也是冒着毁于一旦的危险进行的。

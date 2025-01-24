@@ -38,7 +38,7 @@ tags:
 
 知其所以然: 在这个自媒体时代, 我们常常接收到大量的信息, 每个人都在发表着自己的意见, 当我们接收这些信息的时候, 我们需要有一个心眼来甄别他的可靠性, 就需要有一种能够思考在每个信息的背后它的所以然. 甚至有时候, 我们需要在意我们所接收到的信息是否存在一些问题, 以篇概全, 偷换概念.
 
-> ![Image](/2021-01-29-after-reading-principles_life_and_work/pic1.png)
+![Image](/2021-01-29-after-reading-principles_life_and_work/pic1.png)
 
 #### 一些文摘
 <iframe id="notebook"

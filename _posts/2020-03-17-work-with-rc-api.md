@@ -15,12 +15,12 @@ In the first place, you need to register a developer account, and create a RingC
 Sign in and click `create App`. You will see `Create App - General Settings` page.
 Right after you finish this wizard, you will see this config page.
 
-> ![Image](/2020-03-17-work-with-rc-api/pic1.jpg)
+![Image](/2020-03-17-work-with-rc-api/pic1.jpg)
 
 This is over view of your app.
 In Application Credentials page, you can get auth info for your apps.
 
-> ![Image](/2020-03-17-work-with-rc-api/pic2.jpg)
+![Image](/2020-03-17-work-with-rc-api/pic2.jpg)
 
 Now we have enough information to integrate RingCentral with your own ideas.
 How about we build a simple App to get our Glip Messages. To realize this app you must assign the `read messages` permission in creating App step. Otherwise you will hit `no permission` exception.
@@ -61,4 +61,4 @@ subscription.subscribe();
 
 Now you can see all your messages in the log. You can do whatever you want for your Glip messages, store in some TODO list, key word scan, auto reply etc.
 
-> ![Image]({{site.url}}/assets/post_images/2020-03-17-work-with-rc-api/pic3.jpg)
+![Image]({{site.url}}/assets/post_images/2020-03-17-work-with-rc-api/pic3.jpg)

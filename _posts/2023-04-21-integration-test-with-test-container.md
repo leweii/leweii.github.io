@@ -8,7 +8,7 @@ tags:
 ### Integration Test
 
 Integration test is to test whether many separately developed modules work together as expected.
-> ![Image](/2023-04-21-integration-test-with-test-container/1.png)
+![Image](/2023-04-21-integration-test-with-test-container/1.png)
 
 #### narrow integration tests
 -   exercise only that portion of the code in my service that talks to a separate service
@@ -29,7 +29,7 @@ Test container allows you to combine the benefits of unit test with the benefits
 -   practical and executable for every developer
 -   environment isolation ↔︎ limited in scope
 
-> ![Image](/2023-04-21-integration-test-with-test-container/2.png)
+![Image](/2023-04-21-integration-test-with-test-container/2.png)
 
 #### What does it do
 1.  start a container

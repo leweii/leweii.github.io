@@ -128,7 +128,7 @@ Feature Toggles也称为Feature Flags、Feature Bits或Feature Flippers。 这�
 
 （我们稍后将更详细地研究这些方法，所以如果其中一些概念对您来说是新的，请不要担心。）
 
-> ![Image](/2021-08-09-feature-toggle-from-martinfowler/overview-diagram.png)
+![Image](/2021-08-09-feature-toggle-from-martinfowler/overview-diagram.png)
 
 团队决定使用每个请求的Feature Toggles，因为它为他们提供了很大的灵活性。 该团队特别欣赏这将使他们能够在不需要单独的测试环境的情况下测试他们的新算法。 相反，他们可以简单地在他们的生产环境中打开算法，但仅限于内部用户（通过特殊 cookie 检测到）。 团队现在可以为自己打开该 cookie 并验证新功能是否按预期执行。
 

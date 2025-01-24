@@ -11,7 +11,7 @@ minute: 3
 
 大千世界中，惟一缺乏的就是人类的注意力。 ---- 凯文·凯利
 
-> ![Image](/2022-10-26-competitiveness-agile/Kevin Kelly.jpg)
+![Image](/2022-10-26-competitiveness-agile/Kevin Kelly.jpg)
 
 ### Background
 
@@ -45,7 +45,7 @@ ps: 本文不限于软件项目的敏捷。
 
 [](https://agilemanifesto.org)
 
-> ![Image](/2022-10-26-competitiveness-agile/agile.jpg)
+![Image](/2022-10-26-competitiveness-agile/agile.jpg)
 
 ### 敏捷十二大原则
 
