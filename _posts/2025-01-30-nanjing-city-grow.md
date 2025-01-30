@@ -1,6 +1,5 @@
 ---
 title: 南京修剪
-author: Jakob He
 date: 2025-01-30 00:00:00 +0000
 categories: [Blogging, Life]
 tags: [Life]

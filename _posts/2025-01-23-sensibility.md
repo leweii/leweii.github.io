@@ -1,7 +1,6 @@
 ---
 title: 感受力
 description: 
-author: cotes
 date: 2025-01-23 11:30:00 +0800
 categories: [Blogging]
 tags: []

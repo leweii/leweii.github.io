@@ -2,7 +2,6 @@
 title: "关于2024年的一切"
 date:   2024-12-24
 description: 折腾，人生就是折腾，褒义的折腾。
-author: Jakob He
 categories: [Blogging, Life]
 tags: [life]
 math: true

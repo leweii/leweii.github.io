@@ -1,14 +1,13 @@
 ---
 title: 感受 2025
 description: 
-author: Jakob He
 date: 2025-01-08 00:00:00 +0000
 categories: [Blogging, Life]
 tags: [Life]
 published: true
 image:
   path: /2025-01-08-can-you-hear-the-music-in-2025/1.jpg
-  alt: 
+  alt: Jakob He
 ---
 
 最近出的问题有点多，或许这跟我自己之前较为松懈可能有关，但是也可能一点关系都没有。
