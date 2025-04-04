@@ -1,5 +1,5 @@
 ---
-title: 爱克发1535(Agfa Optima 1535 Sensor) Review
+title: 爱克发1535 (Agfa Optima 1535 Sensor) Review
 date: 2025-04-04 00:00:00 +0000
 categories: [Blogging, Life]
 tags: [Life]
