@@ -15,6 +15,6 @@ description: 在前往小镇的路上，偶遇了这个水泥制品厂，厂里�
 
 ![Image](/2025-04-05-cement-factory/4.jpeg)
 
-![Image](/2025-04-05-cement-factory/5.jpeg)
+![Image](/2025-04-05-cement-factory/7.jpeg)
 
 ![Image](/2025-04-05-cement-factory/6.jpeg)
