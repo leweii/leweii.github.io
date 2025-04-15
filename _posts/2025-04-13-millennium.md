@@ -17,7 +17,7 @@ published: true
 [//]: # (![Image]&#40;/2025-04-13-millennium/5.jpeg&#41;)
 
 [//]: # (![Image]&#40;/2025-04-13-millennium/6.jpeg&#41;)
-![Image](/2025-04-13-millennium/8.jpeg)
+[//]: # (![Image]&#40;/2025-04-13-millennium/8.jpeg&#41;)
 
 ![Image](/2025-04-13-millennium/7.jpeg)
 
