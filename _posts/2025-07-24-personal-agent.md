@@ -92,6 +92,7 @@ duangduangduang，它就开始执行了。
 一个很简单的demo就这样结束了。
 
 ![Image](/2025-07-24-personal-agent/0.JPG)
+> (出于隐私保护，图文无关)
 
 ### 1+1>2
 
