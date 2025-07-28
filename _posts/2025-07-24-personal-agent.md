@@ -26,7 +26,7 @@ MCP 是上下文服务，通过接入许多MCP 服务，你可以告诉agent，�
 
 如果说，软件是倍数，平台是指数，那么个人代理就是平台的能力*平台的能力，指数的指数。
 
-### Demo
+### demo
 Visual Studio Code + Copilot + MCP Services(Atlassian)
 
 作为一个称职的PM，我每个sprint，我都需要对board进行整理，根据task的具体内容，找到相对应的开发进行工作的分配，当然还要对每个task进行优先级的排序，和effort 预估，确保每个人在做的事情都是当下最有价值的工作。
@@ -104,7 +104,7 @@ duangduangduang，它就开始执行了。
 
 我的demo里，只是一个集成了jira 的agent，我只让他在jira的平台上做了一些分内的工作。但是如果jira + github + pipeline，是不是又能够解锁一些不一样的技能呢？
 
-### 由agent 掌控的pipeline
+### 一个由agent 掌控的pipeline
 
 github + pipeline能打出什么连招呢？github 提供了完美的上下文，pipeline 提供了完美的action item和执行的能力。
 
