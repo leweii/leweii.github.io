@@ -1,10 +1,10 @@
 ---
 title: 个人代理
 date: 2025-07-18 00:00:00 +0000
-categories: [photograph]
-tags: [photograph]
+categories: [ai]
+tags: [ai]
 published: true
-description: 拥有一个小秘的幸福
+description: 拥有一个专属小秘的幸福
 ---
 
 MCP 是上下文服务，通过接入许多MCP 服务，你可以告诉agent，它能够具备什么样，什么样的能力。
