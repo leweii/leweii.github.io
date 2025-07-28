@@ -1,11 +1,13 @@
 ---
-title: 最后的总结《MY EVIDENCE》 - PENTAX me super
+title: MY EVIDENCE
 date: 2025-07-18 00:00:00 +0000
 categories: [photograph]
 tags: [photograph]
 published: true
-description: 相片都来自我那已经卖掉的宾得me super
+description: 相片都来自我那已经卖掉的宾得ME SUPER。fujifilm c200。
 ---
+
+PENTAX ME SUPER
 
 ![Image](/2025-07-18-my-evidence/0.JPG)
 
