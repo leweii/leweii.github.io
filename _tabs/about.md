@@ -4,4 +4,4 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-> contact me if you want: lewei.me@gmail.com
+> contact me via lewei.me@gmail.com
