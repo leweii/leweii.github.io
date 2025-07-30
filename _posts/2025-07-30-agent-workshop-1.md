@@ -1,5 +1,5 @@
 ---
-title: agent workshop 1 - 用ADK 运行一个简单的agent
+title: "agent workshop 1: 用ADK 运行一个简单的agent"
 date: 2025-07-30 00:00:00 +0000
 categories: [ai]
 tags: [ai]
