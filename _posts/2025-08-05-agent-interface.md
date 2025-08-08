@@ -4,7 +4,7 @@ date: 2025-07-30 00:00:00 +0000
 categories: [ai]
 tags: [ai]
 published: true
-description: 拥有个人小秘书的第一步, 运行一个agent
+description: token 不够怎么办？工程实践赶来凑。
 ---
 
 一个好的agent interface 能够很大程度的减少幻觉带来的影响。
@@ -61,4 +61,3 @@ token作为感知上下文的能力，将来必定是兵家必争之地，当无
 
 ## 半人马座α星
 这样的ai不适合跟人类一起工作，不适合处理所谓公司workflow这种事情，ta应该把自己上传到u盘里，用光信号的方式把自己发往半人马座α星。
-
