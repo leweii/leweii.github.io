@@ -1,8 +1,8 @@
 ---
-title: "mcp 客户端实操"
+title: "AI Agent 专题 - 集成一个现成的MCP服务"
 date: 2025-08-10 00:00:00 +0000
-categories: [ai]
-tags: [ai]
+categories: [ai, agent]
+tags: [ai, agent, mcp, adk]
 published: true
 description: MCP 是什么，为什么要用MCP，以及在客户端怎么用？
 ---

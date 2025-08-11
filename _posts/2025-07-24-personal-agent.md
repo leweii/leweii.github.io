@@ -1,8 +1,8 @@
 ---
-title: 个人代理
+title: "AI Agent 专题 - 你的第一个代理"
 date: 2025-07-18 00:00:00 +0000
 categories: [ai]
-tags: [ai]
+tags: [ai, agent]
 published: true
 description: 拥有一个专属小秘的幸福
 ---

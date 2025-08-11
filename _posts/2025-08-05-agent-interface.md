@@ -1,8 +1,8 @@
 ---
-title: "agent interface"
+title: "AI Agent 专题 - Agent Interface 的纸上谈兵"
 date: 2025-08-05 00:00:00 +0000
-categories: [ai]
-tags: [ai]
+categories: [ai, agent]
+tags: [ai, agent]
 published: true
 description: token 不够怎么办？工程实践赶来凑。
 ---

@@ -1,8 +1,8 @@
 ---
-title: "agent workshop 1: 用ADK 运行一个简单的agent"
+title: "AI Agent 专题 - workshop: 用ADK 运行一个简单的Agent"
 date: 2025-07-30 00:00:00 +0000
 categories: [ai]
-tags: [ai]
+tags: [ai, agent, workshop, adk]
 published: true
 description: 拥有个人小秘书的第一步, 运行一个agent
 ---
