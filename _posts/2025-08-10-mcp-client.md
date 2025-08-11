@@ -7,16 +7,18 @@ published: true
 description: MCP 是什么，为什么要用MCP，以及在客户端怎么用？
 ---
 
+## Background(所有开场白都是废话，会来看这篇文章的人，都可以直接跳过)
+
 在[个人代理](https://www.jakobhe.com/posts/personal-agent/)的文章里，我们利用vs code插件链接了一个atlassian本地MCP服务，并且连接上，能够自用的使用里面的所有tools。
 但是如果你希望开发一个agent 并让你的用户开始使用这个agent，这么做是非常不友好的。我不可能拉着我的用户安装一个vs code，并且在他的电脑上坑次坑次的配置MCP服务。
 
 那么今天的这篇文章，我们就讨论一下，如果自己开发一个接入了各式各样MCP 服务的agent，让用户在无感知的情况下，觉得这个agent “智能”且有执行力。
 
-## 为什么要用MCP服务？
+### 为什么要用MCP服务？
 
 MCP是一个软件行业非常通用的一种抽象和复用的思维，只需要服务（能力）提供商，一次定义好能力的上下文，就能够給所有的服务使用者快速接入ai的能力。如果没有MCP，每个服务的使用方，都在对不同的tools定义自己的prompt，不厌其烦的重复告诉ai一样的事情，而且由于每个人表达能力和侧重不一样，导致一样的tools 使用的真实效果也千差万别。
 
-## 什么时候需要定义自己的MCP服务
+### 什么时候需要定义自己的MCP服务
 
 - 当有多余1个的agent 需要接入你提供的tools时
 - 当你想更加规范和统一的维护一类tools时
@@ -25,17 +27,14 @@ MCP是一个软件行业非常通用的一种抽象和复用的思维，只需�
 
 ai的规范化是目前阶段的一个大趋势，无论是MCP，还是AG-UI，A2A，A2C，大家都是在尝试让ai更加的规范化，减少幻觉，减少重复劳动。
 
-## 实操吧
-
-今天的实操中，我们会
-1. 利用docker 和现成的mcp 镜像，在本地启动一个mcp 服务（也可看成是一个远程MCP 服务）
-2. 把mcp 服务，注册到agent里
-3. 启动我们的agent，试用对应的tools
-
-### 开始之前
+## 开始之前
 我们需要先回答几个问题，
 
-#### running in client side or server side?
+### is your agent readonly or read/write?
+### do you want to do audit logs for your agent?
+### running in client side or server side?
+
+三个问题要一起考虑。
 
 - 运行在client side 的优点是权限控制，和读取更多本地运行环境的能力。
 - 运行在server side 的优点是，能够减少用户所需要配置的信息，如果你的客户是非软件开发人员，你就需要一个远程的MCP服务和一个已经高度集成好的agent客户端。
@@ -61,6 +60,13 @@ ai的规范化是目前阶段的一个大趋势，无论是MCP，还是AG-UI，A
 
 在今天的实操里，我们启动一个docker 镜像，用一个通用账户来操作所有的读操作。
 
+
+## 实操吧
+
+今天的实操中，我们会
+1. 利用docker 和现成的mcp 镜像，在本地启动一个mcp 服务（也可看成是一个远程MCP 服务）
+2. 把mcp 服务，注册到agent里
+3. 启动我们的agent，试用对应的tools
 
 ### 开始！第一步：定义，启动我们的MCP 服务
 
