@@ -67,7 +67,7 @@ ai的规范化是目前阶段的一个大趋势，无论是MCP，还是AG-UI，A
 2. 把mcp 服务，注册到agent里
 3. 启动我们的agent，试用对应的tools
 
-### 开始！第一步：定义，启动我们的MCP 服务
+### 第一步：定义，启动我们的MCP 服务
 
 今天我们用这个镜像：
 https://hub.docker.com/r/mcp/atlassian
@@ -132,10 +132,17 @@ public static BaseAgent initAgent() {
 }
 ```
 
-验证一下:
+### 第三步：运行一下
+```java
+15:15:50: Executing ':agents.multitool.MultiToolAgent.main()'…
+```
+
+键入你的问题：
+> summarize jira MD-16353
+
 ![Image](/2025-08-10-mcp-client/3.JPG)
 
-### 好了！接下来集成everything吧。
+## 实操结束，接下来integrate everything吧。
 
 接下来，我们就能用agent“有机”的把各种服务集成在一起了，曾经的集成是比较“死”的，没有智能可言。
 
