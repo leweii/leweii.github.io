@@ -92,7 +92,7 @@ from 文档：
 > - sse (Server-Sent Events) transport at /sse endpoint
 > - streamable-http transport at /mcp endpoint
 
-![Image](/2025-08-10-mcp-client/1.jpg)
+![Image](/2025-08-10-mcp-client/4.jpeg)
 
 运行好之后，可以用postman 验证一下启动情况：
 
