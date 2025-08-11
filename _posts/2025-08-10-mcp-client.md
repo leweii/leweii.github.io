@@ -7,7 +7,7 @@ published: true
 description: MCP 是什么，为什么要用MCP，以及在客户端怎么用？
 ---
 
-## Background(所有开场白都是废话，会来看这篇文章的人，都可以直接跳过)
+## Background
 
 在[个人代理](https://www.jakobhe.com/posts/personal-agent/)的文章里，我们利用vs code插件链接了一个atlassian本地MCP服务，并且连接上，能够自用的使用里面的所有tools。
 但是如果你希望开发一个agent 并让你的用户开始使用这个agent，这么做是非常不友好的。我不可能拉着我的用户安装一个vs code，并且在他的电脑上坑次坑次的配置MCP服务。
