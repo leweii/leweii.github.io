@@ -4,7 +4,7 @@ date: 2025-08-10 00:00:00 +0000
 categories: [ai, agent]
 tags: [ai, agent, mcp, adk]
 published: true
-description: MCP 是什么，为什么要用MCP，以及在客户端怎么用？
+description: 公司的老总们，很快就能像管人一样管agent了。
 ---
 
 ## Background
@@ -174,6 +174,8 @@ public static BaseAgent initAgent() {
 
 想不到AI的微服务来的如此之快，我估计这里面的原因跟ai“像”人是有关的，将来公司的软件部门的管理，能够很容易的把软件当作“人”来看，当作“人”来管。
 
-## 最后
+## 个人的感受
+
+个人的感受层面，ai确实让开发变得简单了，系统间，前后端之间，agent agent之间，有了规范和协议之后，确实很大程度上又解放了开发的实践能力。
 
 下一篇，我们一起来实现一个定制的MCP服务器。
