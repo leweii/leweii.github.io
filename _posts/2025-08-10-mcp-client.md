@@ -76,6 +76,15 @@ https://hub.docker.com/r/mcp/atlassian
 1. tools 上下文描述和定义不够准确
 2. 安全问题，比如有人恶意注入一些不安全的上下文，乱操作你的服务
 
+今天demo的镜像来自atlassian 官方MCP docker image，其中定义了37个tools
+- confluence_add_comment
+- confluence_add_label
+- jira_search
+- jira_get_issue
+- ....
+
+今天我们只用其中的两个jira_search 和 jira_get_issue。之后我们会讨论，为什么只用两个tools。
+
 ```bash
 docker run -i --rm -p 8000:8000 \
   -e JIRA_URL="https://meme.atlassian.net" \
@@ -158,7 +167,7 @@ public static BaseAgent initAgent() {
 
 后面这一步，扩展了软件的边界，曾经的软件是专业人员的池塘，外行人听的云里雾里的。现在，任何人，只要能打字，都能来到这个池塘一起捉鱼，养鱼。
 
-## 有那么一个小小的缺点，也有对应的解决方案。
+## 有那么☝️一个🤏小小的缺点，也有对应的解决方案。
 当然MCP 如此方便，带来了一些代价，硕大的工具库冗余了非常多的tools 动辄几十个，上百个。这对token的消耗是无感且恐怖的，不知不觉预算就上去了。
 
 而且实际情况是，我在一个任务的执行时，并不需要用到如此之多的tools，甚至许多tools 的能力会对agent 的判断形成干扰，做出没必要执行的动作。 虽然未来一定是token便宜的时代，这些巨量的tools干扰也成为了一个agent不稳定的因素。
