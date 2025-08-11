@@ -30,9 +30,9 @@ ai的规范化是目前阶段的一个大趋势，无论是MCP，还是AG-UI，A
 ## 开始之前
 我们需要先回答几个问题，
 
-### is your agent readonly or read/write?
-### do you want to do audit logs for your agent?
-### running in client side or server side?
+- Is your agent read-only or read-write?
+- Do you want to create audit logs for your agent events?
+- Will your agent run on the client side or server side?
 
 三个问题要一起考虑。
 
