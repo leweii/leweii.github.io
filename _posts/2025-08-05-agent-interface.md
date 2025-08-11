@@ -42,7 +42,9 @@ agent interface的重要性，不亚于模型支持的token数量。
 
 这样很明确的指向，增加了我们对流程的控制，减少了跳脱工作流的可能性。
 
+这个视频很好的解释了一切：
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9eLKs9AM4tU?si=Q8Q1M_kfiCDBqPY4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## 但是，还不够
 但是我觉得，这是在尝试用软件思维来解决ai的交互问题。agui终将被淘汰。agui用的是协议，用的是共识，比如agent提出问句时候，以某种特定的格式输出给前端。
@@ -55,8 +57,6 @@ agent interface的重要性，不亚于模型支持的token数量。
 万神殿动画片里的ai就具备这样的能力，ta们不仅仅是一个运行在服务端的模型，ta们看起来更像是活在互联网里的精灵。
 
 主角父亲的ai直接能够在屏幕上敲出表情包；作为一个实体，主角父亲的ai能够在不同计算机里传输，不同算力的计算机给予他不同程度的能力。因催斯汀。
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/9eLKs9AM4tU?si=Q8Q1M_kfiCDBqPY4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## token的抽象
 token作为感知上下文的能力，将来必定是兵家必争之地，当无限token出现时，万神殿的ai就能够实现。我的第一个请求，系统就会把我的一生，我运行的客户的操作系统源码，摄像头的所有记录，都作为token给到模型，模型基于如此巨大的信息量作为上下文，能够给到我契合我的需求的答案，像个善解人意的姐姐一样，很多话不必说她就懂。
