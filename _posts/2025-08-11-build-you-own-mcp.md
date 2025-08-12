@@ -7,7 +7,7 @@ published: true
 description: 或许有一天，你也要搭建一个自己的MCP服务。
 image:
   path: /2025-08-11-build-you-own-mcp/0.jpeg
-  alt: Jakob He
+  alt: 2025!
 ---
 
 ## Background
