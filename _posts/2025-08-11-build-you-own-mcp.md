@@ -25,6 +25,9 @@ Better to have:
 - 支持多种不同的连接方式，比如websocket, http, grpc等
 - 支持不同的认证方式，比如token, oauth等
 
+### MCP服务不需要什么？
+MCP 服务是一个很简单的执行层，它并不需要任何llm的能力。
+
 ## 咸盐少许，我们开始
 这个例子里，我们还是使用ADK来搭建我们都MCP 服务。
 
