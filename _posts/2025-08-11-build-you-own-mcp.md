@@ -25,7 +25,7 @@ Better to have:
 - 支持多种不同的连接方式，比如websocket, http, grpc等
 - 支持不同的认证方式，比如token, oauth等
 
-## 先盐少许，我们开始
+## 咸盐少许，我们开始
 这个例子里，我们还是使用ADK来搭建我们都MCP 服务。
 
 实现一个MCP 需要实现list tools 和call tools的方法
