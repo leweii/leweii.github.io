@@ -114,7 +114,7 @@ python3 mcp_server/my_adk_mcp_server.py
 
 ![Image](/2025-08-11-build-you-own-mcp/1.jpg)
 
-### 调试
+### 调试MCP服务
 
 我们能通过postman调试mcp。只需要创建新请求的时候选择mcp
 
@@ -127,6 +127,40 @@ python3 mcp_server/my_adk_mcp_server.py
 ![Image](/2025-08-11-build-you-own-mcp/4.jpg)
 
 结果是糟糕的，页面元素之复杂，导致返回的文字基本不可读。但是流程是通顺的。接下来的事情就是不停的优化这个tool的执行效果。
+
+### 在agent里使用&调试
+
+稍加修改我们在[集成一个现成的MCP服务](https://www.jakobhe.com/posts/mcp-client/)的程序，我们就能智能的使用这个tool了。
+
+```java
+public static BaseAgent initAgent() {
+    return LlmAgent.builder()
+        .name(NAME)
+        .model("gemini-2.0-flash")
+        .description("Agent to get page content.")
+        .instruction(
+            "Use the 'load_web_page' tool to fetch content from a URL provided by the user.")
+        .tools(integrateJiraMCP())
+        .build();
+}
+```
+
+这次我们用adk web 来进行调试，adk web会把所有的event记录清晰，有助于我们理解agent运行的机制。
+java 启动adk-web 需要依赖sprint-boot，并且配置对应的agent 启动程序：
+
+```java
+mvn exec:java \
+    -Dexec.mainClass="com.google.adk.web.AdkWebServer" \
+    -Dexec.args="--adk.agents.source-dir=src/main/java" \
+    -Dexec.classpathScope="compile"
+```
+执行，进入调试页面 ，输入prompt：
+
+`help me to get the web https://www.jakobhe.com/posts/after-reading-breath/`
+
+![Image](/2025-08-11-build-you-own-mcp/5.jpg)
+
+从左边的event栏，你很容易就能看到调用方法的情况。
 
 ## 一些想法
 
