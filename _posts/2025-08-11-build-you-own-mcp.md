@@ -187,7 +187,7 @@ MCP恰恰就是提供这类垂直行业的执行能力的服务。比如绝大�
 - 从evnet来理解agent的运行机制
 
 #### references
-- https://cloud.google.com/blog/topics/developers-practitioners/use-google-adk-and-mcp-with-an-external-server
-- https://google.github.io/adk-docs/get-started/quickstart/#gemini---google-cloud-vertex-ai
-- https://google.github.io/adk-docs/tools/mcp-tools/
-- https://cloud.google.com/docs/authentication/provide-credentials-adc
+- [Use Google ADK and MCP with an external server](https://cloud.google.com/blog/topics/developers-practitioners/use-google-adk-and-mcp-with-an-external-server)
+- [ADK Quickstart - Gemini with Google Cloud Vertex AI](https://google.github.io/adk-docs/get-started/quickstart/#gemini---google-cloud-vertex-ai)
+- [MCP Tools Documentation](https://google.github.io/adk-docs/tools/mcp-tools/)
+- [Provide credentials with Application Default Credentials](https://cloud.google.com/docs/authentication/provide-credentials-adc)
