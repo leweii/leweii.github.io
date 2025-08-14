@@ -5,9 +5,6 @@ categories: [ai, agent]
 tags: [ai, agent, mcp, adk]
 published: true
 description: finding these resources is very helpful
-image:
-  path: /2025-08-11-build-you-own-mcp/0.jpeg
-  alt: 2025!
 ---
 
 转载一篇应该给更多人看到的文章，来自 [AI代理的上下文工程：构建Manus的经验教训](https://manus.im/zh-cn/blog/Context-Engineering-for-AI-Agents-Lessons-from-Building-Manus)
