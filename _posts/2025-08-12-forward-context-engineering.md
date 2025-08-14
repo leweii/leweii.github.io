@@ -74,6 +74,6 @@ anyway 上下文工程看似简单，但是确确实实正在成为ai开发的�
 
 #### ref
 - [Prompt Engineering Guide](https://www.promptingguide.ai/)
-- [A Comprehensive Survey of AI-Generated Content (AIGC): A History of Generative AI from GAN to ChatGPT](https://arxiv.org/abs/2301.00234)
+- [A Survey on In-context Learning](https://arxiv.org/abs/2301.00234)
 - [KV Caching Explained](https://medium.com/@joaolages/kv-caching-explained-276520203249)
 - [Prefix Caching](https://docs.vllm.ai/en/stable/design/v1/prefix_caching.html)
