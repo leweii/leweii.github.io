@@ -3,8 +3,8 @@ title: "AI Agent Workshop - ReAct Planning Parttern 源码对比, Google ADK vs 
 date: 2025-08-16 00:00:00 +0000
 categories: [ai, agent]
 tags: [ai, agent, adk, langChain, Planning Pattern, ReAct Pattern]
-published: false
-description: 
+published: true
+description: agent框架里的坑，不看源码是不知道的！
 ---
 
 ## Background
