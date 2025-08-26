@@ -214,7 +214,11 @@ Question: {input}
 google adk支持循环的ReAct Pattern + 打磨过的prompt
 langChain 支持一次的ReAct Pattern + 一个很简化的prompt
 
-或许它们运行起来之后，不会有太大的区别呢？一切要等实践之后才能下定论。明天我会用google adk 和 langChain 分别实现一个简单的ReAct agent，来对比它们的效果。
+其实，一个agent 框架，是否支持各种pattern是一个很重要的因素，众所周知，langChain在各方面的支持都很丰富，生态也较为完善，但是在读过源码后，发现它对react的支持如此的潦草，我心里就有些降低对它的评级了。讲真，这就是这个workshop的意义所在，我们希望更加深入的去了解各个agent框架的优劣。
+
+虽然但是或许，不排除等它们运行起来之后，两者之间不会有太大的区别。但是这一切都要等实践之后才能下定论。
+
+明天我会用google adk 和 langChain 分别实现一个简单的ReAct agent，来对比它们的效果。
 
 ref：
 - https://arxiv.org/abs/2210.03629
