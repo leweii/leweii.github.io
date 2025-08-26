@@ -1,5 +1,5 @@
 ---
-title: "AI Agent Workshop - ReAct Planning Parttern 源码对比"
+title: "AI Agent Workshop - ReAct Planning Parttern 源码对比, Google ADK vs LangChain"
 date: 2025-08-16 00:00:00 +0000
 categories: [ai, agent]
 tags: [ai, agent, adk, langChain, Planning Pattern, ReAct Pattern]
