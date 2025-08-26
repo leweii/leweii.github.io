@@ -206,7 +206,17 @@ Begin!
 Question: {input}
 
 ```
+
 看得出langChain的实现，还是完全根据文献里的短小内容来设置的。
+
+个人感觉这样的实现真的有点随意啊。
+
+除了注入的prompt以外，源码里还有两个例子分别在文件
+- /libs/langchain/langchain/agents/react/textworld_prompt.py
+- /libs/langchain/langchain/agents/react/wiki_prompt.py
+
+从例子看出，langChain的实现，是基于llm 支持planning 的基础上写的，而且 较为潦草。
+
 
 ## 最后
 
