@@ -1,5 +1,5 @@
 ---
-title: "AI Agent Workshop - ReAct Planning Parttern 源码对比, Google ADK vs LangChain"
+title: "AI Agent Workshop - ReAct Parttern 源码对比, Google ADK vs LangChain"
 date: 2025-08-16 00:00:00 +0000
 categories: [ai, agent]
 tags: [ai, agent, adk, langChain, Planning Pattern, ReAct Pattern]
@@ -107,6 +107,8 @@ if first_fc_part_index > 0:
 
 如果你使用的大模型支持planning，那么就可以直接使用`build_in_planner.py`.
 build in planner 就没有循环，只有一次reasoning -> action -> observation. 但是由于llm支持planning，他会一次调用多次tool。
+
+我提交了一个java 实现的pr，https://github.com/leweii/adk-java/pull/1 能够更好的从这个pr里去理解react 的实现。
 
 ### LangChain Implementation
 
@@ -219,15 +221,20 @@ Question: {input}
 
 ## 最后
 
-对比两者最大的区别就是
-google adk支持循环的ReAct Pattern + 打磨过的prompt
-langChain 支持一次的ReAct Pattern + 一个很简化的prompt
+对比两者最大的区别就是:
 
-其实，一个agent 框架，是否支持各种pattern是一个很重要的因素，众所周知，langChain在各方面的支持都很丰富，生态也较为完善，但是在读过源码后，发现它对react的支持如此的潦草，我心里就有些降低对它的评级了。讲真，这就是这个workshop的意义所在，我们希望更加深入的去了解各个agent框架的优劣。
+1. 当llm 不支持planning 的时候
+google adk支持循环的ReAct Pattern
+langChain 支持一次的ReAct Pattern
+
+2. Prompt 不一样
+google adk是一个经过打磨的prompt
+langChain 一个很简化的prompt
+
+
+其实，一个agent 框架，是否支持各种pattern是一个很重要的因素，众所周知，langChain在各方面的支持都很丰富，生态也较为完善，但是在读过源码后，发现它对react的支持有些潦草，我心里就有些降低对它的评级了。讲真，这就是这个workshop的意义所在，我们希望更加深入的去了解各个agent框架的优劣。
 
 虽然但是或许，不排除等它们运行起来之后，两者之间不会有太大的区别。但是这一切都要等实践之后才能下定论。
-
-明天我会用google adk 和 langChain 分别实现一个简单的ReAct agent，来对比它们的效果。
 
 ref：
 - https://arxiv.org/abs/2210.03629
