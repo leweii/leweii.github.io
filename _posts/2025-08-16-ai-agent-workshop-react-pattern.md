@@ -24,6 +24,8 @@ description: agent框架里的坑，不看源码是不知道的！
 
 ReAct 孕育而生，ReAct 是Reasoning + Action 的缩写。
 
+![Image](/2025-08-16-ai-agent-workshop-react-pattern/1.png)
+
 ```aiignore
 用户问题
 ↓
