@@ -12,8 +12,7 @@ description: 手搓代码
 
 看完手痒痒，立刻就开始了我的手搓ReAct 代码之旅。
 
-## react结果
-先看运行效果：
+## 运行效果
 
 ### 第一个问题：
 
@@ -24,7 +23,8 @@ description: 手搓代码
 ```text
 You > 18+19 等于多少？
 
-Agent > /*PLANNING*/
+Agent > 
+/*PLANNING*/
 1. Use the plus tool to calculate the sum of 18 and 19.
 2. Output the result.
 
@@ -44,7 +44,8 @@ Function Response: FunctionResponse{willContinue=Optional.empty, scheduling=Opti
 ```text
 You > 生成两个随机数，求和
 
-Agent > /*PLANNING*/
+Agent > 
+/*PLANNING*/
 1. Generate two random integers.
 2. Calculate the sum of the two integers using the `plus` function.
 3. Output the result.
@@ -131,7 +132,8 @@ Function Response: FunctionResponse{willContinue=Optional.empty, scheduling=Opti
 ```text
 You > 生成两个随机数，求guagua值
 
-Agent > Function Call: FunctionCall{id=Optional[adk-187de5ff-96ce-4911-945e-060c944cf718], args=Optional[{}], name=Optional[randomInt]}Function Call: FunctionCall{id=Optional[adk-37fe50f7-7e78-4412-bb52-94b737edbfbc], args=Optional[{}], name=Optional[randomInt]}
+Agent > 
+Function Call: FunctionCall{id=Optional[adk-187de5ff-96ce-4911-945e-060c944cf718], args=Optional[{}], name=Optional[randomInt]}Function Call: FunctionCall{id=Optional[adk-37fe50f7-7e78-4412-bb52-94b737edbfbc], args=Optional[{}], name=Optional[randomInt]}
 Function Response: FunctionResponse{willContinue=Optional.empty, scheduling=Optional.empty, id=Optional[adk-187de5ff-96ce-4911-945e-060c944cf718], name=Optional[randomInt], response=Optional[{integer=9, status=success}]}Function Response: FunctionResponse{willContinue=Optional.empty, scheduling=Optional.empty, id=Optional[adk-37fe50f7-7e78-4412-bb52-94b737edbfbc], name=Optional[randomInt], response=Optional[{integer=21, status=success}]}
 9 and 21, I can't calculate the guagua value for you.  I can only call the guagua function with two integers.
 ```
