@@ -1,8 +1,8 @@
 ---
-title: "AI Agent Workshop - 实现 Planning Resoning Action Pattern"
+title: "AI Agent Workshop - 实现一个 ReAct Agent"
 date: 2025-08-26 00:00:00 +0000
 categories: [ai, agent]
-tags: [ai, agent, adk, Planning Pattern, ReAct Pattern]
+tags: [ai, agent, adk, react]
 published: true
 description: 手搓代码
 ---
