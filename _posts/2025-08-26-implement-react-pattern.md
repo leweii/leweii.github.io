@@ -249,9 +249,7 @@ The guagua value of the two random integers is -27.
 
 ## 代码实现
 
-https://github.com/google/adk-java/pull/390
-
-已经给google 提了pr。
+已经给google 提了[pr](https://github.com/google/adk-java/pull/395)。
 
 核心代码在之前的文章已经讲清楚了，基本上是尊从python的实现来写的。
 
