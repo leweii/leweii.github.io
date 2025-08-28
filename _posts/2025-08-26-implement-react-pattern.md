@@ -14,6 +14,32 @@ description: 手搓代码
 
 ## 运行效果
 
+### 运行环境
+
+llm: gemini-2.0-flash-lite
+
+tools: randomInt, multiply, plus, guagua
+
+> guagua值是我编造的一个概念，因为我发现现在的模型都内置了简单的加减乘除功能，我为了确保模型能够通过调用我的tools来执行，就编造了这个对它来说是全新的概念。
+
+```java
+public static final BaseAgent ROOT_AGENT =
+  LlmAgent.builder()
+      .name("multi_tool_agent")
+      .model("gemini-2.0-flash-lite")
+      .description("Agent to answer questions about math.")
+      .planner(new PlanReActPlanner())
+      .instruction(
+          "You are a helpful agent who can answer user questions about math. you can only use the given tools.")
+      .tools(
+          FunctionTool.create(CityTimeWeather.class, "randomInt"),
+          FunctionTool.create(CityTimeWeather.class, "multiply"),
+          FunctionTool.create(CityTimeWeather.class, "guagua"),
+          FunctionTool.create(CityTimeWeather.class, "plus")
+      )
+      .build();
+```
+
 ### 第一个问题：
 
 `18+19 等于多少？`
@@ -66,6 +92,34 @@ The sum of the two random numbers is 86.
 稍微观察一下，在这样的模式运行之下，模型很准确的找到了plus tool，通过plus 函数调用来解决了它的问题。
 
 之后的试验里，我发现模型常常不使用tool来计算数字之和，令我感到不安。
+
+于是我编造了一个guagua值的概念用于测试，运行效果：
+
+`生成两个随机数，求guagua值`
+
+```text
+You > 生成两个随机数，求guagua值
+
+Agent >
+/*PLANNING*/
+1. Generate two random integers using the `default_api.randomInt()` function.
+2. Calculate the guagua value of the two random integers using the `default_api.guagua()` function.
+3. Print the result.
+
+/*ACTION*/
+Function Call: FunctionCall{id=Optional[adk-6b2c14cf-0dc1-491d-8c0d-0dad37e5318f], args=Optional[{}], name=Optional[randomInt]}Function Call: FunctionCall{id=Optional[adk-5d5467db-7ea5-497e-9fb7-53427e5da7e0], args=Optional[{}], name=Optional[randomInt]}
+Function Response: FunctionResponse{willContinue=Optional.empty, scheduling=Optional.empty, id=Optional[adk-6b2c14cf-0dc1-491d-8c0d-0dad37e5318f], name=Optional[randomInt], response=Optional[{status=success, integer=35}]}Function Response: FunctionResponse{willContinue=Optional.empty, scheduling=Optional.empty, id=Optional[adk-5d5467db-7ea5-497e-9fb7-53427e5da7e0], name=Optional[randomInt], response=Optional[{status=success, integer=38}]}
+/*REASONING*/
+I have generated two random integers: 35 and 38. Now I will use the `guagua` function to compute the value.
+
+/*ACTION*/
+Function Call: FunctionCall{id=Optional[adk-03a50e35-2fa0-42fd-bf34-a1d6d50bd7d3], args=Optional[{y=38, x=35}], name=Optional[guagua]}
+Function Response: FunctionResponse{willContinue=Optional.empty, scheduling=Optional.empty, id=Optional[adk-03a50e35-2fa0-42fd-bf34-a1d6d50bd7d3], name=Optional[guagua], response=Optional[{status=success, integer=-3}]}
+/*FINAL_ANSWER*/
+The guagua value of the two random numbers 35 and 38 is -3.
+```
+
+符合预期！
 
 ### 第三个问题 - 一个离谱的问题
 
