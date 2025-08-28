@@ -40,7 +40,7 @@ public static final BaseAgent ROOT_AGENT =
       .build();
 ```
 
-### 第一个问题：
+### 第一个问题:
 
 `18+19 等于多少？`
 
@@ -123,9 +123,7 @@ The guagua value of the two random numbers 35 and 38 is -3.
 
 ### 第三个问题(一个离谱的问题):
 
-```text
-生成三个随机数，x,y,z。我有一个长方形，一个正方形，长方形边长是x、y，正方形边长是z。正方形的面积大还是长方形的面积大？如果是正方形面积大，就告诉我正方形和长方形的面积之和。如果是长方形面积大，就告诉我正方形和长方形的guagua值。
-```
+`生成三个随机数，x,y,z。我有一个长方形，一个正方形，长方形边长是x、y，正方形边长是z。正方形的面积大还是长方形的面积大？如果是正方形面积大，就告诉我正方形和长方形的面积之和。如果是长方形面积大，就告诉我正方形和长方形的guagua值。`
 
 ```text
 
@@ -163,10 +161,16 @@ The guagua value is 1067.
 稍微解释一下，agent 再多次reasoning 之后，发现没有任何需要执行的function call了，于是他就自行停止了。
 从效果上看，整体还是不错的。模型能够处理相对复杂的问题。
 
-## 以此为锚点，向下探索一下模型在什么情况下会出问题
+## 继续向下探索
 
-### 没有react prompt 和任何replanning + action 的实现下，提出第二个问题
+我会逐渐注释掉ReAct的能力，并且用相同的问题向他发问。
+- 没有react prompt + 没有planner 的agent
+- 有react prompt + 没有replanning 的自循环
+
+### 一个裸模型
+
 `生成两个随机数，求和`
+
 如果我注释掉我的planner 来执行一次我的agent 
 
 ```text
@@ -179,7 +183,8 @@ Function Response: FunctionResponse{willContinue=Optional.empty, scheduling=Opti
 ```
 可以看到，模型只调用了两次randomInt，96 + 22 = 118并没通过有调用plus函数来计算。这里容易产生幻觉。
 
-换个问题避免模型使用内置的数学函数：
+为了避免模型调用自身内置的加法函数，我换一个问题：
+
 `生成两个随机数，求guagua值`
 
 ```text
@@ -205,7 +210,7 @@ Function Response: FunctionResponse{willContinue=Optional.empty, scheduling=Opti
 ```
 
 
-### 有react prompt，但是没有replanning + reasoning的情况下，提出第二个问题
+### 只有react prompt 的模型
 
 我稍微修改一下代码子，直接在PlanReActPlanner里不process 任何response:
 
@@ -218,6 +223,9 @@ Function Response: FunctionResponse{willContinue=Optional.empty, scheduling=Opti
   }
 
 ```
+发问：
+
+`生成两个随机数，求guagua值`
 
 效果如下：
 
@@ -246,6 +254,10 @@ The guagua value of the two random integers is -27.
 效果符合预期！
 
 这个结果让我感到有意思。看起来大部分的情况下，我们只要像langchain的实现一样，给一个prompt，模型就能很好的支持replanning。或许只有支持planning的模型由此效果。这次实验里，我用的是`gemini-2.0-flash-lite`
+
+实验先到此暂停一下，因为我觉得绝大部分的单线任务问题，我们通过初始化的planing prompt都能支持。之后我会继续探索一些多线，更为复杂的任务来进行实验。
+
+我认为当前我们绝大多数人对ai对依赖，不至于会100%依赖ai执行一个很复杂的任务。我不想再编造一些不靠谱，上下文不充足，又十分复杂，结果有多种可能性的任务继续我的测试了。
 
 ## 代码实现
 
