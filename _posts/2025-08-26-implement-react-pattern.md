@@ -278,9 +278,11 @@ PlanReActPlanner
 1. 实现react prompt
 2. process response时，判断是否还有function call，如果有就继续循环
 
-## 结论
+## summarize
 
 我们比较了三种递进的react pattern 的能力
 1. 没有react 的prompt + 没有planner 的agent：解决问题能力完全不符合预期
 2. 有react prompt 但是没有replanning + action 的agent：能解决相对复杂的问题，甚至有点超出我的预期，只要对agent的请求不是复杂到要拆解多步，比如画一个html页面，解释地心说的原理，我觉得这类方式就能解决很多基本问题。
 3. 有react prompt + 有replanning + action 循环的agent：我并没测试出这个pattern的边界，敬请期待
+
+在测试过程中，我发现了很多产生幻觉的节点，比如llm对中文中的数学运算存在很严重的误解，我说求和，求差，它会理解成别的运算逻辑，以后的开发要避免这类属于的描述。或者尽量用英文描述。
