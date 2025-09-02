@@ -2,9 +2,9 @@
 title: "AI Agent Workshop - Phase 1 summarize"
 date: 2025-09-01 00:00:00 +0000
 categories: [ai, agent]
-tags: [ai, agent, adk, react]
+tags: [ai, agent, adk]
 published: true
-description: 手搓代码
+description: 周末分享文字化
 ---
 
 ## Background
