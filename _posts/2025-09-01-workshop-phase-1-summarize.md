@@ -141,12 +141,12 @@ llm是另一个关键因素，而我们能左右的就是prompt，和context eng
 
 ![Image](/2025-09-01-workshop-phase-1-summarize/2.png)
 
-①.第一次会话请求，
-- 前端生成chat_session_id发起http请求到后端
-- 监听WebSocket ，后端收到连接后，根据chat_ session_id来分配channel
-②. Agent service根据chat_ session_id创建google ADK Session对象，并发起LLM请求
-③④.LLM返回流消息时，从event中拿到chat_session_id,组装消息对象到Kafka
-⑤⑥⑦.Recipe site(两个消费者)从KafKa拉取消息，根据chat_session_id拿到web socket channel,从channle发送消息
+- ①.第一次会话请求，
+  - 前端生成chat_session_id发起http请求到后端
+  - 监听WebSocket ，后端收到连接后，根据chat_ session_id来分配channel 
+- ②. Agent service根据chat_ session_id创建google ADK Session对象，并发起LLM请求 
+- ③④.LLM返回流消息时，从event中拿到chat_session_id,组装消息对象到Kafka 
+- ⑤⑥⑦.Recipe site(两个消费者)从KafKa拉取消息，根据chat_session_id拿到web socket channel,从channle发送消息
 
 Agent 是否要支持三高？我认为可以，但是我们还没有这些实践，因为每次对llm 的请求看上去是连续的，实际上是原子的，我们唯一需要维护好的就是聊天窗口的推送工作，需要准确的找到对应的长连接。
 
@@ -180,8 +180,5 @@ adk很好的抽象了这些能力，我们也在大量的使用，比如当用�
 告诉你执行了，实际并非如此。
 我们的解决方案是，agui，所有的function call 都应该有对应的前端展示+用户approve的动作。这样人的期待和实际执行，就能够串联起来，而非一个黑盒一样的文字回复。
 
-![Image](/2025-09-01-workshop-phase-1-summarize/3.png)
-
-![Image](/2025-09-01-workshop-phase-1-summarize/4.png)
-
+## END
 让我们这篇文章就结束在幻觉吧，随着llm的能力增强，token的价格下降，我相信agent在短时间，还能有许多提升的空间。
