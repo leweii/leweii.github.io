@@ -30,7 +30,7 @@ atlassian 允许你通过简单的流程创建一个自己的agent，很妙对�
 
 > 给人的启发是，以后我们创建任何类型的数据集，都可以以此为参考，比如我要创建一个“工单“,在接受简单的描述之后，它就能根据这些信息把对应的字段填充完毕，有些时候设置要连assign 给谁都分配好。
 
-![Image](/2025-09-03-workshop-jira-agent/1.png)
+![Image](/2025-09-03-atlassian-rovo-chat/1.png)
 
 ### 第二步：定义scope
 
@@ -38,7 +38,7 @@ agent scope 包含
 1. workspace/knowledge
 2. tools
 
-![Image](/2025-09-03-workshop-jira-agent/2.png)
+![Image](/2025-09-03-atlassian-rovo-chat/2.png)
 
 ### 完成
 
@@ -66,7 +66,7 @@ agent scope 包含
 3. 可以轻松的访问atlassian数据，比如@someone，精确的查找对应的数据
 4. 其它所有agent 都有的东西，比如stop，流式输出，history
 
-![Image](/2025-09-03-workshop-jira-agent/4.png)
+![Image](/2025-09-03-atlassian-rovo-chat/4.png)
 
 还有一个很有意思的点，值得所有平台式的agent 学习，他能搜索指定的用户，以类似mention @ 的形式来与agent 沟通关于人的具体事项。
 
@@ -83,7 +83,7 @@ agent scope 包含
 
 看到一篇热乎的aws blog [Effectively building AI agents on AWS Serverless](https://aws.amazon.com/blogs/compute/effectively-building-ai-agents-on-aws-serverless/)
 
-![Image](/2025-09-03-workshop-jira-agent/5.png)
+![Image](/2025-09-03-atlassian-rovo-chat/5.png)
 
 ## 实际使用感受
 
@@ -104,7 +104,7 @@ agent scope 包含
 
 当然我要故意捉弄它，使用效果肯定很差，但是实际情况是，我们的产品大爱这款agent
 
-![Image](/2025-09-03-workshop-jira-agent/3.png)
+![Image](/2025-09-03-atlassian-rovo-chat/3.png)
 
 ## 对照自己的产品
 
