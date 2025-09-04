@@ -42,7 +42,11 @@ agent scope 包含
 
 ### 完成
 
-我原本以为，这样的一个agent 需要一定的发布时间，实则不然，它只是启动了一个虚拟机。几秒之后，我就能使用这个agent了。
+我原本以为，这样的一个agent 需要一定的发布时间，实则不然，它只是保存了一系列agent运行所需要的配置。
+
+当用户第一次连接上agent时，这个agent作为一个线程，启动在后台。从配置到完成配置不到10分钟，从保存到开始使用，不到20s。
+
+> 给我们的启示是multiple agent，一个服务应该运行无限多个agent，Alex 创建了一个a agent，Bob创建了一个b agent，他们只在有人启动聊天的时候才运行，在没人聊天的时候销毁。
 
 ## 开始使用
 
@@ -65,24 +69,24 @@ agent scope 包含
 ![Image](/2025-09-03-workshop-jira-agent/4.png)
 
 ## 可能的实现原理
-我看不出它用了什么llm，但是看得出效果很好。
+我看不出它用了什么llm，但是看得出效果很好，盲猜chatGPT-5。
 
-我看不出它是否有对我所定义的知识库做了向量处理，我觉得应该没有，因为atlassian里的数据是非常动态的。
+感觉没有对数据做向量处理，因为atlassian里的数据是非常动态的。
 
-它应该是通过tools 对文档进行的一系列读写总结的操作。
+如果是我，我会用serverless，第一次用户请求的时候创建agent，最后一个用户断开的时候销毁agent
 
-它一定是利用了a2a，因为我所启动的agent能力
+看到一篇热乎的aws blog [Effectively building AI agents on AWS Serverless](https://aws.amazon.com/blogs/compute/effectively-building-ai-agents-on-aws-serverless/)
 
-它背后运行的agent 框架值得我们深入讨论。
+![Image](/2025-09-03-workshop-jira-agent/5.png)
 
 ## 实际使用感受
 
-1. 10min 的创建流程
-2. 检索企业文档
-3. 能够溯源知识
+1. 10min 的定制流程
+2. 检索垂直领域知识
+3. 能够溯源
 4. 优秀的交互过程
 
-单纯有这几点的agent，还要什么自行车？
+有一个能做到这么几点的agent，还要什么自行车？
 
 何况atlassian集合了jira + confluence 两个产品线，这两个产品里面的数据，全是公司的垂直领域知识，能解锁巨大的实用空间。
 
@@ -109,3 +113,7 @@ agent 开发一定要落实到每个团队，因为每个团队所需要的agent
 这个方案很好的解决了agent 边界不清晰，过多tools带来的幻觉问题。
 
 我们迟早要经历，从一个单纯的agent 开发，需要过渡到agent 注册平台的开发。
+
+#### references
+- [Self-hosting AI agents on AWS with Serverless Container Framework v2](https://www.serverless.com/blog/self-hosting-ai-agents-on-aws-with-serverless-container-framework-v2)
+- [Serverless AI Agents on AWS: A Small Team’s Quiet Revolution (2025)](https://aws.plainenglish.io/serverless-ai-agents-on-aws-a-small-teams-quiet-revolution-2025-58fb9a68f311)
