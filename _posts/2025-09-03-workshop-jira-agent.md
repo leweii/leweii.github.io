@@ -1,5 +1,5 @@
 ---
-title: "AI Agent Workshop - Jira Agent，一个成熟的服务器端agent"
+title: "AI Agent Workshop - Atlassian Rovo Chat，一个成熟的服务器端Agent"
 date: 2025-09-03 00:00:00 +0000
 categories: [ai, agent]
 tags: [ai, agent, adk]
