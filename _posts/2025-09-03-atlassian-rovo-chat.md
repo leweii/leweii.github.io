@@ -120,6 +120,12 @@ agent 开发一定要落实到每个团队，因为每个团队所需要的agent
 
 我们迟早要经历，从一个单纯的agent 开发，需要过渡到agent 注册平台的开发。
 
+## 从公司层面看
+
+Atlassian Rovo Chat 能够集成jira 和confluence，如果把这两个系统看作是公司内部两个团队，我们就能很容易的推演出一个公司该有的agent形态。
+
+一个ai agent platform部门，集中完成agent 平台的搭建，各个职能部门专注于开发tools，再此基础上，大家可以排列组合出各式各样适合不同角色的agent，供公司不同的部门使用。
+
 #### references
 - [Self-hosting AI agents on AWS with Serverless Container Framework v2](https://www.serverless.com/blog/self-hosting-ai-agents-on-aws-with-serverless-container-framework-v2)
 - [Serverless AI Agents on AWS: A Small Team’s Quiet Revolution (2025)](https://aws.plainenglish.io/serverless-ai-agents-on-aws-a-small-teams-quiet-revolution-2025-58fb9a68f311)
