@@ -58,6 +58,7 @@ Knowledge Base
 - I am a software developer
 - I like to drink coffee
 - I like my agent being kind and smart
+- the folder ~/Chancetop, ~/github have multiple sub-folders, each folder is a project that cloned from github
 ```
 
 - `daily_tasks.md`
@@ -85,6 +86,14 @@ Add any additional notes or reminders here.
 ```
 
 以下就是执行效果和结果：
+
+注意红色高亮部分，调用的是`browser-assistant` agent，粉色高亮的部分，调用的是`pc-command-executor` agent.
+
+![Image](/2025-09-30-claude-sub-agent/6.jpg)
+
+像这样output token很少的应用，cost 并不高。我调试了好几次，也只有0.0002 us刀乐。
+
+![Image](/2025-09-30-claude-sub-agent/7.jpg)
 
 可惜的是，执行速度真是令人堪忧，但是我觉得问题在于我，我没有告诉它对应代码库的目录结构，它只好不停的尝试和试错，所以影响了执行速度。
 
