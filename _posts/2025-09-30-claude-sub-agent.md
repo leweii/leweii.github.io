@@ -120,7 +120,7 @@ Add any additional notes or reminders here.
 
 那么曾经市场需求如此之大的软件开发人员的需求量，会急剧下滑，变成这样一个局势。真正留给开发者开发的空间不多了。
 
-![Image](/2025-09-30-claude-sub-agent/4.jpg)
+![Image](/2025-09-30-claude-sub-agent/5.jpg)
 
 当然软件并不是受到ai冲击最大的行业，内容行业，才是。比如自媒体运营，广告，设计，云云。
 
