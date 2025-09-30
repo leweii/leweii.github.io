@@ -13,7 +13,7 @@ description: 又来用工程的方式解决问题了！
 
 其额外的好处是，
 1. 节约token，只有在特定的agent下会引用特定的tools。
-2. 预设，也就是保存好自己常用的agent prompt
+2. 预设，也就是保存好自己常用的agent prompt。
 
 这篇文章，就分享一个在claude里，预设sub-agent的过程。
 
