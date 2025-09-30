@@ -50,7 +50,8 @@ description: 又来用工程的方式解决问题了！
 ### step 2, define context & tasks
 既然是一个regular task，又有一些regular 的背景和上下文，这样的个人助理类的agent 可以把每天重复的内容保存成一个md。我定义了两个md
 
-- knowledge.md
+- `knowledge.md`
+
 ```java
 Knowledge Base
 - my name is Jakob He
@@ -59,7 +60,8 @@ Knowledge Base
 - I like my agent being kind and smart
 ```
 
-- daily_tasks.md
+- `daily_tasks.md`
+
 ```java
 Daily Tasks
 Today's Tasks
