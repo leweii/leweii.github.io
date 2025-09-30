@@ -2,7 +2,7 @@
 title: "Claude 使用技巧 - sub agent"
 date: 2025-09-30 00:00:00 +0000
 categories: [ai, agent]
-tags: [ai, agent, adk]
+tags: [ai, agent]
 published: true
 description: 又来用工程的方式解决问题了！
 ---
@@ -11,7 +11,9 @@ description: 又来用工程的方式解决问题了！
 
 与其使用**一个**agent，不如预设多个垂直领域的agent，让各自的agent只处理某个垂直领域的问题，这样，我们能够很好的控制边界，让自己最经常使用的业务场景变得可控。
 
-其额外的好处是，节约token，只有在特定的agent下，会
+其额外的好处是，
+1. 节约token，只有在特定的agent下会引用特定的tools。
+2. 预设，也就是保存好自己常用的agent prompt
 
 这篇文章，就分享一个在claude里，预设sub-agent的过程。
 
@@ -86,10 +88,9 @@ Add any additional notes or reminders here.
 
 以下就是执行效果和结果：
 
-
 可惜的是，执行速度真是令人堪忧，但是我觉得问题在于我，我没有告诉它对应代码库的目录结构，它只好不停的尝试和试错，所以影响了执行速度。
 
-### 我们投入了什么，得到了什么？
+### 最后：我们投入了什么，得到了什么？
 
 以前：
 
