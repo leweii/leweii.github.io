@@ -51,10 +51,8 @@ description: 又来用工程的方式解决问题了！
 既然是一个regular task，又有一些regular 的背景和上下文，这样的个人助理类的agent 可以把每天重复的内容保存成一个md。我定义了两个md
 
 - knowledge.md
-```text
-# Knowledge Base
-
-## 
+```java
+Knowledge Base
 - my name is Jakob He
 - I am a software developer
 - I like to drink coffee
@@ -62,20 +60,17 @@ description: 又来用工程的方式解决问题了！
 ```
 
 - daily_tasks.md
-```text
-# Daily Tasks
-
-## Today's Tasks
+```java
+Daily Tasks
+Today's Tasks
 - [ ] git pull all my code in ~/Chancetop and ~/Github folder
 - [ ] open below links in browser:
 		- https://wonder.atlassian.net/jira/software/c/projects/MD/boards/10/backlog
 		- https://github.com/
 - [ ] summarize my jira tickets and list all todos
-
-## Completed Tasks
+Completed Tasks
 - [x] Example completed task
-
-## Notes
+Notes
 Add any additional notes or reminders here.
 ```
 
