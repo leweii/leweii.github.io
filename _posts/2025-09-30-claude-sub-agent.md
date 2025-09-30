@@ -69,7 +69,8 @@ Today's Tasks
 - [ ] open below links in browser:
 		- https://wonder.atlassian.net/jira/software/c/projects/MD/boards/10/backlog
 		- https://github.com/
-- [ ] summarize my jira tickets and list all todos
+- [ ] open slack
+- [ ] summarize my jira tickets and list all todos in a new file, naming after date
 Completed Tasks
 - [x] Example completed task
 Notes
