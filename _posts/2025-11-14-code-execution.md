@@ -55,9 +55,10 @@ Capelin
 ```
 
 我可以这样问：
-1. `write a code to get abbreviations in x.json`
+- `write a code to get abbreviations in x.json`
+
 也可以这样问：
-2. `get the abbreviations from x.json`
+- `get the abbreviations from x.json`
 
 两种问法的区别是
 - 第一种问法巧妙的绕开了llm 幻觉问题，llm确保代码是正确的，从而确保结果是正确的。
