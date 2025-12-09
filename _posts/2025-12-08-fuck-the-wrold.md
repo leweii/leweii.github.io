@@ -44,4 +44,4 @@ published: true
 > 
 > So insecure
 
-做个麻木的人，来自我保护吧～
+做个麻木的人，来自我保护吧～~
