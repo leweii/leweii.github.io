@@ -15,19 +15,33 @@ published: true
 怀疑世界，怀疑人生，怀疑自我。我现在都心境，跟这首歌可谓是，一模一样：
 
 > Crawling in my skin
+> 
 > These wounds, they will not heal
+> 
 > Fear is how I fall
+> 
 > Confusing what is real
+> 
 > There's something inside me that pulls beneath the surface
+> 
 > Consuming, confusing
+> 
 > This lack of self control I fear is never ending
+> 
 > Controlling
+> 
 > I can't seem
+> 
 > To find myself again
+> 
 > My walls are closing in
+> 
 > (Without a sense of confidence, I'm convinced)
+> 
 > (That there's just too much pressure to take)
+> 
 > I've felt this way before
+> 
 > So insecure
 
 做个麻木的人，来自我保护吧～
