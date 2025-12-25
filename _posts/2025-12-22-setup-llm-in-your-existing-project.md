@@ -45,11 +45,11 @@ cd 5-just-ask
 openspec init
 ```
 
-选择claud code
+选择claude code
 
 ![Image](/2025-12-22-setup-llm-in-your-existing-project/1.jpg)
 
-创建之后，会看到一组项目树被创建出来，其中定义了技术栈，需求，测试用例，代码规范等。这样的内容能够一直被claude 通过agnet.md 指向，被claude作为上下文。
+创建之后，会看到一组项目树被创建出来，其中定义了技术栈，需求，测试用例，代码规范等。这样的内容能够一直被claude 通过AGENTS.md 指向，被claude作为上下文。
 
 ![Image](/2025-12-22-setup-llm-in-your-existing-project/2.jpg)
 
@@ -98,7 +98,7 @@ openspec/
 
 ### 第二步: openspec 需求定义（需求变更）
 
-进入claude code，开始定义你的项目吧，我今天要做的是把gemini 3 集成到slack bot 的工作，于是我输入了一下信息。
+进入claude code，开始定义你的项目吧，我今天要做的是把gemini 3 集成到slack bot 的工作，于是我输入了以下信息。
 
 ```text
 I like to develop an integration app that I can connect google gemini 3 llm into my slack chat bot
@@ -200,10 +200,12 @@ changes 文件夹也新建了一个文件，放入了proposal.md 和 design.md
 
 ## 我的感受
 
-现在的llm 编程工具，结合一些好的实践，是能够开发出较为复杂的的项目的。
+现在的llm 编程工具，结合一些好的实践，是能够开发出较为复杂的项目的。
 
 比如我们在模块划分上动点脑筋，在需求拆分上动点脑筋，在文档管理上动点脑筋，llm的那些token 窗口问题，幻觉问题，都不再是什么大问题。
 
-我用类似的方法开发了一个模块化的，相对复杂的自动化测试工具，在这个类似postman 的软件体量下，llm coding works will！不过这件事烧了我（公司）500刀🤫。下次有机会着重介绍给大家玩玩。
+我用类似的方法开发了一个模块化的，相对复杂的自动化测试工具，在这个类似postman 的软件体量下，llm coding works well！不过这件事烧了我（公司）500刀🤫。下次有机会着重介绍给大家玩玩。
+
+![Image](/2025-12-22-setup-llm-in-your-existing-project/9.jpg)
 
 ![Image](/2025-12-22-setup-llm-in-your-existing-project/8.jpg)
