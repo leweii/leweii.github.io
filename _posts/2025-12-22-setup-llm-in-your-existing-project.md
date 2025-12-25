@@ -3,7 +3,7 @@ title: "Openspec 实操，十分钟搭建slack to llm集成"
 date: 2025-12-08 00:00:00 +0000
 categories: [ai, openspec, gemini]
 tags: [ai, openspec, gemini]
-published: false
+published: true
 ---
 
 当前，vibe coding 或者sdd 很适合做小项目。今天就上手做一个。项目叫·just-ask·
