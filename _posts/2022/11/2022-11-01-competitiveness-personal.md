@@ -3,7 +3,7 @@ title: "个人竞争力"
 date:   2022-10-27
 tags:
   - tech
-  - engineering practice
+  - engineering
   - management
 published: false
 minute: 3

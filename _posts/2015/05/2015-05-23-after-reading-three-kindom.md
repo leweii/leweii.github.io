@@ -2,8 +2,8 @@
 title: "三国演义 - 读后感"
 date:   2015-05-23
 tags:
-  - 读后感
-  - 小说
+  - reading
+  - fiction
 ---
 
 

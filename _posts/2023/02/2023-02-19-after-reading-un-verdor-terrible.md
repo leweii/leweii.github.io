@@ -2,8 +2,8 @@
 title: "当我们不再理解世界 - 读后感"
 create_time: 2023-02-16 10:19
 tags:
-  - book
-  - novel
+  - reading
+  - fiction
 ---
 _previous note:_
 

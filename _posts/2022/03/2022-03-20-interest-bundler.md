@@ -2,7 +2,8 @@
 title: "interest bundler - KPI, Contract, Organization, Nation and software company"
 date:   2022-03-20
 tags:
-  - 杂文
+  - life
+  - essay
 published: false
 ---
 

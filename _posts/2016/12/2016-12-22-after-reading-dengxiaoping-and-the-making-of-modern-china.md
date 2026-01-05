@@ -2,8 +2,8 @@
 title: "邓小平传 - 读后感"
 date:   2016-12-22
 tags:
-  - 读后感
-  - 传记
+  - reading
+  - biography
 ---
 
 作者: 理查德·伊文思 (Richard Evans)

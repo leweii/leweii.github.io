@@ -3,7 +3,7 @@ title: "Omnifocus: Review"
 date:   2022-04-14
 tags:
   - tips
-  - omnifocus
+  - productivity
 published: false
 ---
 

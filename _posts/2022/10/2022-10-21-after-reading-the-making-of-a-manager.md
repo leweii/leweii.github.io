@@ -2,7 +2,7 @@
 title: "The making of a manager - 读后感"
 date:   2022-10-21
 tags:
-  - 读后感
+  - reading
 published: true
 minute: 5
 ---

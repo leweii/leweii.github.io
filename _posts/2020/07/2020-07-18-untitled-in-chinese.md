@@ -2,8 +2,8 @@
 title: "无题"
 date:   2020-07-18
 tags:
-  - 杂文
   - life
+  - essay
 ---
 
 

@@ -2,8 +2,8 @@
 title: "月亮与六便士 - 读后感"
 date:   2016-01-11
 tags:
-  - 读后感
-  - 小说
+  - reading
+  - fiction
 ---
 
 作者: [英] 毛姆

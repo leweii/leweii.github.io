@@ -3,7 +3,7 @@ title: "Define a Version Rule and Tag IT"
 date:   2022-02-18
 tags:
   - tech
-  - engineering practice
+  - engineering
   - tips
 published: true
 ---

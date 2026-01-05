@@ -3,7 +3,7 @@ title: "Omnifocus: Inbox 2"
 date:   2022-04-06
 tags:
   - tips
-  - omnifocus
+  - productivity
 published: true
 ---
 

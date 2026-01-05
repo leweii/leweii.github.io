@@ -2,9 +2,8 @@
 title: "嗯~青岛啤酒广告"
 date:   2022-06-26
 tags:
-  - tech
-  - engineering practice
-  - tips
+  - life
+  - photo
 published: true
 ---
 

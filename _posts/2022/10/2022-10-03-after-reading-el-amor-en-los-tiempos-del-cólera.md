@@ -2,7 +2,7 @@
 title: "霍乱时期的爱情 - 读后感"
 date:   2022-10-03
 tags:
-  - 读后感
+  - reading
 published: true
 ---
 

@@ -2,7 +2,7 @@
 title: "矛盾论 - 读后感"
 date:   2022-05-02
 tags:
-  - 读后感
+  - reading
   - COVID19
 published: true
 ---

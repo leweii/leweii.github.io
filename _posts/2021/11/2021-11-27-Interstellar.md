@@ -3,7 +3,8 @@ title: '星际穿越'
 date: 2021-11-27 00:00:00
 excerpt: 我不知道IMBA它排名多少，《星际穿越》就是我的菜。心目中top one。
 tags:
-  - 杂文
+  - life
+  - essay
 ---
 
 ### Background

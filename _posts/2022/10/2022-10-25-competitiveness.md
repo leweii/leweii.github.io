@@ -3,7 +3,7 @@ title: "竞争力系列"
 date:   2022-10-25
 tags:
   - tech
-  - engineering practice
+  - engineering
   - management
 published: false
 minute: 1

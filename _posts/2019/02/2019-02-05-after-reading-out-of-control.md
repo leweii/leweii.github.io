@@ -2,8 +2,8 @@
 title: "失控 - 读后感"
 date:   2019-02-05
 tags:
-  - 读后感
-  - 社科
+  - reading
+  - social-science
 ---
 
 作者:  [美] 凯文·凯利

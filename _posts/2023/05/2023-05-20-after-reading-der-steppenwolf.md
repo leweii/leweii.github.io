@@ -2,8 +2,8 @@
 title: "荒原狼 - 读后感"
 create_time: 2023-05-20 10:19
 tags:
-  - book
-  - novel
+  - reading
+  - fiction
 published: true
 ---
 

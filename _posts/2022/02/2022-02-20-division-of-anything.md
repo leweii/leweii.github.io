@@ -2,7 +2,8 @@
 title: "分工"
 date:   2022-02-20
 tags:
-  - engineering practice
+  - tech
+  - engineering
   - career
 published: true
 ---

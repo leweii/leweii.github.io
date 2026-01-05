@@ -2,8 +2,8 @@
 title: "世界三大问题"
 create_time: 2023-10-17 10:19
 tags:
-  - book
-  - novel
+  - life
+  - essay
 published: true
 ---
 

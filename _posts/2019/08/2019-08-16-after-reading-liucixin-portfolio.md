@@ -2,9 +2,9 @@
 title: "最璀璨的银河 - 读后感"
 date:   2019-08-16
 tags:
-  - 读后感
-  - 科幻
-  - 小说
+  - reading
+  - sci-fi
+  - fiction
 ---
 
 

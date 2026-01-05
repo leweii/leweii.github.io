@@ -2,8 +2,8 @@
 title: "丝绸之路 - 再读后感"
 date:   2016-12-22
 tags:
-  - 读后感
-  - 社科
+  - reading
+  - social-science
 ---
 
 作者: [英] 彼得·弗兰科潘

@@ -2,9 +2,9 @@
 title: "你一生的故事 - 读后感"
 date:   2019-02-05
 tags:
-  - 读后感
-  - 科幻
-  - 小说
+  - reading
+  - sci-fi
+  - fiction
 ---
 
 作者:  [美] 特德·姜

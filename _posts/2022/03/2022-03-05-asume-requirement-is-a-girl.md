@@ -2,7 +2,8 @@
 title: "需求池, 海里针"
 date:   2022-03-05
 tags:
-  - engineering practice
+  - tech
+  - engineering
   - career
 published: false
 ---

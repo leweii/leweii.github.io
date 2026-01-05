@@ -2,7 +2,8 @@
 title: "年终总结"
 date:   2022-10-31
 tags:
-  - 杂文
+  - life
+  - essay
 published: true
 ---
 <p align='center'>这一年在CATL，有幸</p>

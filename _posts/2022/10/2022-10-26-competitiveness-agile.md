@@ -3,7 +3,7 @@ title: "团队竞争力：敏捷"
 date:   2022-10-26
 tags:
   - tech
-  - engineering practice
+  - engineering
   - management
 published: false
 minute: 3

@@ -3,7 +3,7 @@ title: "物联网通讯协议定义原则"
 date:   2022-10-22
 tags:
   - tech
-  - engineering practice
+  - engineering
 published: true
 minute: 5
 ---

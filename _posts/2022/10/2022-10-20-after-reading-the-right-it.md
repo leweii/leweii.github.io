@@ -2,7 +2,7 @@
 title: "做对产品 - 读后感"
 date:   2022-10-20
 tags:
-  - 读后感
+  - reading
 published: true
 minute: 3
 ---

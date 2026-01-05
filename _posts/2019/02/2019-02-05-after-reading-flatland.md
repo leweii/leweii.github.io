@@ -2,9 +2,9 @@
 title: "平面国 - 读后感"
 date:   2019-02-05
 tags:
-  - 读后感
-  - 科幻
-  - 小说
+  - reading
+  - sci-fi
+  - fiction
 ---
 
 作者: 艾勃特

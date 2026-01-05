@@ -3,7 +3,7 @@ title: "Omnifocus: Today"
 date:   2022-04-07
 tags:
   - tips
-  - omnifocus
+  - productivity
 published: true
 ---
 

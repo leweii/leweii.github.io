@@ -2,8 +2,8 @@
 title: "未来简史 - 读后感"
 date: 2018-07-24
 tags:
-  - tips
-  - omnifocus
+  - reading
+  - social-science
 published: true
 ---
 

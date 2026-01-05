@@ -2,7 +2,7 @@
 title: "百年孤独 - 读后感"
 date:   2022-06-24
 tags:
-  - 读后感
+  - reading
 published: true
 ---
 
