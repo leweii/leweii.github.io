@@ -9,23 +9,23 @@ published: true
 
 咸盐少许，直奔主题
 
-### 配置
+## 配置
 
-#### 尽量使用性能最好/最贵的模型
+### 尽量使用性能最好/最贵的模型
 
 虽然 Claude Sonnet 4 计费是 Opus 的 1/5，但在处理极高难度的逻辑时，Claude Opus 4.5 依然是目前最强大的选择。有条件的朋友，建议直接用最贵的模型。节约的是自己的时间。
 
-#### 跳过授权，--dangerously-skip-permissions
+### 跳过授权，--dangerously-skip-permissions
 
 频繁的权限确认动作会打断思路（会很烦）。启动时添加 `--dangerously-skip-permissions` 参数，可以让 Claude 无需询问直接执行操作。
 
-#### activate deep thinking
+### activate deep thinking
 
 关键词 think、think hard 或者 ultrathink 可以增加 Claude 的思考预算。当然 token 消耗也会越多。
 
-### 环境
+## 环境
 
-#### 理解和配置好你的 CLAUDE.md
+### 理解和配置好你的 CLAUDE.md
 
 **加载机制**：
 
@@ -41,7 +41,7 @@ Claude Code 会分级加载你的 CLAUDE.md，从当前目录往上加载，直�
   - 代码风格指南（如 PEP 8、ESLint 等）
   - 测试说明和开发环境设置
 
-#### 记忆
+### 记忆
 
 管理好每个 session 的记忆，在适当的时候 resume，在适当的时候使用
 - `/clear`：重置会话
@@ -56,16 +56,16 @@ Claude Code 会分级加载你的 CLAUDE.md，从当前目录往上加载，直�
 
 利用 `/memory` 命令，修改添加 memory
 
-#### 自定义cmd/skills
+### 自定义cmd/skills
 
 - 将高频的简单流程保存成可重复使用的 prompt 文件
 - 将高频的工作流、复杂任务，开发成 skill 
 - 不停地根据业务的变化和需求的变化，迭代你的 prompt 和 skills
 - 在github上维护你的prompt 和skill
 
-### 工程
+## 工程
 
-#### Spec driven development
+### Spec driven development
 
 利用 SDD 框架工具，开发复杂程序。
 
@@ -85,21 +85,21 @@ Claude Code 会分级加载你的 CLAUDE.md，从当前目录往上加载，直�
 
 如果是一个从 0 到 1 的项目，并且希望能够对项目有完全的掌控，可以尝试 spec-kit。（我尝试过，但是由于需要定义的文档内容过多放弃了）
 
-#### 利用 Git Worktrees 并行任务（待论证）
+### 利用 Git Worktrees 并行任务（待论证）
 
-#### Test-Driven Development
+### Test-Driven Development
 
 用 AI 写代码，一定要让它自论证，TDD 就显得格外适应 AI 时代的编程模式，这写在 superpowers 的哲学里。所以只要你是用 superpowers 的 implementation，它一定都会交付测试通过的结果给你。
 
 如果没有用 superpowers，那就可以自己告诉 LLM。
 
-### 其它
+## 其它
 
-#### 截图调试
+### 截图调试
 
 遇到 UI 错误时，直接将截图粘贴到终端，Claude 可以结合视觉信息定位问题。
 
-#### CLI > MCP
+### CLI > MCP
 
 Claude 处理成熟 CLI 工具的能力极强。尽量不要去依赖不稳定的 MCP 服务器。
 - gh：管理 GitHub repo
