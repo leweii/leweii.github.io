@@ -59,9 +59,9 @@ Claude Code 会分级加载你的 CLAUDE.md，从当前目录往上加载，直�
 #### 自定义cmd/skills
 
 - 将高频的简单流程保存成可重复使用的 prompt 文件
-- 将高频的工作流、复杂任务，开发成 skill
-
-不停地根据业务的变化和需求的变化，迭代你的 prompt 和 skills
+- 将高频的工作流、复杂任务，开发成 skill 
+- 不停地根据业务的变化和需求的变化，迭代你的 prompt 和 skills
+- 在github上维护你的prompt 和skill
 
 ### 工程
 
