@@ -1,6 +1,6 @@
 ---
 title: "Claude Code Skills"
-description: "孵化你的 Claude Code Skill 体系"
+description: "创建孵化Claude Code Skill 的体系"
 create_time: 2026-01-06 00:00
 tags:
   - tech
