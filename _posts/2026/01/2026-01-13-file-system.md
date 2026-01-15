@@ -4,7 +4,7 @@ description: "大道至简，一切应用都将回归，文件系统，以及文
 create_time: 2026-01-13 00:00
 tags:
   - tech
-published: false
+published: true
 ---
 
 Claude Code + Cowork，会干掉绝大多数的桌面工具型应用。
