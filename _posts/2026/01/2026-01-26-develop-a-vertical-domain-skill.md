@@ -1,5 +1,5 @@
 ---
-title: "Develop a vertical domain skill"
+title: "开发一个垂直领域的skill"
 description:
 create_time: 2026-01-26 00:00
 tags:
