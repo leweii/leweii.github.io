@@ -6,7 +6,7 @@ tags:
   - ai
   - workflow
   - development
-published: false
+published: true
 ---
 
 二月的第一个博客，在一个非常非常有意思的节点。截至今天，我让公司的产品们都安装上了 Claude Code，加上团队里的开发们，我们可以开始串整个开发流程了。
