@@ -9,9 +9,9 @@ published: true
 ---
 
 博客原文：
-1. (https://x.com/trq212/article/2027463795355095314)[https://x.com/trq212/article/2027463795355095314]
-2. (https://x.com/trq212/article/2014480496013803643)[https://x.com/trq212/article/2014480496013803643]
-3. (https://x.com/trq212/status/2024574133011673516)[https://x.com/trq212/status/2024574133011673516]
+1. [https://x.com/trq212/article/2027463795355095314](https://x.com/trq212/article/2027463795355095314)
+2. [https://x.com/trq212/article/2014480496013803643](https://x.com/trq212/article/2014480496013803643)
+3. [https://x.com/trq212/status/2024574133011673516](https://x.com/trq212/status/2024574133011673516)
 
 ## 我的总结
 
@@ -34,7 +34,7 @@ published: true
 ### Tasks & Todos
 作者提到，一开始他们就意识到，要给模型一个todo list，为了让他能够保持专注。为此他们实现了一个TodoWrite tool。
 
-但是即便如此，claude 还是经常忘记自己在做什么，以至于有一段时间里，claude code 每5回合对话，就会强调一次todo list。这也是manus的做法:(Lessons from Building Manus)[https://manus.im/blog/Context-Engineering-for-AI-Agents-Lessons-from-Building-Manus]。
+但是即便如此，claude 还是经常忘记自己在做什么，以至于有一段时间里，claude code 每5回合对话，就会强调一次todo list。这也是manus的做法:[Lessons from Building Manus](https://manus.im/blog/Context-Engineering-for-AI-Agents-Lessons-from-Building-Manus)。
 
 模型能力提升之后，现在就不需要再对模型进行强调，而且有时候todo 甚至过于苛刻，以至于模型不会去更新todo。
 
@@ -60,6 +60,6 @@ claude 现在有20个tool，实际上，你每给claude 一个tool 就是给clau
 作者最后还自夸了一下，自己是艺术家，而不是工程师。:)
 
 ## 我的感受
-最近正在经历从claude code 转换到gemini cli的痛苦，我遇到的一个很大的问题是，gemini 无法解决自己的配置问题，比如我让他给自己配置一个mcp 服务，这种任务gemini 都无法很好的完成。 很明显gemini cli没有实现一个像claude 这样的Claude Code Guide Agent。
+最近正在经历从claude code 转换到gemini cli的痛苦，我遇到的一个很看低gemini的方面就是，gemini 无法解决自己的配置问题，比如我让他给自己配置一个mcp 服务，这种任务gemini 都无法很好的完成。 很明显gemini cli没有实现一个像claude 这样的Claude Code Guide Agent。
 
 每一个感受上的区别，背后都是更加合理的agent设计，让我想起互联网早期的故事，无论是qq，今日头条，在刚起步的时候，它们都有无数的竞争对手，就是用户体验上那一点点的细微差距，让他们能够一直站到今天。
