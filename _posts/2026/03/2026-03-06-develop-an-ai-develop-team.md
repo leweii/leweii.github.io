@@ -1,9 +1,12 @@
----  
-title: "Develop an AI Develop Team"  
-create_time: 2026-03-06 10:00  
+---
+title: "Develop an AI Develop Team"
+description:
+create_time: 2026-03-06 10:00
 tags:
-- ai  - developmentpublished: false
----  
+  - ai
+  - development
+published: false
+---
 网络上，已经有人在 build AI team 了，这样的 team 就嫌事情太少，停下来一分钟，都是对与时俱进的不尊重。
 
 这样的人很努力的在晒着自己的 commit 和 PR 频率，在我唾弃这些行为的时候，我也在 build 自己的 AI dev team，恨不得明天就运行起来！

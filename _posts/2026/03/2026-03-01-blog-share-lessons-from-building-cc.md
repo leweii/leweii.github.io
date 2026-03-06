@@ -4,7 +4,7 @@ description:
 create_time: 2026-03-01 00:00
 tags:
   - ai
-  - claude
+  - claude-code
 published: true
 ---
 
