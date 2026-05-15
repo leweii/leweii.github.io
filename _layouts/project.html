@@ -1,0 +1,255 @@
+---
+layout: page
+# Single project detail page
+---
+
+{% include lang.html %}
+
+{% case page.status %}
+  {% when '已上线' %}{% assign status_class = 'is-live' %}{% assign status_label = 'Live' %}
+  {% when '进行中' %}{% assign status_class = 'is-wip' %}{% assign status_label = 'WIP' %}
+  {% when '已归档' %}{% assign status_class = 'is-archived' %}{% assign status_label = 'Archived' %}
+  {% else %}{% assign status_class = '' %}{% assign status_label = page.status %}
+{% endcase %}
+
+<article id="project-detail">
+  <header class="pd-header">
+    <div class="pd-head-row">
+      {% if page.icon %}
+        <div class="pd-icon"><img src="{{ page.icon | relative_url }}" alt=""></div>
+      {% elsif page.icon_emoji %}
+        <div class="pd-icon is-emoji" aria-hidden="true">{{ page.icon_emoji }}</div>
+      {% endif %}
+      <div class="pd-title-group">
+        <h1 class="pd-title">{{ page.title }}</h1>
+        {% if page.subtitle %}
+          <div class="pd-subtitle">{{ page.subtitle }}</div>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="pd-meta">
+      {% if status_label %}
+        <span class="pj-status {{ status_class }}">{{ status_label }}</span>
+      {% endif %}
+      {% if page.category == 'product' %}
+        <span class="pd-meta-item"><i class="fas fa-cube fa-fw"></i> 产品项目</span>
+      {% elsif page.category == 'photography' %}
+        <span class="pd-meta-item"><i class="fas fa-camera fa-fw"></i> 摄影项目</span>
+      {% endif %}
+      {% if page.date %}
+        <span class="pd-meta-item">{% include datetime.html date=page.date class='' lang=lang %}</span>
+      {% endif %}
+      {% if page.tags and page.tags.size > 0 %}
+        <span class="pd-meta-tags">
+          {% for t in page.tags %}<span class="pd-tag">{{ t }}</span>{% endfor %}
+        </span>
+      {% endif %}
+    </div>
+
+    {% assign has_install = false %}
+    {% if page.chrome or page.firefox or page.obsidian or page.link %}{% assign has_install = true %}{% endif %}
+    {% if has_install or page.repo %}
+      <div class="pd-actions">
+        {% if page.chrome %}
+          <a href="{{ page.chrome }}" target="_blank" rel="noopener noreferrer" class="pd-btn pd-btn-primary">
+            <i class="fab fa-chrome"></i> 安装 Chrome 扩展
+          </a>
+        {% endif %}
+        {% if page.firefox %}
+          <a href="{{ page.firefox }}" target="_blank" rel="noopener noreferrer" class="pd-btn pd-btn-primary">
+            <i class="fab fa-firefox-browser"></i> 安装 Firefox 扩展
+          </a>
+        {% endif %}
+        {% if page.obsidian %}
+          <a href="{{ page.obsidian }}" target="_blank" rel="noopener noreferrer" class="pd-btn pd-btn-primary">
+            <i class="fas fa-cube"></i> 在 Obsidian 中安装
+          </a>
+        {% endif %}
+        {% if page.link %}
+          <a href="{{ page.link }}" target="_blank" rel="noopener noreferrer" class="pd-btn pd-btn-primary">
+            <i class="fas fa-external-link-alt"></i> 访问产品
+          </a>
+        {% endif %}
+        {% if page.repo %}
+          <a href="{{ page.repo }}" target="_blank" rel="noopener noreferrer" class="pd-btn pd-btn-outline">
+            <i class="fab fa-github"></i> 仓库
+          </a>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if page.cover %}
+      <img src="{{ page.cover | relative_url }}" alt="" class="pd-cover">
+    {% endif %}
+  </header>
+
+  <div class="pd-body">{{ content }}</div>
+
+  <div class="pd-back">
+    <a href="{{ '/projects/' | relative_url }}">← 返回项目列表</a>
+  </div>
+</article>
+
+<style>
+  #project-detail {
+    --pd-icon-bg: rgb(0 0 0 / 4%);
+    --pd-divider: rgb(0 0 0 / 8%);
+  }
+  html[data-mode='dark'] #project-detail {
+    --pd-icon-bg: rgb(255 255 255 / 5%);
+    --pd-divider: rgb(255 255 255 / 8%);
+  }
+  @media (prefers-color-scheme: dark) {
+    html:not([data-mode='light']) #project-detail {
+      --pd-icon-bg: rgb(255 255 255 / 5%);
+      --pd-divider: rgb(255 255 255 / 8%);
+    }
+  }
+
+  .pd-header {
+    margin-bottom: 28px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--pd-divider);
+  }
+  .pd-head-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .pd-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 16px;
+    background: var(--pd-icon-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .pd-icon img { width: 100%; height: 100%; object-fit: contain; }
+  .pd-icon.is-emoji { font-size: 36px; line-height: 1; }
+
+  .pd-title-group { min-width: 0; }
+  .pd-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--heading-color);
+    margin: 0 0 4px 0;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+  .pd-subtitle {
+    font-size: 14px;
+    color: var(--text-color);
+    opacity: 0.7;
+  }
+
+  .pd-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    color: var(--text-muted-color);
+    margin-bottom: 18px;
+  }
+  .pd-meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .pd-meta-tags { display: inline-flex; gap: 6px; flex-wrap: wrap; }
+  .pd-tag {
+    font-size: 11px;
+    color: var(--text-muted-color);
+    padding: 1px 8px;
+    border: 1px solid var(--pd-divider);
+    border-radius: 999px;
+  }
+
+  .pd-actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .pd-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+  }
+  .pd-btn:hover { transform: translateY(-1px); text-decoration: none; }
+  .pd-btn-primary {
+    background: var(--heading-color);
+    color: var(--main-bg);
+  }
+  .pd-btn-primary:hover { color: var(--main-bg); box-shadow: 0 4px 12px rgb(0 0 0 / 12%); }
+  .pd-btn-outline {
+    border: 1px solid var(--pd-divider);
+    color: var(--text-color);
+    background: transparent;
+  }
+  .pd-btn-outline:hover { color: var(--text-color); background: var(--pd-icon-bg); }
+
+  .pd-cover { width: 100%; border-radius: 12px; margin-top: 8px; }
+
+  .pd-body { color: var(--text-color); line-height: 1.7; }
+
+  .pd-back {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid var(--pd-divider);
+  }
+  .pd-back a { color: var(--text-muted-color); text-decoration: none; font-size: 14px; }
+  .pd-back a:hover { color: var(--text-color); }
+
+  /* Shared pj-status (mirror of projects index) */
+  .pj-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 999px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+  }
+  .pj-status::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .pj-status.is-live    { background: rgb(52 199 89 / 12%); color: #1f8a3a; }
+  .pj-status.is-live::before    { background: #34c759; box-shadow: 0 0 0 3px rgb(52 199 89 / 18%); }
+  .pj-status.is-wip     { background: rgb(255 159 10 / 14%); color: #a96400; }
+  .pj-status.is-wip::before     { background: #ff9f0a; box-shadow: 0 0 0 3px rgb(255 159 10 / 18%); }
+  .pj-status.is-archived { background: rgb(142 142 147 / 16%); color: #5b5b60; }
+  .pj-status.is-archived::before { background: #8e8e93; }
+  html[data-mode='dark'] .pj-status.is-live { color: #62d685; }
+  html[data-mode='dark'] .pj-status.is-wip  { color: #ffbb55; }
+  html[data-mode='dark'] .pj-status.is-archived { color: #c0c0c5; }
+  @media (prefers-color-scheme: dark) {
+    html:not([data-mode='light']) .pj-status.is-live { color: #62d685; }
+    html:not([data-mode='light']) .pj-status.is-wip  { color: #ffbb55; }
+    html:not([data-mode='light']) .pj-status.is-archived { color: #c0c0c5; }
+  }
+
+  @media (max-width: 575.98px) {
+    .pd-head-row { gap: 12px; }
+    .pd-icon { width: 56px; height: 56px; border-radius: 14px; }
+    .pd-icon.is-emoji { font-size: 28px; }
+    .pd-title { font-size: 22px; }
+  }
+</style>

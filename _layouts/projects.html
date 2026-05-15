@@ -1,0 +1,533 @@
+---
+layout: page
+# Projects index: black-gold tilt cards with two category tabs
+---
+
+{% include lang.html %}
+
+{% assign tab_defs = '' | split: '' %}
+{% assign tab_defs = tab_defs
+    | push: 'product|产品项目|fas fa-cube'
+    | push: 'photography|摄影项目|fas fa-camera' %}
+
+<div id="page-projects">
+  <div class="project-tabs" role="tablist">
+    {% for entry in tab_defs %}
+      {% assign parts = entry | split: '|' %}
+      {% assign key = parts[0] %}
+      {% assign label = parts[1] %}
+      {% assign icon = parts[2] %}
+      {% assign count = site.projects | where: 'category', key | size %}
+      {% if forloop.first %}
+        {% assign active_class = 'is-active' %}
+        {% assign aria_selected = 'true' %}
+      {% else %}
+        {% assign active_class = '' %}
+        {% assign aria_selected = 'false' %}
+      {% endif %}
+      <button
+        type="button"
+        class="project-tab {{ active_class }}"
+        id="tab-{{ key }}"
+        data-target="pane-{{ key }}"
+        role="tab"
+        aria-controls="pane-{{ key }}"
+        aria-selected="{{ aria_selected }}"
+      >
+        <i class="{{ icon }} fa-fw"></i>
+        <span>{{ label }}</span>
+        <span class="project-tab-count">{{ count }}</span>
+      </button>
+    {% endfor %}
+  </div>
+
+  <div class="project-panes">
+    {% for entry in tab_defs %}
+      {% assign parts = entry | split: '|' %}
+      {% assign key = parts[0] %}
+      {% assign label = parts[1] %}
+      {% if forloop.first %}
+        {% assign pane_class = 'is-active' %}
+      {% else %}
+        {% assign pane_class = '' %}
+      {% endif %}
+      {% assign items = site.projects | where: 'category', key | sort: 'order' %}
+
+      <div
+        class="project-pane {{ pane_class }}"
+        id="pane-{{ key }}"
+        role="tabpanel"
+        aria-labelledby="tab-{{ key }}"
+      >
+        {% if items.size > 0 %}
+          <ul class="project-list">
+            {% for item in items %}
+              <li>{% include project-card.html item=item %}</li>
+            {% endfor %}
+          </ul>
+        {% elsif key == 'photography' %}
+          <div class="project-empty">
+            <div class="project-empty-icon">📷</div>
+            <div class="project-empty-title">摄影项目即将上线</div>
+            <div class="project-empty-text">正在挑片整理 2024-2026 的作品，敬请期待。</div>
+          </div>
+        {% else %}
+          <p class="text-muted">还没有「{{ label }}」。</p>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+  /* ============================================================
+   * Theme: 黑金 (Black Gold)
+   * Gold accent: #d4af37 classic; #e8c074 warm highlight
+   * ============================================================ */
+  #page-projects {
+    --pj-gold:        #d4af37;
+    --pj-gold-warm:   #e8c074;
+    --pj-gold-deep:   #b8941f;
+    --pj-gold-soft:   rgb(212 175 55 / 14%);
+    --pj-gold-faint:  rgb(212 175 55 / 6%);
+    --pj-gold-glow:   rgb(212 175 55 / 22%);
+
+    /* Light mode: warm ivory cards, gold accents */
+    --pj-card-bg:        linear-gradient(180deg, rgb(255 253 248) 0%, rgb(250 246 235) 100%);
+    --pj-icon-bg:        linear-gradient(180deg, rgb(0 0 0 / 3%) 0%, rgb(0 0 0 / 6%) 100%);
+    --pj-arrow:          rgb(0 0 0 / 30%);
+    --pj-arrow-hover:    var(--pj-gold-deep);
+    --pj-shadow:         rgb(0 0 0 / 5%);
+    --pj-shadow-hover:   rgb(0 0 0 / 12%);
+    --pj-shine:          rgb(212 175 55 / 18%);
+    --pj-inner-top:      rgb(255 255 255 / 80%);
+    --pj-inner-top-hover: rgb(232 192 116 / 55%);
+    --pj-glow-hover:     rgb(212 175 55 / 14%);
+  }
+  html[data-mode='dark'] #page-projects {
+    --pj-card-bg:        linear-gradient(180deg, rgb(22 19 14) 0%, rgb(13 11 8) 100%);
+    --pj-icon-bg:        linear-gradient(180deg, rgb(255 255 255 / 6%) 0%, rgb(255 255 255 / 2%) 100%);
+    --pj-arrow:          rgb(255 255 255 / 32%);
+    --pj-arrow-hover:    var(--pj-gold-warm);
+    --pj-shadow:         rgb(0 0 0 / 55%);
+    --pj-shadow-hover:   rgb(0 0 0 / 75%);
+    --pj-shine:          rgb(232 192 116 / 22%);
+    --pj-inner-top:      rgb(255 255 255 / 6%);
+    --pj-inner-top-hover: rgb(232 192 116 / 38%);
+    --pj-glow-hover:     rgb(212 175 55 / 18%);
+  }
+  @media (prefers-color-scheme: dark) {
+    html:not([data-mode='light']) #page-projects {
+      --pj-card-bg:        linear-gradient(180deg, rgb(22 19 14) 0%, rgb(13 11 8) 100%);
+      --pj-icon-bg:        linear-gradient(180deg, rgb(255 255 255 / 6%) 0%, rgb(255 255 255 / 2%) 100%);
+      --pj-arrow:          rgb(255 255 255 / 32%);
+      --pj-arrow-hover:    var(--pj-gold-warm);
+      --pj-shadow:         rgb(0 0 0 / 55%);
+      --pj-shadow-hover:   rgb(0 0 0 / 75%);
+      --pj-shine:          rgb(232 192 116 / 22%);
+      --pj-inner-top:      rgb(255 255 255 / 6%);
+      --pj-inner-top-hover: rgb(232 192 116 / 38%);
+      --pj-glow-hover:     rgb(212 175 55 / 18%);
+    }
+  }
+
+  /* Tabs */
+  .project-tabs {
+    display: inline-flex;
+    gap: 4px;
+    padding: 4px;
+    background: var(--pj-icon-bg);
+    border-radius: 10px;
+    margin-bottom: 28px;
+  }
+  .project-tab {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    color: var(--text-muted-color);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 7px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+  .project-tab:hover { color: var(--text-color); }
+  .project-tab.is-active {
+    background: var(--main-bg);
+    color: var(--heading-color);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 1px 3px rgb(0 0 0 / 6%);
+  }
+  .project-tab-count {
+    font-size: 12px;
+    color: var(--text-muted-color);
+    font-variant-numeric: tabular-nums;
+    margin-left: 2px;
+  }
+  .project-tab.is-active .project-tab-count { color: var(--text-color); }
+
+  .project-pane { display: none; }
+  .project-pane.is-active { display: block; }
+
+  /* List --- floating cards, no dividers */
+  .project-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    perspective: 1200px;
+  }
+
+  /* Card --- the row (no border, depth from shadows only) */
+  .project-row {
+    position: relative;
+    display: grid;
+    grid-template-columns: 64px 1fr 24px;
+    gap: 20px;
+    align-items: start;
+    padding: 22px 24px;
+    text-decoration: none;
+    color: inherit;
+    background: var(--pj-card-bg);
+    border: 0;
+    outline: 0;
+    border-radius: 16px;
+    box-shadow:
+      inset 0 1px 0 var(--pj-inner-top),
+      0 1px 2px var(--pj-shadow),
+      0 6px 16px var(--pj-shadow);
+    transform-style: preserve-3d;
+    transform: perspective(1200px) rotateX(0) rotateY(0);
+    transition:
+      transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+      box-shadow 0.4s ease,
+      background 0.25s ease;
+    will-change: transform;
+    isolation: isolate;
+  }
+  .project-row:hover,
+  .project-row:focus-visible {
+    text-decoration: none;
+    color: inherit;
+    box-shadow:
+      inset 0 1px 0 var(--pj-inner-top-hover),
+      0 24px 60px var(--pj-shadow-hover),
+      0 10px 24px var(--pj-shadow),
+      0 0 50px var(--pj-glow-hover);
+  }
+  .project-row.is-tilting {
+    transition:
+      transform 0.08s linear,
+      box-shadow 0.4s ease;
+  }
+
+  /* Gold shine — radial follows mouse */
+  .project-row::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+      420px circle at var(--mx, 50%) var(--my, 50%),
+      var(--pj-shine) 0%,
+      rgb(212 175 55 / 6%) 30%,
+      transparent 60%
+    );
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+    z-index: 0;
+    mix-blend-mode: screen;
+  }
+  html[data-mode='light'] .project-row::before { mix-blend-mode: multiply; }
+  @media (prefers-color-scheme: light) {
+    html:not([data-mode='dark']) .project-row::before { mix-blend-mode: multiply; }
+  }
+  .project-row:hover::before { opacity: 1; }
+
+  /* Top gold sheen — luxury card signature */
+  .project-row::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 18%;
+    right: 18%;
+    height: 1px;
+    border-radius: inherit;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgb(232 192 116 / 0%) 10%,
+      rgb(232 192 116 / 60%) 50%,
+      rgb(232 192 116 / 0%) 90%,
+      transparent 100%
+    );
+    opacity: 0;
+    transition: opacity 0.45s ease;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .project-row:hover::after { opacity: 1; }
+
+  /* Children sit above the shine */
+  .project-row > * {
+    position: relative;
+    z-index: 1;
+    transform: translateZ(0);
+  }
+  .project-row:hover .project-row-icon    { transform: translateZ(28px); }
+  .project-row:hover .project-row-content { transform: translateZ(14px); }
+  .project-row:hover .project-row-arrow   { transform: translate(2px, -2px) translateZ(24px); color: var(--pj-arrow-hover); }
+  .project-row-icon,
+  .project-row-content,
+  .project-row-arrow {
+    transition:
+      transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+      color 0.25s ease;
+  }
+
+  /* Icon */
+  .project-row-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 14px;
+    background: var(--pj-icon-bg);
+    box-shadow:
+      inset 0 1px 0 var(--pj-inner-top),
+      inset 0 -1px 0 rgb(0 0 0 / 18%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+    transition: box-shadow 0.3s ease;
+  }
+  .project-row:hover .project-row-icon {
+    box-shadow:
+      inset 0 1px 0 var(--pj-inner-top-hover),
+      inset 0 -1px 0 rgb(0 0 0 / 22%),
+      0 0 0 1px rgb(212 175 55 / 22%);
+  }
+  .project-row-icon img { width: 100%; height: 100%; object-fit: contain; }
+  .project-row-icon.is-emoji { font-size: 32px; line-height: 1; }
+
+  /* Content column */
+  .project-row-content { min-width: 0; }
+  .project-row-head {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 4px;
+  }
+  .project-row-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--heading-color);
+    margin: 0;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    transition: background 0.25s ease, color 0.25s ease;
+  }
+  .project-row:hover .project-row-title {
+    background: linear-gradient(95deg, #e8c074 0%, #f5d98a 35%, #b8941f 65%, #d4af37 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+  html[data-mode='light'] .project-row:hover .project-row-title {
+    background: linear-gradient(95deg, #8a6d1a 0%, #b8941f 50%, #6f5510 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+  @media (prefers-color-scheme: light) {
+    html:not([data-mode='dark']) .project-row:hover .project-row-title {
+      background: linear-gradient(95deg, #8a6d1a 0%, #b8941f 50%, #6f5510 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  .project-row-subtitle {
+    font-size: 13px;
+    color: var(--text-color);
+    opacity: 0.7;
+    margin: 0 0 8px 0;
+    line-height: 1.4;
+  }
+  .project-row-description {
+    font-size: 14px;
+    color: var(--text-color);
+    line-height: 1.55;
+    margin: 0 0 10px 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .project-row-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--text-muted-color);
+    line-height: 1.4;
+  }
+  .project-row-tag { color: inherit; }
+  .project-row-tag + .project-row-tag::before {
+    content: "·";
+    margin-right: 6px;
+    opacity: 0.5;
+  }
+
+  /* Status pill --- gold-tinted */
+  .pj-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 999px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+  }
+  .pj-status::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .pj-status.is-live    { background: rgb(52 199 89 / 12%); color: #1f8a3a; }
+  .pj-status.is-live::before    { background: #34c759; box-shadow: 0 0 0 3px rgb(52 199 89 / 18%); }
+  .pj-status.is-wip     { background: rgb(212 175 55 / 14%); color: #8a6d1a; }
+  .pj-status.is-wip::before     { background: var(--pj-gold); box-shadow: 0 0 0 3px rgb(212 175 55 / 22%); }
+  .pj-status.is-archived { background: rgb(142 142 147 / 16%); color: #5b5b60; }
+  .pj-status.is-archived::before { background: #8e8e93; }
+  html[data-mode='dark'] .pj-status.is-live { color: #62d685; }
+  html[data-mode='dark'] .pj-status.is-wip  { color: var(--pj-gold-warm); }
+  html[data-mode='dark'] .pj-status.is-archived { color: #c0c0c5; }
+  @media (prefers-color-scheme: dark) {
+    html:not([data-mode='light']) .pj-status.is-live { color: #62d685; }
+    html:not([data-mode='light']) .pj-status.is-wip  { color: var(--pj-gold-warm); }
+    html:not([data-mode='light']) .pj-status.is-archived { color: #c0c0c5; }
+  }
+
+  /* Arrow */
+  .project-row-arrow {
+    color: var(--pj-arrow);
+    font-size: 14px;
+    align-self: center;
+  }
+
+  /* Empty state */
+  .project-empty {
+    text-align: center;
+    padding: 64px 24px;
+    color: var(--text-muted-color);
+  }
+  .project-empty-icon { font-size: 44px; margin-bottom: 12px; opacity: 0.6; }
+  .project-empty-title { font-size: 16px; font-weight: 600; color: var(--text-color); margin-bottom: 6px; }
+  .project-empty-text { font-size: 14px; }
+
+  /* Narrow screen */
+  @media (max-width: 575.98px) {
+    .project-row {
+      grid-template-columns: 48px 1fr 20px;
+      gap: 14px;
+      padding: 16px 16px;
+    }
+    .project-row-icon { width: 48px; height: 48px; border-radius: 12px; }
+    .project-row-icon.is-emoji { font-size: 26px; }
+    .project-row-title { font-size: 15px; }
+  }
+
+  /* Reduced motion --- disable tilt & parallax */
+  @media (prefers-reduced-motion: reduce) {
+    .project-row { transition: none !important; }
+    .project-row.is-tilting { transform: none !important; }
+    .project-row:hover .project-row-icon,
+    .project-row:hover .project-row-content,
+    .project-row:hover .project-row-arrow {
+      transform: none;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    /* Tab switching */
+    var tabs = document.querySelectorAll('#page-projects .project-tab');
+    var panes = document.querySelectorAll('#page-projects .project-pane');
+    if (tabs.length) {
+      function activate(targetId) {
+        tabs.forEach(function (btn) {
+          var on = btn.getAttribute('data-target') === targetId;
+          btn.classList.toggle('is-active', on);
+          btn.setAttribute('aria-selected', on ? 'true' : 'false');
+        });
+        panes.forEach(function (pane) {
+          pane.classList.toggle('is-active', pane.id === targetId);
+        });
+      }
+      tabs.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          activate(btn.getAttribute('data-target'));
+        });
+      });
+    }
+
+    /* 3D tilt + shine */
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+    if (window.matchMedia('(hover: none)').matches) return;
+
+    var rows = document.querySelectorAll('#page-projects .project-row');
+    var MAX_TILT = 6;
+    var SCALE   = 1.012;
+
+    rows.forEach(function (row) {
+      var rafId = null;
+
+      function onMove(e) {
+        if (rafId) cancelAnimationFrame(rafId);
+        rafId = requestAnimationFrame(function () {
+          var rect = row.getBoundingClientRect();
+          var x = e.clientX - rect.left;
+          var y = e.clientY - rect.top;
+          var px = x / rect.width;
+          var py = y / rect.height;
+          var rotateY = (px - 0.5) * (MAX_TILT * 2);
+          var rotateX = (0.5 - py) * (MAX_TILT * 2);
+          row.style.transform =
+            'perspective(1200px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) scale(' + SCALE + ')';
+          row.style.setProperty('--mx', (px * 100) + '%');
+          row.style.setProperty('--my', (py * 100) + '%');
+        });
+      }
+      function onEnter() { row.classList.add('is-tilting'); }
+      function onLeave() {
+        if (rafId) cancelAnimationFrame(rafId);
+        row.classList.remove('is-tilting');
+        row.style.transform = '';
+        row.style.removeProperty('--mx');
+        row.style.removeProperty('--my');
+      }
+
+      row.addEventListener('mouseenter', onEnter);
+      row.addEventListener('mousemove', onMove);
+      row.addEventListener('mouseleave', onLeave);
+    });
+  })();
+</script>

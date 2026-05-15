@@ -1,0 +1,10 @@
+{% assign item = include.item %}
+{% if item.icon %}
+  <div class="project-icon">
+    <img src="{{ item.icon | relative_url }}" alt="{{ item.title }} icon" loading="lazy">
+  </div>
+{% elsif item.icon_emoji %}
+  <div class="project-icon is-emoji" aria-hidden="true">{{ item.icon_emoji }}</div>
+{% else %}
+  <div class="project-icon is-emoji" aria-hidden="true">📦</div>
+{% endif %}

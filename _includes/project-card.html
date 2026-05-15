@@ -1,0 +1,42 @@
+{% assign item = include.item %}
+
+{% case item.status %}
+  {% when '已上线' %}{% assign status_class = 'is-live' %}{% assign status_label = 'Live' %}
+  {% when '进行中' %}{% assign status_class = 'is-wip' %}{% assign status_label = 'WIP' %}
+  {% when '已归档' %}{% assign status_class = 'is-archived' %}{% assign status_label = 'Archived' %}
+  {% else %}{% assign status_class = '' %}{% assign status_label = item.status %}
+{% endcase %}
+
+<a href="{{ item.url | relative_url }}" class="project-row">
+  {% if item.icon %}
+    <div class="project-row-icon"><img src="{{ item.icon | relative_url }}" alt="" loading="lazy"></div>
+  {% elsif item.icon_emoji %}
+    <div class="project-row-icon is-emoji" aria-hidden="true">{{ item.icon_emoji }}</div>
+  {% else %}
+    <div class="project-row-icon is-emoji" aria-hidden="true">📦</div>
+  {% endif %}
+
+  <div class="project-row-content">
+    <div class="project-row-head">
+      <h3 class="project-row-title">{{ item.title }}</h3>
+      {% if status_label %}
+        <span class="pj-status {{ status_class }}">{{ status_label }}</span>
+      {% endif %}
+    </div>
+    {% if item.subtitle %}
+      <p class="project-row-subtitle">{{ item.subtitle }}</p>
+    {% endif %}
+    {% if item.description %}
+      <p class="project-row-description">{{ item.description }}</p>
+    {% endif %}
+    {% if item.tags and item.tags.size > 0 %}
+      <div class="project-row-tags">
+        {% for t in item.tags %}
+          <span class="project-row-tag">{{ t }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+
+  <i class="fas fa-arrow-up-right-from-square project-row-arrow" aria-hidden="true"></i>
+</a>
