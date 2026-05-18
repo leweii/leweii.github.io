@@ -3,7 +3,7 @@ title: Smart Vault Sync
 subtitle: Obsidian 插件
 category: product
 order: 4
-status: 进行中
+status: 已上线
 description: AI 辅助的 Obsidian 与 GitHub 双向同步插件，支持嵌套文件夹作为独立 repo（submodule），全程零终端命令。
 date: 2026-02-01
 tags: [obsidian, plugin, ai]

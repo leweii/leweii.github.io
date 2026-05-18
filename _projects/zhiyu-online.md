@@ -3,7 +3,7 @@ title: 知鱼Online
 subtitle: AI 知识伴侣
 category: product
 order: 2
-status: 进行中
+status: 已上线
 description: Chrome 扩展 + Serverless 后端，把被动的网页浏览转化为主动的个人知识库。AI 自动提取、组织、在浏览时主动浮现相关知识。
 date: 2025-09-01
 tags: [chrome-extension, ai, knowledge-management]
