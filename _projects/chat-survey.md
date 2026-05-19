@@ -11,6 +11,7 @@ icon: /assets/img/projects/chat-survey/icon.svg
 cover:
 link: https://survey.zhiyu-online.com/
 repo: https://github.com/leweii/ct-online-survey
+compress_html: false
 ---
 
 ## 一句话生成完整问卷
