@@ -1,16 +1,16 @@
 ---
-title: Smart Vault Sync
+title: Agentic Git Sync
 subtitle: Obsidian 插件
 category: product
 order: 4
 status: 已上线
-description: Obsidian 与 GitHub 双向同步插件，面向不懂 git 的笔记用户。支持 submodule，AI 处理大部分 GitHub 配置与冲突。
+description: Obsidian 与 GitHub 双向同步插件，面向不懂 git 的笔记用户。支持 submodule，AI 自主解决冲突与 git 错误。
 date: 2026-02-01
 tags: [obsidian, plugin, ai]
-icon: /assets/img/projects/smart-vault-sync/icon.png
+icon: /assets/img/projects/agentic-git-sync/icon.png
 cover:
-obsidian: https://obsidian.md/plugins?id=smart-vault-sync
-repo: https://github.com/leweii/obsidian-github-sync
+obsidian: https://community.obsidian.md/plugins/agentic-git-sync
+repo: https://github.com/leweii/agentic-git-sync
 ---
 
 ## 简介
@@ -38,7 +38,7 @@ repo: https://github.com/leweii/obsidian-github-sync
 
 ## 数据安全
 
-密钥永不离开设备。Token 与本机状态写在 `<vault>/.obsidian/plugins/smart-vault-sync/data.json`，插件自带的 `.gitignore` 排除 `.obsidian/` 整个目录，token 不会进入任何 commit。
+密钥永不离开设备。Token 与本机状态写在 `<vault>/.obsidian/plugins/agentic-git-sync/data.json`，插件自带的 `.gitignore` 排除 `.obsidian/` 整个目录，token 不会进入任何 commit。
 
 随仓库走的 `.github-sync.json` 只保存远端 URL、分支、AI 模型选择和 submodule 列表，schema 里完全没有 token 字段，结构上就没有泄露凭据的路径。
 
