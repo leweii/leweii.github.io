@@ -9,7 +9,7 @@ date: 2025-11-01
 tags: [ai, survey, nextjs]
 icon: /assets/img/projects/chat-survey/icon.svg
 cover:
-link: https://ct-online-survey.vercel.app/
+link: https://survey.zhiyu-online.com/
 repo: https://github.com/leweii/ct-online-survey
 ---
 
@@ -17,7 +17,7 @@ repo: https://github.com/leweii/ct-online-survey
 
 输入一句话需求，比如「科技公司员工满意度调研」，AI 几秒内产出一份 21-28 道题的专业问卷：自动选题型、自动分组（基本信息、使用体验、满意度、改进建议）、自动避免引导性表述。题多了删两题就行，比从零写问卷快几十倍。
 
-## 不是看图表，而是问 AI 分析师
+## 用自然语言直接问数据
 
 问卷发布后切到 AI 分析师角色，用自然语言直接问数据：
 
