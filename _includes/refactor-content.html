@@ -24,9 +24,12 @@
 
 {% if _content contains '<pre class="highlight">' %}
   {% assign _content = _content
-    | replace: '<div class="highlight"><pre class="highlight"><code', '<div class="highlight"><code'
+    | replace: '<pre class="highlight"><code', '<code'
     | replace: '</code></pre></div>', '</code></div>'
   %}
+  {% capture _hl_div_nl %}<div class="highlight">
+<code>{% endcapture %}
+  {% assign _content = _content | replace: _hl_div_nl, '<div class="highlight"><code>' %}
 {% endif %}
 
 <!-- Change the icon of checkbox -->
