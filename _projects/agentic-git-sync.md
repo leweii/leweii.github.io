@@ -24,7 +24,7 @@ repo: https://github.com/leweii/agentic-git-sync
 把繁琐的 Git 操作全权交给 AI。
 
 - AI 冲突解决：本地与远端分叉时自动尝试合并，仅在无法判定时弹出可视化对话框
-- Git 操作诊断：token 有效性、repo 访问、git auth path 三层自动检测，用自然语言指出问题在哪一步
+- Git 操作诊断：不是fast forward？需要git merge before push？这些git使用规范你都不需要了解，Agentic 驾驭一切。
 - AI 起草 commit message：DeepSeek 或 Gemini 读 diff 后生成语义化提交信息，可在提交前编辑
 - 空 repo 自动初始化：粘 URL 即可，插件静默处理初始 commit 与首推
 
