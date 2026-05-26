@@ -2,7 +2,7 @@
 title: 知鱼Online
 subtitle: AI 知识伴侣
 category: product
-order: 2
+order: 3
 status: 已上线
 description: 浏览器扩展。读过的网页自动变成知识卡片，下次浏览相关页面时旧卡片自动浮现，还能一键注入到 ChatGPT 或 Gemini 对话框。
 date: 2025-09-01

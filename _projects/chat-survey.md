@@ -2,7 +2,7 @@
 title: ChatSurvey
 subtitle: AI 驱动的问卷设计与分析平台
 category: product
-order: 3
+order: 4
 status: 已上线
 description: 一句话生成 21-28 道专业问卷，4 位短码分享，再用 AI 分析师对话查数据。免注册、自动多语言、可自托管。
 date: 2025-11-01

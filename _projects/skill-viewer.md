@@ -2,7 +2,7 @@
 title: Skill Viewer
 subtitle: Claude Code 技能浏览器扩展
 category: product
-order: 1
+order: 2
 status: 已上线
 description: 打开任意带 Claude Code skills 的 GitHub 仓库，右侧栏自动列出所有 skill 并给出 AI 摘要。免登录免 key 即可用，支持 8 种语言。
 date: 2025-10-01
