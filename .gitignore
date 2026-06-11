@@ -33,3 +33,6 @@ Thumbs.db
 
 # Local design tooling scratch
 .lazyweb/
+
+# Plaintext sources of encrypted posts (never commit)
+_encrypted/

@@ -48,6 +48,7 @@
     "eslint": "^10.0.3",
     "globals": "^17.4.0",
     "husky": "^9.1.7",
+    "marked": "^15.0.12",
     "purgecss": "^8.0.0",
     "rollup": "^4.59.0",
     "semantic-release": "^25.0.3",

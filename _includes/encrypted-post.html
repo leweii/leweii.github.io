@@ -1,0 +1,186 @@
+<!--
+  Password gate for encrypted posts. Pairs with tools/encrypt-post.mjs:
+  payload layout and PBKDF2 parameters must match that script.
+-->
+<style>
+  #encrypted-post-lock {
+    margin: 3rem auto;
+    max-width: 26rem;
+    text-align: center;
+  }
+
+  #encrypted-post-lock .lock-icon {
+    font-size: 2rem;
+    opacity: 0.6;
+    margin-bottom: 1rem;
+  }
+
+  #encrypted-post-form {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+
+  #encrypted-post-password {
+    flex: 1;
+    min-width: 0;
+    padding: 0.4rem 0.75rem;
+    border: 1px solid var(--btn-border-color, #ccc);
+    border-radius: 0.5rem;
+    background: var(--card-bg, transparent);
+    color: inherit;
+  }
+
+  #encrypted-post-form button {
+    padding: 0.4rem 1rem;
+    border: 1px solid var(--btn-border-color, #ccc);
+    border-radius: 0.5rem;
+    background: var(--card-bg, transparent);
+    color: inherit;
+    cursor: pointer;
+  }
+
+  #encrypted-post-form button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+  }
+
+  #encrypted-post-error {
+    color: #dc3545;
+    margin-top: 0.75rem;
+  }
+</style>
+
+<div id="encrypted-post-lock">
+  <div class="lock-icon"><i class="fas fa-lock"></i></div>
+  <p>本文已加密，请输入密码查看。</p>
+  <form id="encrypted-post-form">
+    <input
+      type="password"
+      id="encrypted-post-password"
+      autocomplete="off"
+      placeholder="密码"
+      required
+    />
+    <button type="submit">解锁</button>
+  </form>
+  <p id="encrypted-post-error" hidden></p>
+</div>
+
+<script>
+  (function () {
+    var PBKDF2_ITERATIONS = 600000;
+    var blob = document.getElementById('encrypted-blob');
+    var lock = document.getElementById('encrypted-post-lock');
+    var form = document.getElementById('encrypted-post-form');
+    var input = document.getElementById('encrypted-post-password');
+    var error = document.getElementById('encrypted-post-error');
+    var button = form.querySelector('button');
+    var storageKey = 'encrypted-post:' + location.pathname;
+
+    function showError(msg) {
+      error.textContent = msg;
+      error.hidden = false;
+    }
+
+    if (!(window.crypto && crypto.subtle)) {
+      form.hidden = true;
+      showError('当前环境不支持解密（需要 HTTPS）。');
+      return;
+    }
+
+    function base64ToBytes(b64) {
+      var bin = atob(b64);
+      var bytes = new Uint8Array(bin.length);
+      for (var i = 0; i < bin.length; i++) {
+        bytes[i] = bin.charCodeAt(i);
+      }
+      return bytes;
+    }
+
+    function decrypt(password) {
+      var data = base64ToBytes(blob.dataset.payload);
+      var salt = data.slice(0, 16);
+      var iv = data.slice(16, 28);
+      var ciphertext = data.slice(28);
+      return crypto.subtle
+        .importKey('raw', new TextEncoder().encode(password), 'PBKDF2', false, [
+          'deriveKey'
+        ])
+        .then(function (keyMaterial) {
+          return crypto.subtle.deriveKey(
+            {
+              name: 'PBKDF2',
+              salt: salt,
+              iterations: PBKDF2_ITERATIONS,
+              hash: 'SHA-256'
+            },
+            keyMaterial,
+            { name: 'AES-GCM', length: 256 },
+            false,
+            ['decrypt']
+          );
+        })
+        .then(function (key) {
+          return crypto.subtle.decrypt({ name: 'AES-GCM', iv: iv }, key, ciphertext);
+        })
+        .then(function (plain) {
+          return new TextDecoder().decode(plain);
+        });
+    }
+
+    function unlock(password, fromStorage) {
+      button.disabled = true;
+      error.hidden = true;
+      return decrypt(password)
+        .then(function (html) {
+          try {
+            sessionStorage.setItem(storageKey, password);
+          } catch (e) {
+            /* storage unavailable; just re-prompt next visit */
+          }
+          lock.remove();
+          blob.outerHTML = html;
+        })
+        .catch(function () {
+          button.disabled = false;
+          if (fromStorage) {
+            try {
+              sessionStorage.removeItem(storageKey);
+            } catch (e) {
+              /* ignore */
+            }
+          } else {
+            showError('密码错误，请重试。');
+            input.select();
+          }
+        });
+    }
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      if (input.value) {
+        unlock(input.value, false);
+      }
+    });
+
+    /* Share links carry the password in the URL fragment (#pw=...), which
+       is never sent to the server. Falls back to the sessionStorage copy.
+       NOTE: line comments are forbidden here — compress.html collapses
+       newlines, so `//` would swallow the rest of the script. */
+    var hashMatch = location.hash.match(/^#pw=(.+)$/);
+    if (hashMatch) {
+      unlock(decodeURIComponent(hashMatch[1]), true);
+      return;
+    }
+    var saved = null;
+    try {
+      saved = sessionStorage.getItem(storageKey);
+    } catch (e) {
+      /* ignore */
+    }
+    if (saved) {
+      unlock(saved, true);
+    }
+  })();
+</script>

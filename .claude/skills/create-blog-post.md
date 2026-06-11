@@ -65,3 +65,13 @@ These rules prevent broken builds. **Always follow them.**
 3. Write the file with frontmatter only — no body content unless user provides it
 4. **Validate frontmatter** against the rules above before writing
 5. Confirm the created file path to the user
+
+## Encrypted Posts
+
+If the user wants the post password-protected, write the draft to `_encrypted/YYYY-MM-DD-slug.md` (git-ignored) instead of `_posts/`, then run:
+
+```bash
+node tools/encrypt-post.mjs _encrypted/YYYY-MM-DD-slug.md
+```
+
+The script prompts for a password and writes the ciphertext-only post to `_posts/YYYY/MM/`. Never commit anything from `_encrypted/`. See "Encrypted Posts" in CLAUDE.md for details.

@@ -11,8 +11,12 @@ swcache: true
     "categories": {{ post.categories | join: ', ' | jsonify }},
     "tags": {{ post.tags | join: ', ' | jsonify }},
     "date": {{ post.date | jsonify }},
+    {% if post.encrypted %}
+    "content": {{ post.description | jsonify }}
+    {% else %}
     {% capture content -%}{% include post-summary.html full_text=true %}{%- endcapture -%}
     "content": {{ content | jsonify }}
+    {% endif %}
   }{% unless forloop.last %},{% endunless %}
   {% endfor %}
 ]

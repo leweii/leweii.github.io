@@ -191,6 +191,23 @@ This project uses **Conventional Commits** enforced by Commitlint (via Husky).
 
 The commit message hook runs automatically on commit.
 
+## Encrypted Posts
+
+Some posts are password-protected. Because this repo is **public**, the plaintext must never be committed — encryption happens at the source level:
+
+1. Write the draft as a normal post file (frontmatter + markdown) in `_encrypted/` (git-ignored).
+2. Run `node tools/encrypt-post.mjs _encrypted/YYYY-MM-DD-slug.md` (prompts for password, or set `ENCRYPT_POST_PASSWORD`).
+3. The script renders markdown to HTML (marked), encrypts it with AES-256-GCM (key from PBKDF2-SHA256, 600k iterations), and writes the post to `_posts/YYYY/MM/` containing only the base64 ciphertext plus `encrypted: true` frontmatter.
+4. Commit only the generated file in `_posts/`. Keep the draft in `_encrypted/` for future edits (re-run the script after editing).
+
+In the browser, `_includes/encrypted-post.html` shows a password form and decrypts via WebCrypto (HTTPS or localhost required). The password is cached in `sessionStorage` per post. The encrypt script also prints a share link of the form `https://www.jakobhe.com/posts/<slug>/#pw=<password>` — the fragment auto-unlocks the post and is never sent to the server. Note: scripts in that include must use `/* */` comments only; `compress.html` collapses newlines, so `//` comments break the script.
+
+**Constraints:**
+- Encrypted posts get `toc: false` (no headings exist at build time) and a default `description` shown in listings/search.
+- `assets/js/data/search.json` indexes only the description for `encrypted: true` posts.
+- Images referenced inside encrypted posts still live unencrypted on the CDN — avoid sensitive images, or accept that their URLs are guessable.
+- There is no password recovery; losing the password and the draft means losing the content.
+
 ## Skills and Automation
 
 The repository has Claude Code skills in `.claude/skills/`:
