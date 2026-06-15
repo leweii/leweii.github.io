@@ -1,6 +1,6 @@
 ---
 title: "香蕉辐射"
-description: 本文已加密，输入密码后阅读。
+description: 一篇向内探索的私密文章。
 create_time: 2026-06-11 10:00
 tags:
   - life
