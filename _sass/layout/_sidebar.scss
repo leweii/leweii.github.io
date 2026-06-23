@@ -225,19 +225,10 @@ $sidebar-display: 'sidebar-display'; /* the attribute for sidebar display */
       line-height: $btn-size;
     }
 
-    #mode-toggle,
     #theme-switch {
       @extend %button;
       @extend %sidebar-links;
       @extend %sidebar-link-hover;
-    }
-
-    #mode-toggle {
-      margin-right: v.$sb-btn-gap;
-
-      @include bp.xxxl {
-        margin-right: v.$sb-btn-gap-lg;
-      }
     }
 
     .icon-border {
