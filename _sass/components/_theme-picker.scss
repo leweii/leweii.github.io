@@ -12,7 +12,12 @@
      left/bottom are set inline by the picker script on open. */
   position: fixed;
   z-index: 1051;
-  width: 19rem;
+
+  /* Hug the widest (single-line) row so the border sits close to the text
+     instead of leaving a wide empty gutter; the nowrap descriptions set the
+     width, clamped to the viewport. */
+  width: max-content;
+  min-width: 13rem;
   max-width: calc(100vw - 1rem);
   max-height: 70vh;
   overflow-y: auto;
