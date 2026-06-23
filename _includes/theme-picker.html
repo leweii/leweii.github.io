@@ -1,0 +1,38 @@
+<!-- Theme picker — palette trigger + drop-up menu listing all themes.
+     Selection/persistence/font-injection handled by the inline script in
+     head.html. -->
+<div class="theme-picker" id="theme-picker">
+  <button
+    type="button"
+    class="btn btn-link nav-link"
+    id="theme-switch"
+    aria-label="Switch Theme"
+    aria-haspopup="listbox"
+    aria-expanded="false"
+  >
+    <i class="fas fa-palette"></i>
+  </button>
+
+  <div class="theme-menu" id="theme-menu" role="listbox" tabindex="-1" hidden>
+    <p class="theme-menu-title">{{ site.data.locales[include.lang].theme | default: '主题' }}</p>
+    {% for th in site.data.themes %}
+      <button
+        type="button"
+        class="theme-option"
+        role="option"
+        aria-selected="false"
+        data-theme-id="{{ th.id }}"
+        {% if th.font %}data-font="{{ th.font }}"{% endif %}
+      >
+        <span class="theme-swatch" aria-hidden="true">
+          {% for c in th.swatch %}<span style="background-color: {{ c }}"></span>{% endfor %}
+        </span>
+        <span class="theme-option-text">
+          <span class="theme-option-label">{{ th.label }}</span>
+          <span class="theme-option-desc">{{ th.desc }}</span>
+        </span>
+        <i class="fas fa-check theme-check" aria-hidden="true"></i>
+      </button>
+    {% endfor %}
+  </div>
+</div>

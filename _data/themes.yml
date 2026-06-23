@@ -1,0 +1,54 @@
+# Visual themes ported from hermes-agent (web/src/themes/presets.ts).
+# `swatch` = [background, midground, accent] colors shown in the picker.
+# `font`   = Google Fonts URL injected when the theme is active (optional).
+# Keys here must match the `data-theme` values in _sass/themes/_hermes.scss.
+
+- id: hermes
+  label: Hermes Teal
+  desc: 经典深青色 — 标志性的 Hermes 外观
+  swatch: ["#041c1c", "#ffe6cb", "#34d399"]
+
+- id: hermes-large
+  label: Hermes Teal (Large)
+  desc: 更大的字号与更宽松的间距
+  swatch: ["#041c1c", "#ffe6cb", "#34d399"]
+
+- id: nous-blue
+  label: Nous Blue
+  desc: 浅色模式 — 米色画布上的 Nous 蓝
+  swatch: ["#e8f2fd", "#0053fd", "#001934"]
+
+- id: midnight
+  label: Midnight
+  desc: 深蓝紫色，冷色调点缀
+  swatch: ["#0a0a1f", "#d4c8ff", "#a78bfa"]
+  font: https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap
+
+- id: ember
+  label: Ember
+  desc: 暖红与古铜 — 熔炉气息
+  swatch: ["#1a0a06", "#ffd8b0", "#f97316"]
+  font: https://fonts.googleapis.com/css2?family=Spectral:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;700&display=swap
+
+- id: mono
+  label: Mono
+  desc: 纯净灰阶 — 极简专注
+  swatch: ["#0e0e0e", "#eaeaea", "#bdbdbd"]
+  font: https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap
+
+- id: cyberpunk
+  label: Cyberpunk
+  desc: 黑底霓虹绿 — 矩阵终端
+  swatch: ["#040608", "#9bffcf", "#00ff88"]
+  font: https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=JetBrains+Mono:wght@400;700&display=swap
+
+- id: rose
+  label: Rosé
+  desc: 柔和粉色与暖象牙白 — 护眼
+  swatch: ["#1a0f15", "#ffd4e1", "#f9a8d4"]
+  font: https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=DM+Mono:wght@400;500&display=swap
+
+- id: classic
+  label: Classic
+  desc: 原始 Chirpy 浅色/深色主题
+  swatch: ["#1b1b1e", "#afb0b1", "#8ab4f8"]
