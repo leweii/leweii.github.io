@@ -127,6 +127,11 @@ $themes: (
   --theme-radius: #{$radius};
   --theme-lh: #{$lh};
 
+  /* Faint filler backdrop: veil = the canvas at near-full opacity, so the
+     illustration only ghosts through (~5-7%). */
+  --filler-image: url('/assets/img/filler-bg.webp');
+  --filler-veil: #{rgba($bg, if($light, 0.95, 0.93))};
+
   @if $font {
     --theme-font-sans: #{$font};
   }
@@ -297,10 +302,21 @@ $themes: (
     background-size: 512px 512px;
   }
 
-  /* ---- Typography personality ---- */
+  /* ---- Typography personality + faint filler backdrop ----
+     The filler webp (DS filler-bg0) sits behind all content as the body
+     background, veiled by a near-opaque wash of the theme canvas so only a
+     ghost of the illustration shows through. `fixed` keeps it still on
+     scroll, mirroring the DS z-2 layer. */
   body {
     font-family: var(--theme-font-sans, #{$chirpy-sans});
     line-height: var(--theme-lh, 1.6);
+    background-color: var(--main-bg);
+    background-image: linear-gradient(var(--filler-veil), var(--filler-veil)),
+      var(--filler-image);
+    background-repeat: no-repeat;
+    background-position: center, top left;
+    background-size: cover, cover;
+    background-attachment: fixed;
   }
 
   h1,
