@@ -1,5 +1,104 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <!-- Visual theme picker (Hermes default). Early apply avoids FOUC; the
+       drop-up menu, persistence and per-theme web-font injection are wired
+       on DOMContentLoaded. -->
+  <script>
+    (function () {
+      var KEY = 'site-theme';
+      var DEFAULT = 'hermes';
+
+      function apply(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        try { localStorage.setItem(KEY, theme); } catch (e) { /* ignore */ }
+      }
+
+      function injectFont(url) {
+        var link = document.getElementById('theme-font');
+        if (!url) { if (link) { link.remove(); } return; }
+        if (!link) {
+          link = document.createElement('link');
+          link.id = 'theme-font';
+          link.rel = 'stylesheet';
+          document.head.appendChild(link);
+        }
+        if (link.getAttribute('href') !== url) { link.setAttribute('href', url); }
+      }
+
+      /* Early apply — runs before paint. */
+      try { apply(localStorage.getItem(KEY) || DEFAULT); } catch (e) { apply(DEFAULT); }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        var picker = document.getElementById('theme-picker');
+        var trigger = document.getElementById('theme-switch');
+        var menu = document.getElementById('theme-menu');
+        if (!picker || !trigger || !menu) { return; }
+        var options = menu.querySelectorAll('.theme-option');
+
+        function current() {
+          return document.documentElement.getAttribute('data-theme') || DEFAULT;
+        }
+
+        function sync() {
+          var cur = current();
+          for (var i = 0; i < options.length; i++) {
+            var on = options[i].getAttribute('data-theme-id') === cur;
+            options[i].setAttribute('aria-selected', on ? 'true' : 'false');
+            if (on) { injectFont(options[i].getAttribute('data-font')); }
+          }
+        }
+
+        function position() {
+          var r = trigger.getBoundingClientRect();
+          var gap = 8;
+          /* Align the menu's left edge to the trigger, clamped to the
+             viewport, and float it just above the trigger. */
+          var left = Math.min(r.left, window.innerWidth - menu.offsetWidth - 8);
+          menu.style.left = Math.max(8, left) + 'px';
+          menu.style.bottom = (window.innerHeight - r.top + gap) + 'px';
+        }
+
+        function close() {
+          menu.hidden = true;
+          trigger.setAttribute('aria-expanded', 'false');
+        }
+
+        function toggle() {
+          if (menu.hidden) {
+            menu.hidden = false;
+            position();
+            trigger.setAttribute('aria-expanded', 'true');
+          } else {
+            close();
+          }
+        }
+
+        sync();
+
+        trigger.addEventListener('click', function (e) {
+          e.stopPropagation();
+          toggle();
+        });
+
+        for (var i = 0; i < options.length; i++) {
+          options[i].addEventListener('click', function () {
+            apply(this.getAttribute('data-theme-id'));
+            sync();
+            close();
+          });
+        }
+
+        document.addEventListener('click', function (e) {
+          if (!picker.contains(e.target)) { close(); }
+        });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape') { close(); }
+        });
+      });
+    })();
+  </script>
+
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e">
   <meta name="mobile-web-app-capable" content="yes">

@@ -1,0 +1,532 @@
+/* ==========================================================================
+   Hermes themes — ported from hermes-agent (web/src/themes/presets.ts +
+   components/Backdrop.tsx + index.css).
+
+   Each preset is a dark (or, for `nous-blue`, light) palette built from four
+   core tokens — background / midground / accent / warm-glow — plus a noise
+   multiplier, corner radius and optional font stack. Every Chirpy CSS
+   variable is derived from those so a new theme is one row in `$themes`.
+
+   `emit` outputs:
+     • per-theme `html[data-theme='<name>']` blocks of CSS custom properties
+     • one grouped block of shared "chrome" (grain, vignette, tags, syntax,
+       radius, fonts) that reads those variables.
+
+   `classic` is intentionally absent → it falls through to stock Chirpy
+   light/dark.
+   ========================================================================== */
+
+@use 'sass:color';
+@use 'sass:map';
+
+/* Fallbacks so the default (Hermes) theme keeps Chirpy's native typography. */
+$chirpy-sans: 'Source Sans Pro', 'Microsoft Yahei', sans-serif;
+$chirpy-heading: lato, 'Microsoft Yahei', sans-serif;
+$chirpy-mono: ui-monospace, 'SF Mono', 'Cascadia Mono', menlo, consolas, monospace;
+
+/* name → palette/typography/layout. Mirrors presets.ts. */
+$themes: (
+  'hermes': (
+    bg: #041c1c, mid: #ffe6cb, accent: #34d399,
+    glow: rgb(255 189 56 / 35%), noise: 1, radius: 0.5rem,
+    base: 16px, lh: 1.6, light: false, font: null, mono: null
+  ),
+  'hermes-large': (
+    bg: #041c1c, mid: #ffe6cb, accent: #34d399,
+    glow: rgb(255 189 56 / 35%), noise: 1, radius: 0.5rem,
+    base: 18px, lh: 1.7, light: false, font: null, mono: null
+  ),
+  'midnight': (
+    bg: #0a0a1f, mid: #d4c8ff, accent: #a78bfa,
+    glow: rgb(167 139 250 / 32%), noise: 0.8, radius: 0.75rem,
+    base: 16px, lh: 1.6, light: false,
+    font: ('Inter', 'Microsoft Yahei', sans-serif),
+    mono: ('JetBrains Mono', monospace)
+  ),
+  'ember': (
+    bg: #1a0a06, mid: #ffd8b0, accent: #f97316,
+    glow: rgb(249 115 22 / 38%), noise: 1, radius: 0.25rem,
+    base: 16px, lh: 1.6, light: false,
+    font: ('Spectral', georgia, serif),
+    mono: ('IBM Plex Mono', monospace)
+  ),
+  'mono': (
+    bg: #0e0e0e, mid: #eaeaea, accent: #bdbdbd,
+    glow: rgb(255 255 255 / 10%), noise: 0.6, radius: 0,
+    base: 16px, lh: 1.6, light: false,
+    font: ('IBM Plex Sans', 'Microsoft Yahei', sans-serif),
+    mono: ('IBM Plex Mono', monospace)
+  ),
+  'cyberpunk': (
+    bg: #040608, mid: #9bffcf, accent: #00ff88,
+    glow: rgb(0 255 136 / 22%), noise: 1.2, radius: 0,
+    base: 16px, lh: 1.6, light: false,
+    font: ('Share Tech Mono', 'JetBrains Mono', monospace),
+    mono: ('Share Tech Mono', monospace)
+  ),
+  'rose': (
+    bg: #1a0f15, mid: #ffd4e1, accent: #f9a8d4,
+    glow: rgb(249 168 212 / 30%), noise: 0.9, radius: 1rem,
+    base: 16px, lh: 1.6, light: false,
+    font: ('Fraunces', georgia, serif),
+    mono: ('DM Mono', monospace)
+  ),
+  /* Authored directly in its post-inversion (on-screen) colors: a cream
+     canvas with vivid Nous-blue accents, per the source's documented
+     LENS_5I result. */
+  'nous-blue': (
+    bg: #e8f2fd, mid: #001934, accent: #0053fd,
+    glow: rgb(0 83 253 / 10%), noise: 0.25, radius: 0.5rem,
+    base: 16px, lh: 1.6, light: true, font: null, mono: null
+  )
+);
+
+/* Set every Chirpy variable for one theme from its four core tokens. */
+@mixin theme-vars($t) {
+  $bg: map.get($t, bg);
+  $mid: map.get($t, mid);
+  $accent: map.get($t, accent);
+  $glow: map.get($t, glow);
+  $noise: map.get($t, noise);
+  $radius: map.get($t, radius);
+  $base: map.get($t, base);
+  $lh: map.get($t, lh);
+  $light: map.get($t, light);
+  $font: map.get($t, font);
+  $mono: map.get($t, mono);
+
+  color-scheme: if($light, light, dark);
+  font-size: $base;
+
+  /* Tinted surfaces derived from bg ± mid. */
+  $panel: if($light, color.mix(#ffffff, $bg, 55%), color.mix($mid, $bg, 7%));
+  $panel-2: if($light, color.mix(#ffffff, $bg, 30%), color.mix($mid, $bg, 11%));
+  $panel-3: if($light, color.mix($mid, $bg, 6%), color.mix($mid, $bg, 16%));
+  $sink: if($light, color.mix($mid, $bg, 3%), color.mix(#000000, $bg, 28%));
+  $code-bg: if($light, color.mix($mid, $bg, 5%), color.mix(#000000, $bg, 45%));
+
+  /* Secondary accents (syntax + callouts) — tuned for dark vs light canvas. */
+  $blue: if($light, #0053fd, #6fb3ff);
+  $purple: if($light, #6d28d9, #b48bff);
+  $amber: if($light, #b45309, #ffbd38);
+  $rose: if($light, #be185d, #e08ba8);
+
+  /* Palette tokens consumed by the shared chrome. */
+  --hermes-cream: #{$mid};
+  --hermes-line: #{rgba($mid, 0.14)};
+  --hermes-line-strong: #{rgba($mid, 0.28)};
+  --hermes-teal: #{$accent};
+  --hermes-blue: #{$blue};
+  --hermes-purple: #{$purple};
+  --hermes-amber: #{$amber};
+  --hermes-rose: #{$rose};
+  --warm-glow: #{$glow};
+  --noise-opacity-mul: #{$noise};
+  --noise-blend: #{if($light, multiply, color-dodge)};
+  --glow-blend: #{if($light, multiply, lighten)};
+  --theme-radius: #{$radius};
+  --theme-lh: #{$lh};
+
+  @if $font {
+    --theme-font-sans: #{$font};
+  }
+
+  @if $mono {
+    --theme-font-mono: #{$mono};
+  }
+
+  /* Framework color */
+  --main-bg: #{$bg};
+  --mask-bg: #{$panel-2};
+  --main-border-color: var(--hermes-line);
+
+  /* Common color */
+  --text-color: #{rgba($mid, if($light, 0.9, 0.82))};
+  --text-muted-color: #{rgba($mid, if($light, 0.6, 0.5))};
+  --text-muted-highlight-color: #{rgba($mid, if($light, 0.78, 0.68))};
+  --heading-color: #{$mid};
+  --label-color: #{rgba($mid, if($light, 0.7, 0.6))};
+  --blockquote-border-color: var(--hermes-line-strong);
+  --blockquote-text-color: #{rgba($mid, if($light, 0.62, 0.55))};
+  --link-color: #{$accent};
+  --link-underline-color: #{rgba($accent, 0.45)};
+  --button-bg: #{$panel-2};
+  --btn-border-color: var(--hermes-line-strong);
+  --btn-backtotop-color: var(--hermes-cream);
+  --btn-backtotop-border-color: var(--hermes-line-strong);
+  --card-header-bg: #{$panel-2};
+  --checkbox-color: #{rgba($mid, 0.45)};
+  --checkbox-checked-color: var(--hermes-teal);
+  --img-bg: radial-gradient(
+    circle,
+    #{color.mix($mid, $bg, 4%)} 0%,
+    #{$bg} 100%
+  );
+  --shimmer-bg: linear-gradient(
+    90deg,
+    rgb(255 255 255 / 0%) 0%,
+    #{rgba($accent, 0.18)} 50%,
+    rgb(255 255 255 / 0%) 100%
+  );
+
+  /* Sidebar */
+  --site-title-color: var(--hermes-cream);
+  --site-subtitle-color: #{rgba($mid, 0.5)};
+  --sidebar-bg: #{$sink};
+  --sidebar-border-color: var(--hermes-line);
+  --sidebar-muted-color: #{rgba($mid, 0.48)};
+  --sidebar-active-color: var(--hermes-cream);
+  --sidebar-hover-bg: #{rgba($accent, 0.1)};
+  --sidebar-btn-bg: #{$panel-2};
+  --sidebar-btn-color: #{rgba($mid, 0.6)};
+  --avatar-border-color: #{rgba($mid, 0.55)};
+
+  /* Topbar */
+  --topbar-bg: #{rgba($bg, 0.72)};
+  --topbar-text-color: var(--text-color);
+  --search-border-color: var(--hermes-line-strong);
+  --search-icon-color: #{rgba($mid, 0.45)};
+  --input-focus-border-color: var(--hermes-teal);
+
+  /* Home page */
+  --post-list-text-color: #{rgba($mid, if($light, 0.82, 0.78))};
+  --btn-patinator-text-color: var(--text-color);
+  --btn-paginator-hover-color: #{$panel-3};
+
+  /* Posts */
+  --toc-highlight: var(--hermes-teal);
+  --toc-popup-border-color: var(--hermes-line-strong);
+  --tag-hover: #{rgba($accent, 0.18)};
+  --tb-odd-bg: #{$panel};
+  --tb-even-bg: #{color.mix($mid, $bg, 3%)};
+  --tb-border-color: var(--hermes-line);
+  --footnote-target-bg: #{rgba($accent, 0.3)};
+  --btn-share-color: #{rgba($mid, 0.55)};
+  --btn-share-hover-color: var(--hermes-cream);
+  --card-bg: #{$panel};
+  --card-hover-bg: #{$panel-3};
+  --card-shadow: rgb(0 0 0 / #{if($light, 12%, 56%)}) 0 6px 18px 0,
+    #{rgba($mid, 0.1)} 0 0 0 1px;
+  --kbd-wrap-color: var(--hermes-cream);
+  --kbd-text-color: var(--hermes-cream);
+  --kbd-bg-color: #{$panel-2};
+  --prompt-text-color: #{rgba($mid, 0.82)};
+  --prompt-tip-bg: #{rgba($accent, 0.14)};
+  --prompt-tip-icon-color: var(--hermes-teal);
+  --prompt-info-bg: #{rgba($blue, 0.12)};
+  --prompt-info-icon-color: var(--hermes-blue);
+  --prompt-warning-bg: #{rgba($amber, 0.14)};
+  --prompt-warning-icon-color: var(--hermes-amber);
+  --prompt-danger-bg: #{rgba($rose, 0.14)};
+  --prompt-danger-icon-color: var(--hermes-rose);
+
+  /* Tags */
+  --tag-border: var(--hermes-line-strong);
+  --tag-shadow: rgb(0 0 0 / 30%);
+  --dash-color: #{rgba($mid, 0.18)};
+  --search-tag-bg: #{$panel-2};
+
+  /* Categories */
+  --categories-border: var(--hermes-line);
+  --categories-hover-bg: #{$panel-3};
+  --categories-icon-hover-color: var(--hermes-cream);
+
+  /* Archive */
+  --timeline-node-bg: var(--hermes-teal);
+  --timeline-color: var(--hermes-line-strong);
+  --timeline-year-dot-color: var(--hermes-teal);
+
+  /* Code highlight */
+  --language-border-color: var(--hermes-line);
+  --highlight-bg-color: #{$code-bg};
+  --highlighter-rouge-color: var(--hermes-cream);
+  --highlight-lineno-color: #{rgba($mid, 0.38)};
+  --inline-code-bg: #{rgba($accent, 0.1)};
+  --code-color: #{rgba($mid, if($light, 0.9, 0.8))};
+  --code-header-text-color: #{rgba($mid, 0.5)};
+  --code-header-muted-color: #{$panel-3};
+  --code-header-icon-color: #{rgba($mid, 0.4)};
+  --clipboard-checked-color: var(--hermes-teal);
+  --filepath-text-color: var(--hermes-cream);
+
+  /* Chirpy shows different image variants per scheme. */
+  @if $light {
+    .dark {
+      display: none;
+    }
+  } @else {
+    .light {
+      display: none;
+    }
+  }
+}
+
+/* Shared chrome — reads the variables set above, emitted once for all themes. */
+@mixin chrome {
+  /* =====================================================================
+     Backdrop stack — copied from hermes-agent Backdrop.tsx (LENS_0).
+     ===================================================================== */
+
+  /* warm corner vignette */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 9997;
+    pointer-events: none;
+    opacity: 0.22;
+    mix-blend-mode: var(--glow-blend, lighten);
+    background: radial-gradient(
+      ellipse at 0% 0%,
+      transparent 60%,
+      var(--warm-glow) 100%
+    );
+  }
+
+  /* film-grain noise (static texture — intentionally not gated on
+     reduced-motion, unlike the DS which gates its animated layer) */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    pointer-events: none;
+    opacity: calc(0.85 * var(--noise-opacity-mul, 1));
+    mix-blend-mode: var(--noise-blend, color-dodge);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' fill='%23eaeaea' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+    background-size: 512px 512px;
+  }
+
+  /* ---- Typography personality ---- */
+  body {
+    font-family: var(--theme-font-sans, #{$chirpy-sans});
+    line-height: var(--theme-lh, 1.6);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: var(--theme-font-sans, #{$chirpy-heading});
+    letter-spacing: 0.01em;
+  }
+
+  code,
+  kbd,
+  pre,
+  samp,
+  .highlight {
+    font-family: var(--theme-font-mono, #{$chirpy-mono});
+  }
+
+  /* ---- Corner-radius personality ---- */
+  .card,
+  .post-preview,
+  pre,
+  .highlight,
+  .highlighter-rouge,
+  img,
+  .preview-img,
+  #avatar,
+  blockquote.prompt-tip,
+  blockquote.prompt-info,
+  blockquote.prompt-warning,
+  blockquote.prompt-danger,
+  .post-tag,
+  #search-results .card {
+    border-radius: var(--theme-radius);
+  }
+
+  /* ---- Tags / chips: neon outline ---- */
+  .post-tag,
+  .tag {
+    border: 1px solid var(--hermes-line-strong) !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+
+    &:hover {
+      border-color: var(--hermes-teal) !important;
+      color: var(--hermes-teal) !important;
+      box-shadow: 0 0 8px var(--tag-hover);
+    }
+  }
+
+  /* ---- Sidebar toggle buttons glow on hover ---- */
+  #sidebar .sidebar-bottom .btn:hover,
+  #sidebar .sidebar-bottom a:hover {
+    color: var(--hermes-teal) !important;
+  }
+
+  /* ---- Categories ---- */
+  .categories.card,
+  .list-group-item {
+    background-color: var(--card-bg);
+  }
+
+  .categories {
+    .card-header {
+      background-color: var(--card-header-bg);
+    }
+
+    .list-group-item {
+      border-left: none;
+      border-right: none;
+      padding-left: 2rem;
+      border-color: var(--categories-border);
+
+      &:last-child {
+        border-bottom-color: var(--card-bg);
+      }
+    }
+  }
+
+  #archives li:nth-child(odd) {
+    background-image: linear-gradient(
+      to left,
+      var(--main-bg),
+      var(--card-bg),
+      var(--card-bg),
+      var(--card-bg),
+      var(--main-bg)
+    );
+  }
+
+  /* stylelint-disable-next-line selector-id-pattern */
+  #disqus_thread {
+    color-scheme: none;
+  }
+
+  /* --- Syntax highlight (base16-ish, recolored from theme accents) --- */
+  .highlight .gp {
+    color: var(--text-muted-color);
+  }
+
+  .highlight table td {
+    padding: 5px;
+  }
+
+  .highlight table pre {
+    margin: 0;
+  }
+
+  .highlight,
+  .highlight .w {
+    color: var(--code-color);
+    background-color: var(--highlight-bg-color);
+  }
+
+  .highlight .err {
+    color: var(--highlight-bg-color);
+    background-color: #ac4142;
+  }
+
+  .highlight .c,
+  .highlight .ch,
+  .highlight .cd,
+  .highlight .cm,
+  .highlight .cpf,
+  .highlight .c1,
+  .highlight .cs {
+    color: var(--text-muted-color);
+  }
+
+  .highlight .cp,
+  .highlight .nt,
+  .highlight .kc,
+  .highlight .kt,
+  .highlight .kd {
+    color: var(--hermes-amber);
+  }
+
+  .highlight .o,
+  .highlight .ow,
+  .highlight .p,
+  .highlight .pi {
+    color: var(--code-color);
+  }
+
+  .highlight .gi {
+    color: var(--hermes-teal);
+  }
+
+  .highlight .gd {
+    color: #f08a8b;
+    background-color: #320000;
+  }
+
+  .highlight .gh {
+    color: var(--hermes-blue);
+    background-color: var(--highlight-bg-color);
+    font-weight: bold;
+  }
+
+  .highlight .k,
+  .highlight .kn,
+  .highlight .kp,
+  .highlight .kr,
+  .highlight .kv {
+    color: var(--hermes-purple);
+  }
+
+  .highlight .s,
+  .highlight .sb,
+  .highlight .sc,
+  .highlight .dl,
+  .highlight .sd,
+  .highlight .s2,
+  .highlight .sh,
+  .highlight .sx,
+  .highlight .s1,
+  .highlight .m,
+  .highlight .mb,
+  .highlight .mf,
+  .highlight .mh,
+  .highlight .mi,
+  .highlight .il,
+  .highlight .mo,
+  .highlight .mx,
+  .highlight .ss {
+    color: var(--hermes-teal);
+  }
+
+  .highlight .sa {
+    color: var(--hermes-purple);
+  }
+
+  .highlight .sr {
+    color: #75b5aa;
+  }
+
+  .highlight .si,
+  .highlight .se {
+    color: #b76d45;
+  }
+
+  .highlight .nn,
+  .highlight .nc,
+  .highlight .no,
+  .highlight .na {
+    color: var(--hermes-amber);
+  }
+}
+
+/* Public entry point — call once at top level, after the light/dark blocks. */
+@mixin emit {
+  @each $name, $t in $themes {
+    html[data-theme='#{$name}'] {
+      @include theme-vars($t);
+    }
+  }
+
+  /* Build the grouped selector for the shared chrome. */
+  $sel: '';
+
+  @each $name, $t in $themes {
+    $piece: 'html[data-theme=#{$name}]';
+    $sel: if($sel == '', $piece, '#{$sel}, #{$piece}');
+  }
+
+  #{$sel} {
+    @include chrome;
+  }
+}

@@ -4,6 +4,7 @@
 @use '../abstracts/placeholders';
 @use '../themes/light';
 @use '../themes/dark';
+@use '../themes/hermes';
 
 :root {
   font-size: 16px;
@@ -36,6 +37,10 @@ html {
     overflow-y: scroll;
   }
 }
+
+/* Hermes themes — emit every preset's vars + shared chrome, after the
+   light/dark blocks so an active theme wins the cascade. */
+@include hermes.emit;
 
 body {
   background: var(--main-bg);

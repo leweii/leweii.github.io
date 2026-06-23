@@ -131,6 +131,23 @@ layout: page
     }
   }
 
+  /* Hermes themes win over the light/dark defaults above: derive every
+     project-card surface from the active palette so the cards match the
+     theme instead of staying ivory/black-gold. Works for both the dark
+     presets and the light `nous-blue` (all reference the same vars). */
+  html[data-theme]:not([data-theme='classic']) #page-projects {
+    --pj-card-bg:        var(--card-bg);
+    --pj-icon-bg:        linear-gradient(180deg, rgb(255 255 255 / 8%) 0%, rgb(255 255 255 / 3%) 100%);
+    --pj-arrow:          var(--text-muted-color);
+    --pj-arrow-hover:    var(--link-color);
+    --pj-shadow:         rgb(0 0 0 / 40%);
+    --pj-shadow-hover:   rgb(0 0 0 / 60%);
+    --pj-shine:          var(--hermes-line-strong);
+    --pj-inner-top:      var(--hermes-line);
+    --pj-inner-top-hover: var(--hermes-line-strong);
+    --pj-glow-hover:     var(--tag-hover);
+  }
+
   /* Tabs */
   .project-tabs {
     display: inline-flex;
@@ -423,6 +440,10 @@ layout: page
     html:not([data-mode='light']) .pj-status.is-wip  { color: var(--pj-gold-warm); }
     html:not([data-mode='light']) .pj-status.is-archived { color: #c0c0c5; }
   }
+  /* Brighter pill text on the dark Hermes presets (nous-blue stays light). */
+  html[data-theme]:not([data-theme='classic']):not([data-theme='nous-blue']) .pj-status.is-live { color: #62d685; }
+  html[data-theme]:not([data-theme='classic']):not([data-theme='nous-blue']) .pj-status.is-wip  { color: var(--pj-gold-warm); }
+  html[data-theme]:not([data-theme='classic']):not([data-theme='nous-blue']) .pj-status.is-archived { color: #c0c0c5; }
 
   /* Arrow */
   .project-row-arrow {
