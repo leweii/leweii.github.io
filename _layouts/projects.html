@@ -196,7 +196,7 @@ layout: page
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 20px;
     perspective: 1200px;
   }
 
@@ -226,6 +226,14 @@ layout: page
       background 0.25s ease;
     will-change: transform;
     isolation: isolate;
+    z-index: 1;
+  }
+  /* Lift the active card above its siblings so its tilt/scale never gets
+     painted over by the next card in the list (which would read as overlap). */
+  .project-row:hover,
+  .project-row:focus-visible,
+  .project-row.is-tilting {
+    z-index: 5;
   }
   .project-row:hover,
   .project-row:focus-visible {
