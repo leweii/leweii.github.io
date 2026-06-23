@@ -7,50 +7,50 @@
 
 - id: hermes
   label: Poseidon
-  desc: 波塞冬 · 深海般沉静的青色
+  desc: 波塞冬 · 深海在他掌中起伏
   swatch: ["#041c1c", "#ffe6cb", "#34d399"]
 
 - id: hermes-large
   label: Oceanus
-  desc: 俄刻阿诺斯 · 环绕世界的长河，更宏阔的字号与间距
+  desc: 俄刻阿诺斯 · 环绕世界的长河
   swatch: ["#041c1c", "#ffe6cb", "#34d399"]
 
 - id: nous-blue
   label: Aether
-  desc: 埃忒尔 · 上界明澈的浅色天光
+  desc: 埃忒尔 · 白昼从他指间流下
   swatch: ["#e8f2fd", "#0053fd", "#001934"]
 
 - id: midnight
   label: Nyx
-  desc: 倪克斯 · 暗夜女神的深蓝紫
+  desc: 倪克斯 · 夜色是她垂下的长发
   swatch: ["#0a0a1f", "#d4c8ff", "#a78bfa"]
   font: https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap
 
 - id: ember
   label: Hephaestus
-  desc: 赫菲斯托斯 · 锻造之炉的暖红与古铜
+  desc: 赫菲斯托斯 · 炉膛里淬炼星辰
   swatch: ["#1a0a06", "#ffd8b0", "#f97316"]
   font: https://fonts.googleapis.com/css2?family=Spectral:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;700&display=swap
 
 - id: mono
   label: Selene
-  desc: 塞勒涅 · 银灰月华，极简澄澈
+  desc: 塞勒涅 · 羽毛像日子一样亮着
   swatch: ["#0e0e0e", "#eaeaea", "#bdbdbd"]
   font: https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap
 
 - id: cyberpunk
   label: Hecate
-  desc: 赫卡忒 · 黑夜中的霓虹绿，魔法之炬
+  desc: 赫卡忒 · 暗处有火把替她开路
   swatch: ["#040608", "#9bffcf", "#00ff88"]
   font: https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=JetBrains+Mono:wght@400;700&display=swap
 
 - id: rose
   label: Aphrodite
-  desc: 阿佛洛狄忒 · 柔粉与象牙白，爱与美
+  desc: 阿佛洛狄忒 · 她经过处花都开了
   swatch: ["#1a0f15", "#ffd4e1", "#f9a8d4"]
   font: https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=DM+Mono:wght@400;500&display=swap
 
 - id: classic
   label: Chaos
-  desc: 卡俄斯 · 本初混沌，原始 Chirpy 主题
+  desc: 卡俄斯 · 众神诞生之前的混沌
   swatch: ["#1b1b1e", "#afb0b1", "#8ab4f8"]
