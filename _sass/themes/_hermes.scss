@@ -28,45 +28,45 @@ $chirpy-mono: ui-monospace, 'SF Mono', 'Cascadia Mono', menlo, consolas, monospa
 $themes: (
   'hermes': (
     bg: #041c1c, mid: #ffe6cb, accent: #34d399,
-    glow: rgba(255, 189, 56, 0.35), noise: 1, radius: 0.5rem,
+    glow: rgb(255 189 56 / 35%), noise: 1, radius: 0.5rem,
     base: 16px, lh: 1.6, light: false, font: null, mono: null
   ),
   'hermes-large': (
     bg: #041c1c, mid: #ffe6cb, accent: #34d399,
-    glow: rgba(255, 189, 56, 0.35), noise: 1, radius: 0.5rem,
+    glow: rgb(255 189 56 / 35%), noise: 1, radius: 0.5rem,
     base: 18px, lh: 1.7, light: false, font: null, mono: null
   ),
   'midnight': (
     bg: #0a0a1f, mid: #d4c8ff, accent: #a78bfa,
-    glow: rgba(167, 139, 250, 0.32), noise: 0.8, radius: 0.75rem,
+    glow: rgb(167 139 250 / 32%), noise: 0.8, radius: 0.75rem,
     base: 16px, lh: 1.6, light: false,
     font: ('Inter', 'Microsoft Yahei', sans-serif),
     mono: ('JetBrains Mono', monospace)
   ),
   'ember': (
     bg: #1a0a06, mid: #ffd8b0, accent: #f97316,
-    glow: rgba(249, 115, 22, 0.38), noise: 1, radius: 0.25rem,
+    glow: rgb(249 115 22 / 38%), noise: 1, radius: 0.25rem,
     base: 16px, lh: 1.6, light: false,
     font: ('Spectral', georgia, serif),
     mono: ('IBM Plex Mono', monospace)
   ),
   'mono': (
     bg: #0e0e0e, mid: #eaeaea, accent: #bdbdbd,
-    glow: rgba(255, 255, 255, 0.1), noise: 0.6, radius: 0,
+    glow: rgb(255 255 255 / 10%), noise: 0.6, radius: 0,
     base: 16px, lh: 1.6, light: false,
     font: ('IBM Plex Sans', 'Microsoft Yahei', sans-serif),
     mono: ('IBM Plex Mono', monospace)
   ),
   'cyberpunk': (
     bg: #040608, mid: #9bffcf, accent: #00ff88,
-    glow: rgba(0, 255, 136, 0.22), noise: 1.2, radius: 0,
+    glow: rgb(0 255 136 / 22%), noise: 1.2, radius: 0,
     base: 16px, lh: 1.6, light: false,
     font: ('Share Tech Mono', 'JetBrains Mono', monospace),
     mono: ('Share Tech Mono', monospace)
   ),
   'rose': (
     bg: #1a0f15, mid: #ffd4e1, accent: #f9a8d4,
-    glow: rgba(249, 168, 212, 0.3), noise: 0.9, radius: 1rem,
+    glow: rgb(249 168 212 / 30%), noise: 0.9, radius: 1rem,
     base: 16px, lh: 1.6, light: false,
     font: ('Fraunces', georgia, serif),
     mono: ('DM Mono', monospace)
@@ -76,7 +76,7 @@ $themes: (
      LENS_5I result. */
   'nous-blue': (
     bg: #e8f2fd, mid: #001934, accent: #0053fd,
-    glow: rgba(0, 83, 253, 0.1), noise: 0.25, radius: 0.5rem,
+    glow: rgb(0 83 253 / 10%), noise: 0.25, radius: 0.5rem,
     base: 16px, lh: 1.6, light: true, font: null, mono: null
   )
 );
@@ -99,11 +99,11 @@ $themes: (
   font-size: $base;
 
   /* Tinted surfaces derived from bg ± mid. */
-  $panel: if($light, color.mix(#fff, $bg, 55%), color.mix($mid, $bg, 7%));
-  $panel-2: if($light, color.mix(#fff, $bg, 30%), color.mix($mid, $bg, 11%));
+  $panel: if($light, color.mix(#ffffff, $bg, 55%), color.mix($mid, $bg, 7%));
+  $panel-2: if($light, color.mix(#ffffff, $bg, 30%), color.mix($mid, $bg, 11%));
   $panel-3: if($light, color.mix($mid, $bg, 6%), color.mix($mid, $bg, 16%));
-  $sink: if($light, color.mix($mid, $bg, 3%), color.mix(#000, $bg, 28%));
-  $code-bg: if($light, color.mix($mid, $bg, 5%), color.mix(#000, $bg, 45%));
+  $sink: if($light, color.mix($mid, $bg, 3%), color.mix(#000000, $bg, 28%));
+  $code-bg: if($light, color.mix($mid, $bg, 5%), color.mix(#000000, $bg, 45%));
 
   /* Secondary accents (syntax + callouts) — tuned for dark vs light canvas. */
   $blue: if($light, #0053fd, #6fb3ff);
@@ -126,10 +126,12 @@ $themes: (
   --glow-blend: #{if($light, multiply, lighten)};
   --theme-radius: #{$radius};
   --theme-lh: #{$lh};
-  @if $font != null {
+
+  @if $font {
     --theme-font-sans: #{$font};
   }
-  @if $mono != null {
+
+  @if $mono {
     --theme-font-mono: #{$mono};
   }
 
@@ -518,6 +520,7 @@ $themes: (
 
   /* Build the grouped selector for the shared chrome. */
   $sel: '';
+
   @each $name, $t in $themes {
     $piece: 'html[data-theme=#{$name}]';
     $sel: if($sel == '', $piece, '#{$sel}, #{$piece}');
